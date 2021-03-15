@@ -1,12 +1,15 @@
 ﻿using System;
 
-namespace C_
+
+namespace testingeningen
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
+
+class Program{
+    static void Main(){
+        while (true){
+        console.WriteLine("fakka");
+        test = console.ReadLine();
         }
+
     }
 }
