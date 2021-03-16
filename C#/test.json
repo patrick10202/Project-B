@@ -2,10 +2,6 @@
 	"voornaam": "Rick",
 	"achternaam": "word",
 	"gender": "man",
-	"adres": {
-		"stad": "Rotterdam"
-	},
-	"nummer": [
-		{"type": "home", "nummer": "12345" }
-	]
+	"adres": "Rotterdam",
+	"nummer": 12345
 }
