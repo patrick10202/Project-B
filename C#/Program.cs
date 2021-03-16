@@ -3,6 +3,20 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using Newtonsoft.Json;
 
+var projectFolder = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+var FILEPATH = Path.Combine(projectFolder, @"test.json");
+var jsonString = File.ReadAllText(FILEPATH);
+ 
+var object = JsonConvert.DeserializeObject<Persoon>(jsonString);
+public class Persoon{
+    public string voornaam;
+    public string achternaam;
+    public string gender;
+    public string adres;
+    public int nummer;
+}
+
+
 public class Reservering{
 
 }
