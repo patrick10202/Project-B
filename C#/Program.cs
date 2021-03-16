@@ -15,7 +15,6 @@ public class Phrases{
     public static string inputPlease(){
         Console.WriteLine("Please input a number to see the following menus:");
         Console.WriteLine("1: HomeScreen\n2: movies\n3: reserve\n4: comming soon\n5:info");
-        Console.WriteLine("1: login\n2: movies\n3: reserve\n4: coming soon\n5: info");
         Console.WriteLine("to quit, enter 0");
         string UserInput = Console.ReadLine();
         return UserInput;
