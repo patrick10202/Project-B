@@ -46,6 +46,8 @@ class program{
             } else if (UserInput == "5"){
                 // info screen
                 Console.WriteLine("u typt 5");
+            } else if (UserInput == "0"){
+              break;
             }
             Console.WriteLine("press enter to continue");
             Console.ReadLine();
