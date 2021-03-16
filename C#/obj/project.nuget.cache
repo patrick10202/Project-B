@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JHGLZG1Jc1hbUX3EW32rqs/D+U+z7lJyPbqZtutZcb8SNT+yEHOx+YnIikC/mj3Oke9rFbJ+FDZwiTE5zk6gCg==",
+  "dgSpecHash": "6roxGnAOse0crFxSlnzNvVnmLOVldSCTACYTmURN4Zz8GhKYgf6U6w1qicoprAQOQhenG2fBgD6L4P5A1F+aLw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\DotBat\\Documents\\GitHub\\Project-B\\C#\\C#.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\DotBat\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
-    "C:\\Users\\DotBat\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
-    "C:\\Users\\DotBat\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
-    "C:\\Users\\DotBat\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.13\\microsoft.netcore.app.host.win-x64.3.1.13.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\patri\\Documents\\GitHub\\Project-B\\C#\\C#.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
