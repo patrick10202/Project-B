@@ -5,6 +5,8 @@ using System.Text.Json.Serialization;
 public class Screen{
     public static void HomeScreen(){
         Console.WriteLine("HomeScreen");
+        Console.WriteLine("hello");
+        Console.WriteLine("dit is een test");
     }
     public static void MovieScreen(){
         Console.WriteLine("MovieScreen");
