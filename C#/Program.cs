@@ -14,11 +14,8 @@ public class Screen{
 public class Phrases{
     public static string inputPlease(){
         Console.WriteLine("Please input a number to see the following menus:");
-<<<<<<< HEAD
         Console.WriteLine("1: HomeScreen\n2: movies\n3: reserve\n4: comming soon\n5:info");
-=======
         Console.WriteLine("1: login\n2: movies\n3: reserve\n4: coming soon\n5: info");
->>>>>>> f471a54aa34a83ca7f647b827aa4dacbb2be7322
         Console.WriteLine("to quit, enter 0");
         string UserInput = Console.ReadLine();
         return UserInput;
@@ -30,17 +27,14 @@ class program{
         while (true) {
             string UserInput = Phrases.inputPlease();
             if (UserInput == "1"){
-<<<<<<< HEAD
                 Screen.HomeScreen();
             } else if (UserInput == "2"){
                 Screen.MovieScreen();
-=======
                 // login screen
                 Console.WriteLine("u typt 1");
             } else if (UserInput == "2"){
                 // movies screen
                 Console.WriteLine("u typt 2");
->>>>>>> f471a54aa34a83ca7f647b827aa4dacbb2be7322
             } else if (UserInput == "3"){
                 // reserve screen
                 Console.WriteLine("u typt 3");
