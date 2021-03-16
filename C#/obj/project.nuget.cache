@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "6roxGnAOse0crFxSlnzNvVnmLOVldSCTACYTmURN4Zz8GhKYgf6U6w1qicoprAQOQhenG2fBgD6L4P5A1F+aLw==",
+  "dgSpecHash": "YezXDG7oMGyRP5HeH5Rj6KJKKnLmroAl5Bz8QVv80SPBT6KnKDrcDAjOQugeThUSA5QlIM7xOwKm/otz7MoCUg==",
   "success": true,
   "projectFilePath": "C:\\Users\\patri\\Documents\\GitHub\\Project-B\\C#\\C#.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\patri\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
