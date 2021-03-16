@@ -3,6 +3,9 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 
 public class Screen{
+    public static void test(){
+        /*dit is een test*/
+    }
     public static void HomeScreen(){
         Console.WriteLine("HomeScreen");
     }
