@@ -1,11 +1,7 @@
 ﻿using System;
-namespace testingeningen
-{
-class Program{
-    static void Main(){
-        while (true){
-        Console.WriteLine("test");
-        }
-        }
-    }
+
+class Program {
+  public static void Main(){
+    Console.WriteLine("hello");
+  }
 }
