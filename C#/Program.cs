@@ -20,7 +20,7 @@ public class Screen{
 public class Phrases{
     public static string inputPlease(){
         Console.WriteLine("Please input a number to see the following menus:");
-        Console.WriteLine("1: login\n2: movies\n3: reserve\n4: comming soon\n5:info");
+        Console.WriteLine("1: login\n2: movies\n3: reserve\n4: coming soon\n5: info");
         Console.WriteLine("to quit, enter 0");
         string UserInput = Console.ReadLine();
         return UserInput;
@@ -32,14 +32,19 @@ class program{
         while (true) {
             string UserInput = Phrases.inputPlease();
             if (UserInput == "1"){
+                // login screen
                 Console.WriteLine("u typt 1");
             } else if (UserInput == "2"){
+                // movies screen
                 Console.WriteLine("u typt 2");
             } else if (UserInput == "3"){
+                // reserve screen
                 Console.WriteLine("u typt 3");
             } else if (UserInput == "4"){
+                // coming soon screen
                 Console.WriteLine("u typt 4");
             } else if (UserInput == "5"){
+                // info screen
                 Console.WriteLine("u typt 5");
             }
             Console.WriteLine("press enter to continue");
