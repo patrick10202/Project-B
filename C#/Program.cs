@@ -2,8 +2,10 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Newtonsoft.Json;
+using methods;
+using System.IO;
 
-var projectFolder = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+/*var projectFolder = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
 var FILEPATH = Path.Combine(projectFolder, @"test.json");
 var jsonString = File.ReadAllText(FILEPATH);
  
@@ -70,5 +72,26 @@ class program{
         }
         
         
+    }
+}*/
+namespace MovieProgram
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            MovieClass movie = new MovieClass()
+            {
+                Title = "Balaji: A tale of kings",
+                Description = "Balaji punjab is on a quest to defeat his evil brother and become king of the promised land",
+                Genre = "action",
+                Language = "english"
+            };
+            string movieObject =  JsonConvert.SerializeObject(movie);
+            File.WriteAllText(@"movies.json",movieObject);
+            Console.WriteLine("succesfully created");
+            string movieInfo = File.ReadAllText(@"movies.json");
+            Console.WriteLine(movieInfo);
+        }
     }
 }
