@@ -23,29 +23,40 @@ public class Reservering{
 
 }
 public class Screen{
-    public static string HomeScreen(){
+    public static void HomeScreen(){
         Console.WriteLine("======================================================================");
         Console.WriteLine("Home");
         string UserInput = Phrases.inputPlease();
-        return UserInput;
-    }
-    public static void LoginScreen(){
+        if (UserInput == "1"){
+                LoginScreen();
+            } else if (UserInput == "2"){
+                MovieScreen();
+            } else if (UserInput == "3"){
+                ReserveScreen();
+            } else if (UserInput == "4"){
+                ComingSoonScreen();
+            } else if (UserInput == "5"){
+                InfoScreen();
+            } else if (UserInput == "0"){
+              Console.WriteLine("quit");
+            }
+    static void LoginScreen(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Login");
     }
-    public static void MovieScreen(){
+    static void MovieScreen(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Movies");
     }
-    public static void ReserveScreen(){
+    static void ReserveScreen(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("reservations");
     }
-    public static void ComingSoonScreen(){
+    static void ComingSoonScreen(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Come watch these movies soon");
     }
-    public static void InfoScreen(){
+    static void InfoScreen(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Cinema info");
         // info over app en cinema
@@ -66,28 +77,14 @@ class program{
     static void Main(){
         Console.WriteLine("Welcome to our cinema app");
         while (true) {
-            string UserInput = Screen.HomeScreen();
-            if (UserInput == "1"){
-                Screen.LoginScreen();
-            } else if (UserInput == "2"){
-                Screen.MovieScreen();
-            } else if (UserInput == "3"){
-                Screen.ReserveScreen();
-            } else if (UserInput == "4"){
-                Screen.ComingSoonScreen();
-            } else if (UserInput == "5"){
-                Screen.InfoScreen();
-            } else if (UserInput == "0"){
-              break;
-            }
+            Screen.HomeScreen();
             Console.WriteLine("");
             Console.WriteLine("press enter to continue");
             Console.ReadLine();
 
         }
-        
-        
     }
+}
 }
 /*
 namespace MovieProgram
