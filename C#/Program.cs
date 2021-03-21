@@ -18,23 +18,45 @@ public class Persoon{
     public int nummer;
 }
 
-
+*/
 public class Reservering{
 
 }
 public class Screen{
-    public static void HomeScreen(){
-        Console.WriteLine("HomeScreen");
+    public static string HomeScreen(){
+        Console.WriteLine("======================================================================");
+        Console.WriteLine("Home");
+        string UserInput = Phrases.inputPlease();
+        return UserInput;
+    }
+    public static void LoginScreen(){
+        Console.WriteLine("----------------------------------------------------------------------");
+        Console.WriteLine("Login");
     }
     public static void MovieScreen(){
-        Console.WriteLine("MovieScreen");
+        Console.WriteLine("----------------------------------------------------------------------");
+        Console.WriteLine("Movies");
+    }
+    public static void ReserveScreen(){
+        Console.WriteLine("----------------------------------------------------------------------");
+        Console.WriteLine("reservations");
+    }
+    public static void ComingSoonScreen(){
+        Console.WriteLine("----------------------------------------------------------------------");
+        Console.WriteLine("Come watch these movies soon");
+    }
+    public static void InfoScreen(){
+        Console.WriteLine("----------------------------------------------------------------------");
+        Console.WriteLine("Cinema info");
+        // info over app en cinema
     }
 }
 
 public class Phrases{
     public static string inputPlease(){
-        Console.WriteLine("Please input a number to see the following menus:");
-        Console.WriteLine("1: HomeScreen\n2: movies\n3: reserve\n4: comming soon\n5:info");
+        Console.WriteLine("Please input a number to see the following menus:\n");
+        Console.WriteLine("1: Login\n2: movies\n3: reserve\n4: comming soon\n5: info\n");
+        
         Console.WriteLine("to quit, enter 0");
         string UserInput = Console.ReadLine();
         return UserInput;
@@ -44,28 +66,21 @@ class program{
     static void Main(){
         Console.WriteLine("Welcome to our cinema app");
         while (true) {
-            string UserInput = Phrases.inputPlease();
+            string UserInput = Screen.HomeScreen();
             if (UserInput == "1"){
-                Screen.HomeScreen();
+                Screen.LoginScreen();
             } else if (UserInput == "2"){
                 Screen.MovieScreen();
-                // login screen
-                Console.WriteLine("you typed in 1");
-            } else if (UserInput == "2"){
-                // movies screen
-                Console.WriteLine("you typed in 2");
             } else if (UserInput == "3"){
-                // reserve screen
-                Console.WriteLine("you typed in 3");
+                Screen.ReserveScreen();
             } else if (UserInput == "4"){
-                // coming soon screen
-                Console.WriteLine("you typed in 4");
+                Screen.ComingSoonScreen();
             } else if (UserInput == "5"){
-                // info screen
-                Console.WriteLine("you typed in 5");
+                Screen.InfoScreen();
             } else if (UserInput == "0"){
               break;
             }
+            Console.WriteLine("");
             Console.WriteLine("press enter to continue");
             Console.ReadLine();
 
@@ -73,7 +88,8 @@ class program{
         
         
     }
-}*/
+}
+/*
 namespace MovieProgram
 {
     class Program
@@ -94,4 +110,5 @@ namespace MovieProgram
             Console.WriteLine(movieInfo);
         }
     }
-}
+}*/
+
