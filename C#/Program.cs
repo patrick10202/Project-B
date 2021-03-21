@@ -62,6 +62,7 @@ public class Screen{
         // info over app en cinema
     }
 }
+}
 
 public class Phrases{
     public static string inputPlease(){
@@ -85,7 +86,7 @@ class program{
         }
     }
 }
-}
+
 /*
 namespace MovieProgram
 {
@@ -108,4 +109,3 @@ namespace MovieProgram
         }
     }
 }*/
-
