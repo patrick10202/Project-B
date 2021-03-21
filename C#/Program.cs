@@ -23,10 +23,6 @@ public class Reservering{
 
 }
 public class Screen{
-    public static void Nummers(){
-
-    }
-
     public static void HomeScreen(){
         Console.WriteLine("======================================================================");
         Console.WriteLine("Home");
@@ -62,6 +58,7 @@ public class Screen{
                 HomeScreen();
                 break;
             }
+        }
     static void LoginScreen(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Login");
@@ -148,7 +145,6 @@ public class Screen{
             }
         // info over app en cinema
     }
-}
 }
 
 public class Phrases{
