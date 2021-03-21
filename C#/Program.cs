@@ -23,42 +23,129 @@ public class Reservering{
 
 }
 public class Screen{
+    public static void Nummers(){
+
+    }
+
     public static void HomeScreen(){
         Console.WriteLine("======================================================================");
         Console.WriteLine("Home");
         string UserInput = Phrases.inputPlease();
-        if (UserInput == "1"){
+        switch (UserInput){
+            case "1":
+                Console.Clear();
                 LoginScreen();
-            } else if (UserInput == "2"){
+                break;
+            case "2":
+                Console.Clear();
                 MovieScreen();
-            } else if (UserInput == "3"){
+                break;
+            case "3":
+                Console.Clear();
                 ReserveScreen();
-            } else if (UserInput == "4"){
+                break;
+            case "4":
+                Console.Clear();
                 ComingSoonScreen();
-            } else if (UserInput == "5"){
+                break;
+            case "5":
+                Console.Clear();
                 InfoScreen();
-            } else if (UserInput == "0"){
-              Console.WriteLine("quit");
+                break;
+            case "0":
+                Console.Clear();
+                Console.WriteLine("quit");
+                break;
+            default:
+                Console.Clear();
+                Console.WriteLine("Please enter a valid number.");
+                HomeScreen();
+                break;
             }
     static void LoginScreen(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Login");
+        Console.WriteLine("0: back");
+        string UserInput = Console.ReadLine();
+        switch (UserInput){
+            case "0":
+                Console.Clear();
+                HomeScreen();
+                break;
+            default:
+            Console.Clear();
+            Console.WriteLine("Please enter a valid number.");
+                LoginScreen();
+                break;
+            }
     }
     static void MovieScreen(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Movies");
+        Console.WriteLine("0: back");
+        string UserInput = Console.ReadLine();
+        switch (UserInput){
+            case "0":
+                Console.Clear();
+                HomeScreen();
+                break;
+            default:
+            Console.Clear();
+            Console.WriteLine("Please enter a valid number.");
+                MovieScreen();
+                break;
+            }
     }
     static void ReserveScreen(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("reservations");
+        Console.WriteLine("0: back");
+        string UserInput = Console.ReadLine();
+        switch (UserInput){
+            case "0":
+                Console.Clear();
+                HomeScreen();
+                break;
+            default:
+            Console.Clear();
+            Console.WriteLine("Please enter a valid number.");
+                ReserveScreen();
+                break;
+            }
     }
     static void ComingSoonScreen(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Come watch these movies soon");
+        Console.WriteLine("0: back");
+        string UserInput = Console.ReadLine();
+        switch (UserInput){
+            case "0":
+                Console.Clear();
+                HomeScreen();
+                break;
+            default:
+            Console.Clear();
+            Console.WriteLine("Please enter a valid number.");
+                ComingSoonScreen();
+                break;
+            }
     }
     static void InfoScreen(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Cinema info");
+        Console.WriteLine("0: back");
+        string UserInput = Console.ReadLine();
+        switch (UserInput){
+            case "0":
+                Console.Clear();
+                HomeScreen();
+                break;
+            default:
+            Console.Clear();
+            Console.WriteLine("Please enter a valid number.");
+                InfoScreen();
+                break;
+            }
         // info over app en cinema
     }
 }
@@ -76,14 +163,9 @@ public class Phrases{
 }
 class program{
     static void Main(){
+        Console.Clear();
         Console.WriteLine("Welcome to our cinema app");
-        while (true) {
-            Screen.HomeScreen();
-            Console.WriteLine("");
-            Console.WriteLine("press enter to continue");
-            Console.ReadLine();
-
-        }
+        Screen.HomeScreen();
     }
 }
 
