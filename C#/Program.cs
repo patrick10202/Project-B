@@ -4,6 +4,7 @@ using System.Text.Json.Serialization;
 using Newtonsoft.Json;
 using methods;
 using System.IO;
+using System.Collections.Generic;
 
 /*var projectFolder = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
 var FILEPATH = Path.Combine(projectFolder, @"test.json");
@@ -80,6 +81,12 @@ public class Screen{
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Movies");
         Console.WriteLine("0: back");
+        string movieInfo = File.ReadAllText(@"movies.json");
+        List<MovieClass> Movielist = JsonConvert.DeserializeObject<List<MovieClass>>(movieInfo);
+        foreach(var item in Movielist){
+            string ret = $"name: {item.Title}";
+            Console.WriteLine(ret);
+        }
         string UserInput = Console.ReadLine();
         switch (UserInput){
             case "0":
