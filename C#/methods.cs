@@ -15,11 +15,5 @@ namespace methods
         public string Language {get;set;}
 
     }
-    public class JsonMethods{
-        public static List<object> JsonRead(string Path, object usedObject){
-            string JsonTostring = File.ReadAllText(Path);
-            List<object> list = JsonConvert.DeserializeObject<List<object>>(JsonTostring);
-            return list;
-        }
-    }
+
 }
