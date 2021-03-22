@@ -80,18 +80,22 @@ public class Screen{
     static void MovieScreen(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Movies");
-        Console.WriteLine("0: back");
+        Console.WriteLine("0: back\n1: filter on genre");
         string movieInfo = File.ReadAllText(@"movies.json");
         List<MovieClass> Movielist = JsonConvert.DeserializeObject<List<MovieClass>>(movieInfo);
-        foreach(var item in Movielist){
-            string ret = $"name: {item.Title}";
-            Console.WriteLine(ret);
-        }
         string UserInput = Console.ReadLine();
         switch (UserInput){
             case "0":
                 Console.Clear();
                 HomeScreen();
+                break;
+            case "1":
+                Console.Clear();
+                foreach(var item in Movielist){
+                string ret = item.Genre;
+                if (ret == "Action")
+                    Console.WriteLine($"Title: {item.Title} Genre: {item.Genre}");
+                }
                 break;
             default:
             Console.Clear();
