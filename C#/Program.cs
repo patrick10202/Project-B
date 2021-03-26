@@ -23,6 +23,19 @@ public class Persoon{
 public class Reservering{
 
 }
+
+public class login{
+    public static bool tryLogin(string usernameinput, string passwordinput){
+        string logininfo = File.ReadAllText(@"login.json");
+        List<LoginClass> Loginlist = JsonConvert.DeserializeObject<List<LoginClass>>(logininfo);
+        foreach(var item in Loginlist){
+            if (usernameinput == item.Username && passwordinput == item.Password){
+                return true;
+            }
+        }
+        return false;
+    }
+}
 public class Screen{
     public static void HomeScreen(){
         Console.WriteLine("======================================================================");
@@ -63,12 +76,29 @@ public class Screen{
     static void LoginScreen(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Login");
-        Console.WriteLine("0: back");
+        Console.WriteLine("0: back\n1: Create account\n2: Login");
         string UserInput = Console.ReadLine();
         switch (UserInput){
             case "0":
                 Console.Clear();
                 HomeScreen();
+                break;
+            case "1":
+                Console.Clear();
+                LoginScreen();
+                break;
+            case "2":
+                Console.Clear();
+                Console.WriteLine("Please enter username: ");
+                var usernameinput = Console.ReadLine();
+                Console.WriteLine("Please enter password: ");
+                var passwordinput = Console.ReadLine();
+                if (login.tryLogin(usernameinput, passwordinput)){
+                    Console.WriteLine("logged in");
+                }
+                else{
+                    Console.WriteLine("wrong combination");
+                }
                 break;
             default:
             Console.Clear();
