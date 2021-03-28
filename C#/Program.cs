@@ -76,7 +76,7 @@ public class Screen{
     static void LoginScreen(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Login");
-        Console.WriteLine("0: back\n1: Create account\n2: Login");
+        Console.WriteLine("0: back\n1: Create account\n2: Login\n3: Login Admin");
         string UserInput = Console.ReadLine();
         switch (UserInput){
             case "0":
@@ -98,6 +98,16 @@ public class Screen{
                 }
                 else{
                     Console.WriteLine("wrong combination");
+                }
+                break;
+            case "3":
+                Console.Clear();
+                Console.WriteLine("Please enter admin password");
+                string AdminPass = Console.ReadLine();
+                if (AdminPass == "Admin1"){
+                    AdminHome();
+                } else {
+                    Console.WriteLine("Wrong password");
                 }
                 break;
             default:
@@ -185,6 +195,109 @@ public class Screen{
                 break;
             }
         // info over app en cinema
+    }
+    static void AdminHome(){
+        Console.WriteLine("----------------------------------------------------------------------");
+        Console.WriteLine("Admin Main Menu");
+        Console.WriteLine("0: Admin logoff\n1: Movies");
+        string UserInput = Console.ReadLine();
+        switch (UserInput){
+            case "0":
+                Console.Clear();
+                HomeScreen();
+                break;
+            
+            case "1":
+                Console.Clear();
+                AdminMovies();
+                break;
+            default:
+                Console.Clear();
+                Console.WriteLine("Please enter a valid number.");
+                AdminHome();
+                break;
+            }
+    }
+    static void AdminMovies(){
+        Console.WriteLine("----------------------------------------------------------------------");
+        Console.WriteLine("Admin Movie Menu");
+        Console.WriteLine("0: back\n1: Add movie\n2: Edit Movie\n3: Remove movie");
+        string UserInput = Console.ReadLine();
+        string movieInfo = File.ReadAllText(@"movies.json");
+        List<MovieClass> Movielist = JsonConvert.DeserializeObject<List<MovieClass>>(movieInfo);
+        switch (UserInput){
+            case "0":
+                Console.Clear();
+                AdminHome();
+                break;
+            
+            case "1":
+                Console.Clear();
+
+                Console.WriteLine("Enter new Title");
+                var NewTitle = Console.ReadLine();
+                Console.WriteLine("Enter Description");
+                var NewDescription = Console.ReadLine();
+                Console.WriteLine("Enter Genre"); 
+                var NewGenre = Console.ReadLine();
+                Console.WriteLine("Enter Language");
+                var NewLanguage = Console.ReadLine();
+                MovieClass newMovie = new MovieClass(){
+                    Title = NewTitle,
+                    Description = NewDescription,
+                    Genre = NewGenre,
+                    Language = NewLanguage
+                };
+
+                Movielist.Add(newMovie);
+                var serialisedMovielist = JsonConvert.SerializeObject(Movielist, Formatting.Indented);
+                File.WriteAllText(@"movies.Json",serialisedMovielist);
+                AdminMovies();
+
+                break;
+
+            case "2":
+                Console.Clear();
+                AdminMovies();
+                break;
+
+            case "3":
+                Console.Clear();
+                Console.WriteLine("Select movie to delete, ");
+                int Choice = 1;
+                Console.WriteLine("0: Cancel");
+                foreach (var item in Movielist){
+                    Console.WriteLine($"{Choice}: {item.Title}");
+                    Choice++;
+                }
+                string SelectedMovie = Console.ReadLine();
+                if (Convert.ToInt32(SelectedMovie) != 0){
+                    try {
+                        Console.WriteLine($"Do you want to delete the movie '{Movielist[Convert.ToInt32(SelectedMovie) -1].Title}'? Y/N");
+                        string answer = Console.ReadLine();
+                        if (answer == "Y" || answer == "y"){
+                            string DeletedTitle = Movielist[Convert.ToInt32(SelectedMovie) - 1].Title;
+                            Movielist.RemoveAt(Convert.ToInt32(SelectedMovie)-1);
+                            Console.WriteLine($"{DeletedTitle} was deleted");
+                        } else {
+                            Console.WriteLine("Nothing Deleted");
+                        }
+                    } catch {
+                        Console.WriteLine("Please enter a valid movie");
+                    }
+                } else {
+                    Console.WriteLine("Cancelled");
+                }
+                serialisedMovielist = JsonConvert.SerializeObject(Movielist, Formatting.Indented);
+                File.WriteAllText(@"movies.Json",serialisedMovielist);
+                AdminMovies();
+                break;
+            default:
+                Console.Clear();
+                Console.WriteLine("Please enter a valid number.");
+                AdminMovies();
+                break;
+            }
     }
 }
 
