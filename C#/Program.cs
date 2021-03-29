@@ -154,7 +154,7 @@ public class Screen{
     static void MovieScreen(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Movies");
-        Console.WriteLine("0: back\n1: filter on genre");
+        Console.WriteLine("0: back\n1: filter on genre\n2: movie res");
         string movieInfo = File.ReadAllText(@"movies.json");
         List<MovieClass> Movielist = JsonConvert.DeserializeObject<List<MovieClass>>(movieInfo);
         string UserInput = Console.ReadLine();
@@ -171,6 +171,17 @@ public class Screen{
                     Console.WriteLine($"Title: {item.Title} Genre: {item.Genre}");
                 }
                 break;
+            case "2":
+                Console.Clear();
+                Console.WriteLine("Select movie to reserve a seat");
+                int Choice = 1;
+                foreach (var item in Movielist){
+                    Console.WriteLine($"{Choice}: {item.Title}");
+                    Choice++;
+                }
+                Console.WriteLine("0: Cancel");
+                break;
+            
             default:
             Console.Clear();
             Console.WriteLine("Please enter a valid number.");
