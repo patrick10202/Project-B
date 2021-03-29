@@ -154,7 +154,7 @@ public class Screen{
     static void MovieScreen(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Movies");
-        Console.WriteLine("0: back\n1: filter on genre\n2: filter on Language");
+        Console.WriteLine("0: back\n1: filter on genre\n2: filter on Language\n3: filter on time");
         string movieInfo = File.ReadAllText(@"movies.json");
         List<MovieClass> Movielist = JsonConvert.DeserializeObject<List<MovieClass>>(movieInfo);
         string UserInput = Console.ReadLine();
@@ -166,28 +166,31 @@ public class Screen{
             case "1":
                 Console.Clear();
                 Console.WriteLine("----------------------------------------------------------------------");
-                Console.WriteLine("0: Action\n1: Thriller\n2: Adventure");
+                Console.WriteLine("0: Back\n1: Action\n2: Thriller\n3: Adventure");
                 string answergenre = Console.ReadLine();
                 //filter for genre
-                if (answergenre == "0") {
+                if (answergenre == "1") {
                     foreach(var item in Movielist){
                         string ret = item.Genre;
                     if (ret == "Action")
                         Console.WriteLine($"Title: {item.Title}");
+                        
                     }
                 }    
-                if (answergenre == "1") {
+                if (answergenre == "2") {
                     foreach(var item in Movielist){
                         string ret = item.Genre;
                     if (ret == "Thriller")
                         Console.WriteLine($"Title: {item.Title}");
+                        
                     }   
                 }
-                if (answergenre == "2") {
+                if (answergenre == "3") {
                     foreach(var item in Movielist){
                         string ret = item.Genre;
                     if (ret == "Adventure")
                         Console.WriteLine($"Title: {item.Title}");
+                        
                     }   
                 }
                 break;
@@ -195,26 +198,28 @@ public class Screen{
             case "2":
                 Console.Clear();
                 Console.WriteLine("----------------------------------------------------------------------");
-                Console.WriteLine("0: Dutch\n1: English");
+                Console.WriteLine("0: Back\n1: Dutch\n2: English");
                 string answerLanguage = Console.ReadLine();
                 //filter for Language
-                if (answerLanguage == "0") {
+                if (answerLanguage == "1") {
                     foreach(var item in Movielist){
                         string ret = item.Language;
                     if (ret == "Dutch")
                         Console.WriteLine($"Title: {item.Title}");
+                        MovieScreen();
                     }   
                 }
-                  if (answerLanguage == "1") {
+                  if (answerLanguage == "2") {
                     foreach(var item in Movielist){
                         string ret = item.Language;
                     if (ret == "English")
                         Console.WriteLine($"Title: {item.Title}");
+                        MovieScreen();
                     }   
                 }
                 break;
-            
-            default:
+                
+                default:
             Console.Clear();
             Console.WriteLine("Please enter a valid number.");
                 MovieScreen();
