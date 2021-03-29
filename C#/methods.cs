@@ -14,6 +14,10 @@ namespace methods
         public string Genre {get;set;}
         public string Language {get;set;}
 
+        public int BasePrice {get;set;}
+
+        public string PlayTime {get; set;}
+
     }
 
 }
