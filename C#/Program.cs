@@ -25,15 +25,17 @@ public class Reservering{
 }
 
 public class login{
-    public static bool tryLogin(string usernameinput, string passwordinput){
+    public static Tuple<bool, int> tryLogin(string usernameinput, string passwordinput){
         string logininfo = File.ReadAllText(@"login.json");
         List<LoginClass> Loginlist = JsonConvert.DeserializeObject<List<LoginClass>>(logininfo);
+        int index = 0;
         foreach(var item in Loginlist){
             if (usernameinput == item.Username && passwordinput == item.Password){
-                return true;
+                return Tuple.Create(true, index);
             }
+            index++;
         }
-        return false;
+        return Tuple.Create(false, index);
     }
 }
 public class Screen{
@@ -76,7 +78,7 @@ public class Screen{
     static void LoginScreen(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Login");
-        Console.WriteLine("0: back\n1: Create account\n2: Login\n3: Admin Login\n4: Delete account");
+        Console.WriteLine("0: back\n1: Create account\n2: Login\n3: Admin Login");
         string logininfo = File.ReadAllText(@"login.json");
         List<LoginClass> Loginlist = JsonConvert.DeserializeObject<List<LoginClass>>(logininfo);
         string UserInput = Console.ReadLine();
@@ -121,8 +123,10 @@ public class Screen{
                 var usernameinput = Console.ReadLine();
                 Console.WriteLine("Please enter password: ");
                 var passwordinput = Console.ReadLine();
-                if (login.tryLogin(usernameinput, passwordinput)){
+                if (login.tryLogin(usernameinput, passwordinput).Item1){
+                    Console.Clear();
                     Console.WriteLine("logged in");
+                    AccountSettings(login.tryLogin(usernameinput, passwordinput));
                 }
                 else{
                     Console.WriteLine("wrong combination");
@@ -139,10 +143,6 @@ public class Screen{
                     Console.WriteLine("Wrong password");
                     LoginScreen();
                 }
-                break;
-            case "4":
-                Console.Clear();
-                LoginScreen();
                 break;
             default:
             Console.Clear();
@@ -295,6 +295,64 @@ public class Screen{
                 break;
             }
     }
+    static void AccountSettings(Tuple<bool, int> accindex){
+        Console.WriteLine("----------------------------------------------------------------------");
+        Console.WriteLine("Account Settings");
+        Console.WriteLine("0: back\n1: edit username\n2: edit password\n3: edit name\n4: edit surname\n5: edit email\n6: edit phone number\n7 delete account");
+        string logininfo = File.ReadAllText(@"login.json");
+        List<LoginClass> Loginlist = JsonConvert.DeserializeObject<List<LoginClass>>(logininfo);
+        string UserInput = Console.ReadLine();
+        switch (UserInput){
+            case "0":
+                Console.Clear();
+                LoginScreen();
+                break;
+            case "1":
+                Console.Clear();
+                LoginScreen();
+                break;
+            case "2":
+                Console.Clear();
+                LoginScreen();
+                break;
+            case "3":
+                Console.Clear();
+                LoginScreen();
+                break;
+            case "4":
+                Console.Clear();
+                LoginScreen();
+                break;
+            case "5":
+                Console.Clear();
+                LoginScreen();
+                break;
+            case "6":
+                Console.Clear();
+                LoginScreen();
+                break;
+            case "7":
+                Console.Clear();
+                Console.WriteLine("Are you sure you want to delete your account? Y/N");
+                string answer = Console.ReadLine();
+                if (answer == "Y" || answer == "y"){
+                    Loginlist.RemoveAt(accindex.Item2);
+                    Console.WriteLine("Your account has been deleted");
+                } else {
+                    Console.WriteLine("Aborted");
+                }
+                var serialisedLoginlist = JsonConvert.SerializeObject(Loginlist, Formatting.Indented);
+                File.WriteAllText(@"login.Json",serialisedLoginlist);
+                LoginScreen();
+                break;
+            default:
+                Console.Clear();
+                Console.WriteLine("Please enter a valid number.");
+                AdminHome();
+                break;
+            }
+    }
+
     static void AdminMovies(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Admin Movie Menu");
@@ -319,11 +377,18 @@ public class Screen{
                 var NewGenre = Console.ReadLine();
                 Console.WriteLine("Enter Language");
                 var NewLanguage = Console.ReadLine();
+                Console.WriteLine("Enter price (integer value)");
+                var NewPrice = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter Playtime (in minutes)");
+                var NewPlayTime = Console.ReadLine();
+
                 MovieClass newMovie = new MovieClass(){
                     Title = NewTitle,
                     Description = NewDescription,
                     Genre = NewGenre,
-                    Language = NewLanguage
+                    Language = NewLanguage,
+                    BasePrice = NewPrice,
+                    PlayTime = NewPlayTime
                 };
 
                 Movielist.Add(newMovie);
@@ -335,12 +400,72 @@ public class Screen{
 
             case "2":
                 Console.Clear();
+                Console.WriteLine("Select movie to edit");
+                int Choce = 1;
+                Console.WriteLine("0: Cancel");
+                foreach (var item in Movielist){
+                    Console.WriteLine($"{Choce}: {item.Title}");
+                    Choce++;
+                }
+                string SelecteMovie = Console.ReadLine();
+                int selecteIndex = 0;
+                try {
+                    selecteIndex = Convert.ToInt32(SelecteMovie);
+                } catch {
+                    Console.WriteLine("Please enter a valid number");
+                }
+                if (selecteIndex != 0){
+                    bool indexInList = true;
+                    try {
+                        var test = Movielist[selecteIndex - 1];
+                    } catch {
+                        indexInList = false;
+                    }
+                    if (indexInList){
+                        Console.WriteLine("Select item to Edit\n0: Cancel ");
+                        Console.WriteLine($"1: Title: {Movielist[selecteIndex - 1].Title}");
+                        Console.WriteLine($"2: Description: {Movielist[selecteIndex - 1].Description}");
+                        Console.WriteLine($"3: Genre: {Movielist[selecteIndex - 1].Genre}");
+                        Console.WriteLine($"4: Language: {Movielist[selecteIndex - 1].Language}");
+                        Console.WriteLine($"5: BasePrice: {Movielist[selecteIndex - 1].BasePrice}");
+                        Console.WriteLine($"6: Playtime: {Movielist[selecteIndex - 1].PlayTime}");
+                        UserInput = Console.ReadLine();
+                        if (UserInput == "1"){
+                            Console.WriteLine("Edit Title:");
+                            Movielist[selecteIndex - 1].Title = Console.ReadLine();
+                        } else if (UserInput == "2"){
+                            Console.WriteLine("Edit Description:");
+                            Movielist[selecteIndex - 1].Description = Console.ReadLine();
+                        }else if (UserInput == "3"){
+                            Console.WriteLine("Edit Genre:");
+                            Movielist[selecteIndex - 1].Genre = Console.ReadLine();
+                        }else if (UserInput == "4"){
+                            Console.WriteLine("Edit Language:");
+                            Movielist[selecteIndex - 1].Language = Console.ReadLine();
+                        }else if (UserInput == "5"){
+                            Console.WriteLine("Edit Price (integer value):");
+                            Movielist[selecteIndex - 1].BasePrice = Convert.ToInt32(Console.ReadLine());
+                        }else if (UserInput == "6"){
+                            Console.WriteLine("Edit PlayTime (in minutes)");
+                            Movielist[selecteIndex - 1].PlayTime = Console.ReadLine();
+                        }else {
+                            Console.WriteLine("Nothing was edited");
+                        }
+                        
+                    } else {
+                        Console.WriteLine("Please enter a valid number");
+                    }
+                } else {
+                    Console.WriteLine("Cancelled");
+                }
+                serialisedMovielist = JsonConvert.SerializeObject(Movielist, Formatting.Indented);
+                File.WriteAllText(@"movies.Json",serialisedMovielist);
                 AdminMovies();
                 break;
 
             case "3":
                 Console.Clear();
-                Console.WriteLine("Select movie to delete, ");
+                Console.WriteLine("Select movie to delete");
                 int Choice = 1;
                 Console.WriteLine("0: Cancel");
                 foreach (var item in Movielist){
