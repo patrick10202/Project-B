@@ -52,7 +52,7 @@ public class Screen{
                 break;
             case "3":
                 Console.Clear();
-                ReserveScreen();
+                FoodAndDrinks();
                 break;
             case "4":
                 Console.Clear();
@@ -144,9 +144,9 @@ public class Screen{
                 break;
             }
     }
-    static void ReserveScreen(){
+    static void FoodAndDrinks(){
         Console.WriteLine("----------------------------------------------------------------------");
-        Console.WriteLine("reservations");
+        Console.WriteLine("food & Drinks");
         Console.WriteLine("0: back");
         string UserInput = Console.ReadLine();
         switch (UserInput){
@@ -157,7 +157,7 @@ public class Screen{
             default:
             Console.Clear();
             Console.WriteLine("Please enter a valid number.");
-                ReserveScreen();
+                FoodAndDrinks();
                 break;
             }
     }
