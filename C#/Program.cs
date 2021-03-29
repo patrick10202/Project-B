@@ -345,11 +345,18 @@ public class Screen{
                 var NewGenre = Console.ReadLine();
                 Console.WriteLine("Enter Language");
                 var NewLanguage = Console.ReadLine();
+                Console.WriteLine("Enter price (integer value)");
+                var NewPrice = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter Playtime (in minutes)");
+                var NewPlayTime = Console.ReadLine();
+
                 MovieClass newMovie = new MovieClass(){
                     Title = NewTitle,
                     Description = NewDescription,
                     Genre = NewGenre,
-                    Language = NewLanguage
+                    Language = NewLanguage,
+                    BasePrice = NewPrice,
+                    PlayTime = NewPlayTime
                 };
 
                 Movielist.Add(newMovie);
@@ -361,12 +368,72 @@ public class Screen{
 
             case "2":
                 Console.Clear();
+                Console.WriteLine("Select movie to edit");
+                int Choce = 1;
+                Console.WriteLine("0: Cancel");
+                foreach (var item in Movielist){
+                    Console.WriteLine($"{Choce}: {item.Title}");
+                    Choce++;
+                }
+                string SelecteMovie = Console.ReadLine();
+                int selecteIndex = 0;
+                try {
+                    selecteIndex = Convert.ToInt32(SelecteMovie);
+                } catch {
+                    Console.WriteLine("Please enter a valid number");
+                }
+                if (selecteIndex != 0){
+                    bool indexInList = true;
+                    try {
+                        var test = Movielist[selecteIndex - 1];
+                    } catch {
+                        indexInList = false;
+                    }
+                    if (indexInList){
+                        Console.WriteLine("Select item to Edit\n0: Cancel ");
+                        Console.WriteLine($"1: Title: {Movielist[selecteIndex - 1].Title}");
+                        Console.WriteLine($"2: Description: {Movielist[selecteIndex - 1].Description}");
+                        Console.WriteLine($"3: Genre: {Movielist[selecteIndex - 1].Genre}");
+                        Console.WriteLine($"4: Language: {Movielist[selecteIndex - 1].Language}");
+                        Console.WriteLine($"5: BasePrice: {Movielist[selecteIndex - 1].BasePrice}");
+                        Console.WriteLine($"6: Playtime: {Movielist[selecteIndex - 1].PlayTime}");
+                        UserInput = Console.ReadLine();
+                        if (UserInput == "1"){
+                            Console.WriteLine("Edit Title:");
+                            Movielist[selecteIndex - 1].Title = Console.ReadLine();
+                        } else if (UserInput == "2"){
+                            Console.WriteLine("Edit Description:");
+                            Movielist[selecteIndex - 1].Description = Console.ReadLine();
+                        }else if (UserInput == "3"){
+                            Console.WriteLine("Edit Genre:");
+                            Movielist[selecteIndex - 1].Genre = Console.ReadLine();
+                        }else if (UserInput == "4"){
+                            Console.WriteLine("Edit Language:");
+                            Movielist[selecteIndex - 1].Language = Console.ReadLine();
+                        }else if (UserInput == "5"){
+                            Console.WriteLine("Edit Price (integer value):");
+                            Movielist[selecteIndex - 1].BasePrice = Convert.ToInt32(Console.ReadLine());
+                        }else if (UserInput == "6"){
+                            Console.WriteLine("Edit PlayTime (in minutes)");
+                            Movielist[selecteIndex - 1].PlayTime = Console.ReadLine();
+                        }else {
+                            Console.WriteLine("Nothing was edited");
+                        }
+                        
+                    } else {
+                        Console.WriteLine("Please enter a valid number");
+                    }
+                } else {
+                    Console.WriteLine("Cancelled");
+                }
+                serialisedMovielist = JsonConvert.SerializeObject(Movielist, Formatting.Indented);
+                File.WriteAllText(@"movies.Json",serialisedMovielist);
                 AdminMovies();
                 break;
 
             case "3":
                 Console.Clear();
-                Console.WriteLine("Select movie to delete, ");
+                Console.WriteLine("Select movie to delete");
                 int Choice = 1;
                 Console.WriteLine("0: Cancel");
                 foreach (var item in Movielist){
