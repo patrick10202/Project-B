@@ -154,7 +154,7 @@ public class Screen{
     static void MovieScreen(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Movies");
-        Console.WriteLine("0: back\n1: filter on genre\n2: movie res");
+        Console.WriteLine("0: back\n1: filter on genre\n2: filter on Language");
         string movieInfo = File.ReadAllText(@"movies.json");
         List<MovieClass> Movielist = JsonConvert.DeserializeObject<List<MovieClass>>(movieInfo);
         string UserInput = Console.ReadLine();
@@ -165,21 +165,53 @@ public class Screen{
                 break;
             case "1":
                 Console.Clear();
-                foreach(var item in Movielist){
-                string ret = item.Genre;
-                if (ret == "Action")
-                    Console.WriteLine($"Title: {item.Title} Genre: {item.Genre}");
+                Console.WriteLine("----------------------------------------------------------------------");
+                Console.WriteLine("0: Action\n1: Thriller\n2: Adventure");
+                string answergenre = Console.ReadLine();
+                //filter for genre
+                if (answergenre == "0") {
+                    foreach(var item in Movielist){
+                        string ret = item.Genre;
+                    if (ret == "Action")
+                        Console.WriteLine($"Title: {item.Title}");
+                    }
+                }    
+                if (answergenre == "1") {
+                    foreach(var item in Movielist){
+                        string ret = item.Genre;
+                    if (ret == "Thriller")
+                        Console.WriteLine($"Title: {item.Title}");
+                    }   
+                }
+                if (answergenre == "2") {
+                    foreach(var item in Movielist){
+                        string ret = item.Genre;
+                    if (ret == "Adventure")
+                        Console.WriteLine($"Title: {item.Title}");
+                    }   
                 }
                 break;
+            
             case "2":
                 Console.Clear();
-                Console.WriteLine("Select movie to reserve a seat");
-                int Choice = 1;
-                foreach (var item in Movielist){
-                    Console.WriteLine($"{Choice}: {item.Title}");
-                    Choice++;
+                Console.WriteLine("----------------------------------------------------------------------");
+                Console.WriteLine("0: Dutch\n1: English");
+                string answerLanguage = Console.ReadLine();
+                //filter for Language
+                if (answerLanguage == "0") {
+                    foreach(var item in Movielist){
+                        string ret = item.Language;
+                    if (ret == "Dutch")
+                        Console.WriteLine($"Title: {item.Title}");
+                    }   
                 }
-                Console.WriteLine("0: Cancel");
+                  if (answerLanguage == "1") {
+                    foreach(var item in Movielist){
+                        string ret = item.Language;
+                    if (ret == "English")
+                        Console.WriteLine($"Title: {item.Title}");
+                    }   
+                }
                 break;
             
             default:
