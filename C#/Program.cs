@@ -52,7 +52,7 @@ public class Screen{
                 break;
             case "3":
                 Console.Clear();
-                ReserveScreen();
+                FoodAndDrinks();
                 break;
             case "4":
                 Console.Clear();
@@ -76,7 +76,9 @@ public class Screen{
     static void LoginScreen(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Login");
-        Console.WriteLine("0: back\n1: Create account\n2: Login\n3: Login Admin");
+        Console.WriteLine("0: back\n1: Create account\n2: Login\n3: Admin Login\n4: Delete account");
+        string logininfo = File.ReadAllText(@"login.json");
+        List<LoginClass> Loginlist = JsonConvert.DeserializeObject<List<LoginClass>>(logininfo);
         string UserInput = Console.ReadLine();
         switch (UserInput){
             case "0":
@@ -85,6 +87,32 @@ public class Screen{
                 break;
             case "1":
                 Console.Clear();
+                Console.WriteLine("Please enter username: ");
+                var NewUser = Console.ReadLine();
+                Console.WriteLine("Please enter password: ");
+                var NewPassword = Console.ReadLine();
+                Console.WriteLine("Please enter name: ");
+                var NewName = Console.ReadLine();
+                Console.WriteLine("Please enter surname: ");
+                var NewSurname = Console.ReadLine();
+                Console.WriteLine("Please enter email: ");
+                var NewEmail = Console.ReadLine();
+                Console.WriteLine("Please enter phonenumber: ");
+                var NewPhone = Console.ReadLine();
+                LoginClass newAccount = new LoginClass(){
+                    Username = NewUser,
+                    Password = NewPassword,
+                    Name = NewName,
+                    Surname = NewSurname,
+                    Email = NewEmail,
+                    Phone = NewPhone
+                };
+
+                Loginlist.Add(newAccount);
+                var serialisedLoginlist = JsonConvert.SerializeObject(Loginlist, Formatting.Indented);
+                File.WriteAllText(@"login.Json",serialisedLoginlist);
+                Console.Clear();
+                Console.WriteLine("Account creation was succesful");
                 LoginScreen();
                 break;
             case "2":
@@ -107,8 +135,14 @@ public class Screen{
                 if (AdminPass == "Admin1"){
                     AdminHome();
                 } else {
+                    Console.Clear();
                     Console.WriteLine("Wrong password");
+                    LoginScreen();
                 }
+                break;
+            case "4":
+                Console.Clear();
+                LoginScreen();
                 break;
             default:
             Console.Clear();
@@ -120,7 +154,7 @@ public class Screen{
     static void MovieScreen(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Movies");
-        Console.WriteLine("0: back\n1: filter on genre");
+        Console.WriteLine("0: back\n1: filter on genre\n2: movie res");
         string movieInfo = File.ReadAllText(@"movies.json");
         List<MovieClass> Movielist = JsonConvert.DeserializeObject<List<MovieClass>>(movieInfo);
         string UserInput = Console.ReadLine();
@@ -137,6 +171,17 @@ public class Screen{
                     Console.WriteLine($"Title: {item.Title} Genre: {item.Genre}");
                 }
                 break;
+            case "2":
+                Console.Clear();
+                Console.WriteLine("Select movie to reserve a seat");
+                int Choice = 1;
+                foreach (var item in Movielist){
+                    Console.WriteLine($"{Choice}: {item.Title}");
+                    Choice++;
+                }
+                Console.WriteLine("0: Cancel");
+                break;
+            
             default:
             Console.Clear();
             Console.WriteLine("Please enter a valid number.");
@@ -144,9 +189,9 @@ public class Screen{
                 break;
             }
     }
-    static void ReserveScreen(){
+    static void FoodAndDrinks(){
         Console.WriteLine("----------------------------------------------------------------------");
-        Console.WriteLine("reservations");
+        Console.WriteLine("food & Drinks");
         Console.WriteLine("0: back");
         string UserInput = Console.ReadLine();
         switch (UserInput){
@@ -157,7 +202,7 @@ public class Screen{
             default:
             Console.Clear();
             Console.WriteLine("Please enter a valid number.");
-                ReserveScreen();
+                FoodAndDrinks();
                 break;
             }
     }
@@ -371,7 +416,7 @@ public class Screen{
 public class Phrases{
     public static string inputPlease(){
         Console.WriteLine("Please input a number to see the following menus:\n");
-        Console.WriteLine("1: Login\n2: movies\n3: reserve\n4: comming soon\n5: info\n");
+        Console.WriteLine("1: Login\n2: movies\n3: Food & Drinks\n4: comming soon\n5: info\n");
         
         Console.WriteLine("to quit, enter 0");
         string UserInput = Console.ReadLine();

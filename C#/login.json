@@ -1,9 +1,26 @@
 [
-{   "Username": "testuser1",
-    "Password": "testpassword1"
-},
-
-{   "Username": "testuser2",
-    "Password": "testpassword2"
-}
+  {
+    "Username": "testuser1",
+    "Password": "testpassword1",
+    "Name": null,
+    "Surname": null,
+    "Email": null,
+    "Phone": null
+  },
+  {
+    "Username": "testuser2",
+    "Password": "testpassword2",
+    "Name": null,
+    "Surname": null,
+    "Email": null,
+    "Phone": null
+  },
+  {
+    "Username": "testnewuser",
+    "Password": "testnewpassword",
+    "Name": "testnewname",
+    "Surname": "testnewsurname",
+    "Email": "testnewemail@gmail.com",
+    "Phone": "0612345678"
+  }
 ]
