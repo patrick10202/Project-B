@@ -76,7 +76,7 @@ public class Screen{
     static void LoginScreen(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Login");
-        Console.WriteLine("0: back\n1: Create account\n2: Login\n3: Login Admin");
+        Console.WriteLine("0: back\n1: Create account\n2: Login\n3: Admin Login\n4: Delete account");
         string logininfo = File.ReadAllText(@"login.json");
         List<LoginClass> Loginlist = JsonConvert.DeserializeObject<List<LoginClass>>(logininfo);
         string UserInput = Console.ReadLine();
@@ -91,9 +91,21 @@ public class Screen{
                 var NewUser = Console.ReadLine();
                 Console.WriteLine("Please enter password: ");
                 var NewPassword = Console.ReadLine();
+                Console.WriteLine("Please enter name: ");
+                var NewName = Console.ReadLine();
+                Console.WriteLine("Please enter surname: ");
+                var NewSurname = Console.ReadLine();
+                Console.WriteLine("Please enter email: ");
+                var NewEmail = Console.ReadLine();
+                Console.WriteLine("Please enter phonenumber: ");
+                var NewPhone = Console.ReadLine();
                 LoginClass newAccount = new LoginClass(){
                     Username = NewUser,
-                    Password = NewPassword
+                    Password = NewPassword,
+                    Name = NewName,
+                    Surname = NewSurname,
+                    Email = NewEmail,
+                    Phone = NewPhone
                 };
 
                 Loginlist.Add(newAccount);
@@ -127,6 +139,10 @@ public class Screen{
                     Console.WriteLine("Wrong password");
                     LoginScreen();
                 }
+                break;
+            case "4":
+                Console.Clear();
+                LoginScreen();
                 break;
             default:
             Console.Clear();
