@@ -77,6 +77,8 @@ public class Screen{
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Login");
         Console.WriteLine("0: back\n1: Create account\n2: Login\n3: Login Admin");
+        string logininfo = File.ReadAllText(@"login.json");
+        List<LoginClass> Loginlist = JsonConvert.DeserializeObject<List<LoginClass>>(logininfo);
         string UserInput = Console.ReadLine();
         switch (UserInput){
             case "0":
@@ -85,6 +87,20 @@ public class Screen{
                 break;
             case "1":
                 Console.Clear();
+                Console.WriteLine("Please enter username: ");
+                var NewUser = Console.ReadLine();
+                Console.WriteLine("Please enter password: ");
+                var NewPassword = Console.ReadLine();
+                LoginClass newAccount = new LoginClass(){
+                    Username = NewUser,
+                    Password = NewPassword
+                };
+
+                Loginlist.Add(newAccount);
+                var serialisedLoginlist = JsonConvert.SerializeObject(Loginlist, Formatting.Indented);
+                File.WriteAllText(@"login.Json",serialisedLoginlist);
+                Console.Clear();
+                Console.WriteLine("Account creation was succesful");
                 LoginScreen();
                 break;
             case "2":
@@ -107,7 +123,9 @@ public class Screen{
                 if (AdminPass == "Admin1"){
                     AdminHome();
                 } else {
+                    Console.Clear();
                     Console.WriteLine("Wrong password");
+                    LoginScreen();
                 }
                 break;
             default:
