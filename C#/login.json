@@ -1,13 +1,5 @@
 [
   {
-    "Username": "testuser1",
-    "Password": "testpassword1",
-    "Name": null,
-    "Surname": null,
-    "Email": null,
-    "Phone": null
-  },
-  {
     "Username": "testuser2",
     "Password": "testpassword2",
     "Name": null,

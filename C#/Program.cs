@@ -25,15 +25,17 @@ public class Reservering{
 }
 
 public class login{
-    public static bool tryLogin(string usernameinput, string passwordinput){
+    public static Tuple<bool, int> tryLogin(string usernameinput, string passwordinput){
         string logininfo = File.ReadAllText(@"login.json");
         List<LoginClass> Loginlist = JsonConvert.DeserializeObject<List<LoginClass>>(logininfo);
+        int index = 0;
         foreach(var item in Loginlist){
             if (usernameinput == item.Username && passwordinput == item.Password){
-                return true;
+                return Tuple.Create(true, index);
             }
+            index++;
         }
-        return false;
+        return Tuple.Create(false, index);
     }
 }
 public class Screen{
@@ -76,7 +78,7 @@ public class Screen{
     static void LoginScreen(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Login");
-        Console.WriteLine("0: back\n1: Create account\n2: Login\n3: Admin Login\n4: Delete account");
+        Console.WriteLine("0: back\n1: Create account\n2: Login\n3: Admin Login");
         string logininfo = File.ReadAllText(@"login.json");
         List<LoginClass> Loginlist = JsonConvert.DeserializeObject<List<LoginClass>>(logininfo);
         string UserInput = Console.ReadLine();
@@ -121,8 +123,10 @@ public class Screen{
                 var usernameinput = Console.ReadLine();
                 Console.WriteLine("Please enter password: ");
                 var passwordinput = Console.ReadLine();
-                if (login.tryLogin(usernameinput, passwordinput)){
+                if (login.tryLogin(usernameinput, passwordinput).Item1){
+                    Console.Clear();
                     Console.WriteLine("logged in");
+                    AccountSettings(login.tryLogin(usernameinput, passwordinput));
                 }
                 else{
                     Console.WriteLine("wrong combination");
@@ -139,10 +143,6 @@ public class Screen{
                     Console.WriteLine("Wrong password");
                     LoginScreen();
                 }
-                break;
-            case "4":
-                Console.Clear();
-                LoginScreen();
                 break;
             default:
             Console.Clear();
@@ -263,6 +263,64 @@ public class Screen{
                 break;
             }
     }
+    static void AccountSettings(Tuple<bool, int> accindex){
+        Console.WriteLine("----------------------------------------------------------------------");
+        Console.WriteLine("Account Settings");
+        Console.WriteLine("0: back\n1: edit username\n2: edit password\n3: edit name\n4: edit surname\n5: edit email\n6: edit phone number\n7 delete account");
+        string logininfo = File.ReadAllText(@"login.json");
+        List<LoginClass> Loginlist = JsonConvert.DeserializeObject<List<LoginClass>>(logininfo);
+        string UserInput = Console.ReadLine();
+        switch (UserInput){
+            case "0":
+                Console.Clear();
+                LoginScreen();
+                break;
+            case "1":
+                Console.Clear();
+                LoginScreen();
+                break;
+            case "2":
+                Console.Clear();
+                LoginScreen();
+                break;
+            case "3":
+                Console.Clear();
+                LoginScreen();
+                break;
+            case "4":
+                Console.Clear();
+                LoginScreen();
+                break;
+            case "5":
+                Console.Clear();
+                LoginScreen();
+                break;
+            case "6":
+                Console.Clear();
+                LoginScreen();
+                break;
+            case "7":
+                Console.Clear();
+                Console.WriteLine("Are you sure you want to delete your account? Y/N");
+                string answer = Console.ReadLine();
+                if (answer == "Y" || answer == "y"){
+                    Loginlist.RemoveAt(accindex.Item2);
+                    Console.WriteLine("Your account has been deleted");
+                } else {
+                    Console.WriteLine("Aborted");
+                }
+                var serialisedLoginlist = JsonConvert.SerializeObject(Loginlist, Formatting.Indented);
+                File.WriteAllText(@"login.Json",serialisedLoginlist);
+                LoginScreen();
+                break;
+            default:
+                Console.Clear();
+                Console.WriteLine("Please enter a valid number.");
+                AdminHome();
+                break;
+            }
+    }
+
     static void AdminMovies(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Admin Movie Menu");
