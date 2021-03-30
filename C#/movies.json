@@ -5,7 +5,7 @@
     "Genre": "Action",
     "Language": "English",
     "BasePrice": 0,
-    "PlayTime": null
+    "PlayTime": "1 hour"
   },
   {
     "Title": "Justice Leauge",
@@ -13,7 +13,7 @@
     "Genre": "Action",
     "Language": "English",
     "BasePrice": 0,
-    "PlayTime": null
+    "PlayTime": "1.5 hours"
   },
   {
     "Title": "Tenet",
@@ -21,7 +21,7 @@
     "Genre": "Action",
     "Language": "English",
     "BasePrice": 0,
-    "PlayTime": null
+    "PlayTime": "2 hours"
   },
   {
     "Title": "American Assassin",
@@ -29,7 +29,7 @@
     "Genre": "Action",
     "Language": "English",
     "BasePrice": 0,
-    "PlayTime": null
+    "PlayTime": "2.5 hours"
   },
   {
     "Title": "21 Bridges",
@@ -37,7 +37,7 @@
     "Genre": "Thriller",
     "Language": "English",
     "BasePrice": 0,
-    "PlayTime": null
+    "PlayTime": "3 hours"
   },
   {
     "Title": "Harry Potter and the Philosopher's Stone",
@@ -45,7 +45,7 @@
     "Genre": "Thriller",
     "Language": "English",
     "BasePrice": 0,
-    "PlayTime": null
+    "PlayTime": "1 hour"
   },
   {
     "Title": "Toy Story 3",
@@ -53,7 +53,7 @@
     "Genre": "Adventure",
     "Language": "Dutch",
     "BasePrice": 0,
-    "PlayTime": null
+    "PlayTime": "2 hours"
   },
   {
     "Title": "Scooby!",
@@ -61,7 +61,7 @@
     "Genre": "Adventure",
     "Language": "Dutch",
     "BasePrice": 0,
-    "PlayTime": null
+    "PlayTime": "2.5 hours"
   },
   {
     "Title": "Pirates of the Caribbean: the Curse of the Black Pearl",
@@ -69,6 +69,6 @@
     "Genre": "Adventure",
     "Language": "English",
     "BasePrice": 0,
-    "PlayTime": null
+    "PlayTime": "3 hours"
   }
  ]
