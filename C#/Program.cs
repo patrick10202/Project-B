@@ -263,7 +263,8 @@ public class Screen{
                     if (ret == "3 hours")
                         Console.WriteLine($"Title: {item.Title}");
                         MovieScreen();
-                    }   
+                    } 
+                }      
                 break;
                 
                 default:
