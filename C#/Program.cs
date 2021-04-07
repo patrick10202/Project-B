@@ -315,7 +315,43 @@ public class Screen{
                 break;
             }
     }
-
+    static void Drinks(){
+        Console.Clear();
+        Console.WriteLine("These are the drinks we sell at the restaurant");
+        Console.WriteLine("1. Coca cola               2,50 euros ");
+        Console.WriteLine("2. Fanta                   2,50 euros ");
+        Console.WriteLine("3. Sprite                  2,50 euros ");
+        Console.WriteLine("4. Fernandes               2,50 euros ");
+        Console.WriteLine("5 Heineken 500 ml          4,50 euros ");
+        Console.WriteLine("6. Redbull                 3,50 euros ");
+        Console.WriteLine("7. Spa blue                2,50 euros ");
+        Console.WriteLine("8. Tenesis                 2,50 euros ");
+        Console.WriteLine("9. Milkshake strawberry    2,50 euros ");
+        //Console.WriteLine("Price in total ");
+        Console.WriteLine("0 = back");
+        string userName = Console.ReadLine();
+        if (userName == "0"){
+            HomeScreen();
+        }
+    }
+    static void Food(){
+        Console.WriteLine("These are the drinks we sell at the restaurant");
+        Console.WriteLine("1. Coca cola               2,50 euros ");
+        Console.WriteLine("2. Fanta                   2,50 euros ");
+        Console.WriteLine("3. Sprite                  2,50 euros ");
+        Console.WriteLine("4. Fernandes               2,50 euros ");
+        Console.WriteLine("5  Heineken 500 ml         4,50 euros ");
+        Console.WriteLine("6. Redbull                 3,50 euros ");
+        Console.WriteLine("7. Spa blue                2,50 euros ");
+        Console.WriteLine("8. Tenesis                 2,50 euros ");
+        Console.WriteLine("9. Milkshake strawberry    2,50 euros ");
+        //Console.WriteLine("Price in total ");
+        Console.WriteLine("0 = back");
+        string userName = Console.ReadLine();
+        if (userName == "0"){
+            HomeScreen();
+        }
+    }
     
     static void FoodAndDrinks(){
         Console.WriteLine("----------------------------------------------------------------------");
@@ -325,19 +361,24 @@ public class Screen{
         if  (UserInput == "0"){
                 Console.Clear();
                 HomeScreen();
+        }
+        if  (UserInput == "1"){
+                Console.Clear();
+                Food();
+        }
+        if  (UserInput == "2"){
+                Console.Clear();
+                Drinks();
+          }
                 
 
             //Console.Clear();
             //Console.WriteLine("Please enter a valid number.");
                 //FoodAndDrinks();
                 //break;
-            }
+            
     }
-    static void Food(){
-        Console.Clear();
-        Console.WriteLine("These are the foods we sell at the restaurant");
-        string userName = Console.ReadLine();
-    }
+
     static void ComingSoonScreen(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Come watch these movies soon");
