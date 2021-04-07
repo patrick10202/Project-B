@@ -318,7 +318,7 @@ public class Screen{
     static void FoodAndDrinks(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("food & Drinks");
-        Console.WriteLine("0: back");
+        Console.WriteLine("0: back\n1: Food\n2: Drinks");
         string UserInput = Console.ReadLine();
         switch (UserInput){
             case "0":
@@ -359,18 +359,7 @@ public class Screen{
                 Console.Clear();
                 HomeScreen();
                 break;
-
-            case "1":
-                Console.Clear();
-                Console.WriteLine("Check Seats prices");
-                Console.WriteLine("Normal Seats         €9,50");
-                Console.WriteLine("Love Seats           €10,50");
-                Console.WriteLine("Premium Seats        €13,50");
-                Console.WriteLine("0 = back to Main menu");
-                //string Usernameseats = Console.ReadLine();
-
-
-
+                
             default:
             Console.Clear();
             Console.WriteLine("Please enter a valid number.");
