@@ -372,11 +372,7 @@ public class Screen{
           }
                 
 
-            //Console.Clear();
-            //Console.WriteLine("Please enter a valid number.");
-                //FoodAndDrinks();
-                //break;
-            
+
     }
 
     static void ComingSoonScreen(){
@@ -396,6 +392,17 @@ public class Screen{
                 break;
             }
     }
+    static void Seats(){
+        Console.Clear();
+        Console.WriteLine("Check Seats prices");
+        Console.WriteLine("Normal Seats         9,50 euro");
+        Console.WriteLine("Love Seats           10,50 euro");
+        Console.WriteLine("Premium Seats        13,50 euro");
+        Console.WriteLine("0 = back to Main menu");
+        string Usernameseats = Console.ReadLine();
+        if (Usernameseats == "0"){
+            HomeScreen();}
+    }
     static void InfoScreen(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Cinema info");
@@ -406,7 +413,11 @@ public class Screen{
                 Console.Clear();
                 HomeScreen();
                 break;
-                
+
+            case "1":
+                Console.Clear();
+                Seats();
+                break;
             default:
             Console.Clear();
             Console.WriteLine("Please enter a valid number.");
