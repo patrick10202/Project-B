@@ -246,16 +246,14 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.Language;
                     if (ret == "Dutch")
-                        Console.WriteLine($"Title: {item.Title}");
-                        MovieScreen();
+                        Console.WriteLine($"Title: {item.Title}");    
                     }   
                 }
                 if (answerLanguage == "2") {
                     foreach(var item in Movielist){
                         string ret = item.Language;
                     if (ret == "English")
-                        Console.WriteLine($"Title: {item.Title}");
-                        MovieScreen();
+                        Console.WriteLine($"Title: {item.Title}");     
                     }   
                 }
                 break;
@@ -270,40 +268,35 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.PlayTime;
                     if (ret == "1 hour")
-                        Console.WriteLine($"Title: {item.Title}");
-                        MovieScreen();
+                        Console.WriteLine($"Title: {item.Title}");     
                     }   
                 }
                 if (answerPlayTime == "2") {
                     foreach(var item in Movielist){
                         string ret = item.PlayTime;
                     if (ret == "1.5 hours")
-                        Console.WriteLine($"Title: {item.Title}");
-                        MovieScreen();
+                        Console.WriteLine($"Title: {item.Title}");    
                     }   
                 }
                 if (answerPlayTime == "3") {
                     foreach(var item in Movielist){
                         string ret = item.PlayTime;
                     if (ret == "2 hours")
-                        Console.WriteLine($"Title: {item.Title}");
-                        MovieScreen();
+                        Console.WriteLine($"Title: {item.Title}");     
                     }   
                 }
                 if (answerPlayTime == "4") {
                     foreach(var item in Movielist){
                         string ret = item.PlayTime;
                     if (ret == "2.5 hours")
-                        Console.WriteLine($"Title: {item.Title}");
-                        MovieScreen();
+                        Console.WriteLine($"Title: {item.Title}");    
                     }   
                 }
                 if (answerPlayTime == "5") {
                     foreach(var item in Movielist){
                         string ret = item.PlayTime;
                     if (ret == "3 hours")
-                        Console.WriteLine($"Title: {item.Title}");
-                        MovieScreen();
+                        Console.WriteLine($"Title: {item.Title}");    
                     } 
                 }      
                 break;
