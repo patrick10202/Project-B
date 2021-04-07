@@ -175,7 +175,6 @@ public class Screen{
                         string ret = item.Genre;
                     if (ret == "Action")
                         Console.WriteLine($"Title: {item.Title}");
-                        
                     }
                 }    
                 if (answergenre == "2") {
@@ -183,7 +182,6 @@ public class Screen{
                         string ret = item.Genre;
                     if (ret == "Thriller")
                         Console.WriteLine($"Title: {item.Title}");
-                        
                     }   
                 }
                 if (answergenre == "3") {
@@ -191,7 +189,6 @@ public class Screen{
                         string ret = item.Genre;
                     if (ret == "Adventure")
                         Console.WriteLine($"Title: {item.Title}");
-                        
                     }   
                 }
                 if (answergenre == "4") {
@@ -199,7 +196,6 @@ public class Screen{
                         string ret = item.Genre;
                     if (ret == "Comedy")
                         Console.WriteLine($"Title: {item.Title}");
-                        
                     }
                 }  
                 if (answergenre == "5") {
@@ -207,7 +203,6 @@ public class Screen{
                         string ret = item.Genre;
                     if (ret == "Fantasy")
                         Console.WriteLine($"Title: {item.Title}");
-                        
                     }
                 }  
                 if (answergenre == "6") {
@@ -215,7 +210,6 @@ public class Screen{
                         string ret = item.Genre;
                     if (ret == "Horror")
                         Console.WriteLine($"Title: {item.Title}");
-                        
                     }
                 }  
                 if (answergenre == "7") {
@@ -223,7 +217,6 @@ public class Screen{
                         string ret = item.Genre;
                     if (ret == "Romance")
                         Console.WriteLine($"Title: {item.Title}");
-                        
                     }
                 }  
                 if (answergenre == "8") {
@@ -231,7 +224,6 @@ public class Screen{
                         string ret = item.Genre;
                     if (ret == "Drama")
                         Console.WriteLine($"Title: {item.Title}");
-                        
                     }
                 }  
                 break;
@@ -246,16 +238,14 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.Language;
                     if (ret == "Dutch")
-                        Console.WriteLine($"Title: {item.Title}");
-                        MovieScreen();
+                        Console.WriteLine($"Title: {item.Title}");    
                     }   
                 }
                 if (answerLanguage == "2") {
                     foreach(var item in Movielist){
                         string ret = item.Language;
                     if (ret == "English")
-                        Console.WriteLine($"Title: {item.Title}");
-                        MovieScreen();
+                        Console.WriteLine($"Title: {item.Title}");     
                     }   
                 }
                 break;
@@ -270,40 +260,35 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.PlayTime;
                     if (ret == "1 hour")
-                        Console.WriteLine($"Title: {item.Title}");
-                        MovieScreen();
+                        Console.WriteLine($"Title: {item.Title}");     
                     }   
                 }
                 if (answerPlayTime == "2") {
                     foreach(var item in Movielist){
                         string ret = item.PlayTime;
                     if (ret == "1.5 hours")
-                        Console.WriteLine($"Title: {item.Title}");
-                        MovieScreen();
+                        Console.WriteLine($"Title: {item.Title}");    
                     }   
                 }
                 if (answerPlayTime == "3") {
                     foreach(var item in Movielist){
                         string ret = item.PlayTime;
                     if (ret == "2 hours")
-                        Console.WriteLine($"Title: {item.Title}");
-                        MovieScreen();
+                        Console.WriteLine($"Title: {item.Title}");     
                     }   
                 }
                 if (answerPlayTime == "4") {
                     foreach(var item in Movielist){
                         string ret = item.PlayTime;
                     if (ret == "2.5 hours")
-                        Console.WriteLine($"Title: {item.Title}");
-                        MovieScreen();
+                        Console.WriteLine($"Title: {item.Title}");    
                     }   
                 }
                 if (answerPlayTime == "5") {
                     foreach(var item in Movielist){
                         string ret = item.PlayTime;
                     if (ret == "3 hours")
-                        Console.WriteLine($"Title: {item.Title}");
-                        MovieScreen();
+                        Console.WriteLine($"Title: {item.Title}");    
                     } 
                 }      
                 break;
