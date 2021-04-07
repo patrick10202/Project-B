@@ -315,22 +315,33 @@ public class Screen{
                 break;
             }
     }
+
+    
     static void FoodAndDrinks(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("food & Drinks");
         Console.WriteLine("0: back\n1: Food\n2: Drinks");
         string UserInput = Console.ReadLine();
-        switch (UserInput){
-            case "0":
+        if  (UserInput == "0"){
                 Console.Clear();
                 HomeScreen();
-                break;
-            default:
+        }
+        if (UserInput == "1"){
             Console.Clear();
-            Console.WriteLine("Please enter a valid number.");
-                FoodAndDrinks();
-                break;
+            Food();
+        }
+                
+
+            //Console.Clear();
+            //Console.WriteLine("Please enter a valid number.");
+                //FoodAndDrinks();
+                //break;
             }
+    }
+    static void Food(){
+        Console.Clear();
+        Console.WriteLine("These are the foods we sell at the restaurant");
+        string userName = Console.ReadLine();
     }
     static void ComingSoonScreen(){
         Console.WriteLine("----------------------------------------------------------------------");
