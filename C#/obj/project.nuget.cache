@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Xm0VhZkrd/8G/CziRQoYTAeOXw6fF42s9+LfGomwjJp6Vtz1AtCKkgCeAtCEV7wdsj3iJl9xDLrSnVIIeDwwdg==",
+  "dgSpecHash": "yHL2XLcDSL0vYAV2ajkZ6Gu16XWonDPr7wucYOCJ5x9OtIH7c9e5nmF422s2qwbJYsDxPte/NxLs1XheeC0Gxw==",
   "success": true,
-  "projectFilePath": "/Users/stephanvandenberg/Documents/GitHub/Project-B/C#/C#.csproj",
+  "projectFilePath": "C:\\Users\\Administrator\\Documents\\GitHub\\Proje\\C#\\C#.csproj",
   "expectedPackageFiles": [
-    "/Users/stephanvandenberg/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512"
+    "C:\\Users\\Administrator\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.13\\microsoft.netcore.app.host.win-x64.3.1.13.nupkg.sha512"
   ],
   "logs": []
 }

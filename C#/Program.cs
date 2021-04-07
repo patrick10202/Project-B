@@ -166,7 +166,8 @@ public class Screen{
             case "1":
                 Console.Clear();
                 Console.WriteLine("----------------------------------------------------------------------");
-                Console.WriteLine("0: Back\n1: Action\n2: Thriller\n3: Adventure");
+                Console.WriteLine("0: Back\n1: Action\n2: Thriller\n3: Adventure\n4: Comedy\n5: Fantasy");
+                Console.WriteLine("6: Horror\n7: Romance\n8: Drama");
                 string answergenre = Console.ReadLine();
                 //filter for genre
                 if (answergenre == "1") {
@@ -193,6 +194,46 @@ public class Screen{
                         
                     }   
                 }
+                if (answergenre == "4") {
+                    foreach(var item in Movielist){
+                        string ret = item.Genre;
+                    if (ret == "Comedy")
+                        Console.WriteLine($"Title: {item.Title}");
+                        
+                    }
+                }  
+                if (answergenre == "5") {
+                    foreach(var item in Movielist){
+                        string ret = item.Genre;
+                    if (ret == "Fantasy")
+                        Console.WriteLine($"Title: {item.Title}");
+                        
+                    }
+                }  
+                if (answergenre == "6") {
+                    foreach(var item in Movielist){
+                        string ret = item.Genre;
+                    if (ret == "Horror")
+                        Console.WriteLine($"Title: {item.Title}");
+                        
+                    }
+                }  
+                if (answergenre == "7") {
+                    foreach(var item in Movielist){
+                        string ret = item.Genre;
+                    if (ret == "Romance")
+                        Console.WriteLine($"Title: {item.Title}");
+                        
+                    }
+                }  
+                if (answergenre == "8") {
+                    foreach(var item in Movielist){
+                        string ret = item.Genre;
+                    if (ret == "Drama")
+                        Console.WriteLine($"Title: {item.Title}");
+                        
+                    }
+                }  
                 break;
             
             case "2":
@@ -311,13 +352,25 @@ public class Screen{
     static void InfoScreen(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Cinema info");
-        Console.WriteLine("0: back");
+        Console.WriteLine("0: back\n1: Seats");
         string UserInput = Console.ReadLine();
         switch (UserInput){
             case "0":
                 Console.Clear();
                 HomeScreen();
                 break;
+
+            case "1":
+                Console.Clear();
+                Console.WriteLine("Check Seats prices");
+                Console.WriteLine("Normal Seats         €9,50");
+                Console.WriteLine("Love Seats           €10,50");
+                Console.WriteLine("Premium Seats        €13,50");
+                Console.WriteLine("0 = back to Main menu");
+                //string Usernameseats = Console.ReadLine();
+
+
+
             default:
             Console.Clear();
             Console.WriteLine("Please enter a valid number.");
