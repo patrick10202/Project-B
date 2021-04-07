@@ -325,11 +325,6 @@ public class Screen{
         if  (UserInput == "0"){
                 Console.Clear();
                 HomeScreen();
-        }
-        if (UserInput == "1"){
-            Console.Clear();
-            Food();
-        }
                 
 
             //Console.Clear();
