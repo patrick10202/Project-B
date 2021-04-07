@@ -290,7 +290,7 @@ public class Screen{
                         MovieScreen();
                     }   
                 }
-                if (answerPlayTime == "3") {
+                if (answerPlayTime == "4") {
                     foreach(var item in Movielist){
                         string ret = item.PlayTime;
                     if (ret == "2.5 hours")
@@ -298,7 +298,7 @@ public class Screen{
                         MovieScreen();
                     }   
                 }
-                if (answerPlayTime == "4") {
+                if (answerPlayTime == "5") {
                     foreach(var item in Movielist){
                         string ret = item.PlayTime;
                     if (ret == "3 hours")
