@@ -171,23 +171,19 @@ public class Screen{
                 string answergenre = Console.ReadLine();
                 //filter for genre
                 if (answergenre == "1") {
-                    int counter = 1;
                     foreach(var item in Movielist){
                         string ret = item.Genre;
                     if (ret == "Action")
                         Console.Clear();
-                        Console.WriteLine($"{counter} Title: {item.Title}");
-                        counter++;
+                        Console.WriteLine($"Title: {item.Title}");
                     }
                 }    
                 if (answergenre == "2") {
-                    int counter = 1;
                     foreach(var item in Movielist){
                         string ret = item.Genre;
                     if (ret == "Thriller")
                         Console.Clear();
-                        Console.WriteLine($"{counter} Title: {item.Title}");
-                        counter++;
+                        Console.WriteLine($"Title: {item.Title}");
                     }   
                 }
                 if (answergenre == "3") {
