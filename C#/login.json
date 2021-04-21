@@ -1,11 +1,11 @@
 [
   {
-    "Username": "testuser2",
-    "Password": "testpassword2",
-    "Name": null,
-    "Surname": null,
-    "Email": null,
-    "Phone": null
+    "Username": "test",
+    "Password": "test",
+    "Name": "testname",
+    "Surname": "testsurname",
+    "Email": "testemail@gmail.com",
+    "Phone": "0612345678"
   },
   {
     "Username": "testnewuser",
