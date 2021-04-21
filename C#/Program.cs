@@ -171,17 +171,21 @@ public class Screen{
                 string answergenre = Console.ReadLine();
                 //filter for genre
                 if (answergenre == "1") {
+                    int counter = 1;
                     foreach(var item in Movielist){
                         string ret = item.Genre;
                     if (ret == "Action")
-                        Console.WriteLine($"Title: {item.Title}");
+                        Console.WriteLine($"{counter} Title: {item.Title}");
+                        counter++;
                     }
                 }    
                 if (answergenre == "2") {
+                    int counter = 1;
                     foreach(var item in Movielist){
                         string ret = item.Genre;
                     if (ret == "Thriller")
-                        Console.WriteLine($"Title: {item.Title}");
+                        Console.WriteLine($"{counter} Title: {item.Title}");
+                        counter++;
                     }   
                 }
                 if (answergenre == "3") {
@@ -225,7 +229,16 @@ public class Screen{
                     if (ret == "Drama")
                         Console.WriteLine($"Title: {item.Title}");
                     }
-                }  
+                } 
+                Console.WriteLine("0: Back\n");
+                UserInput = Console.ReadLine();
+                switch(UserInput){
+                    case "0":
+                        Console.Clear();
+                        MovieScreen();
+                        break;
+                }
+                
                 break;
             
             case "2":
@@ -293,9 +306,9 @@ public class Screen{
                 }      
                 break;
                 
-                default:
-            Console.Clear();
-            Console.WriteLine("Please enter a valid number.");
+            default:
+                Console.Clear();
+                Console.WriteLine("Please enter a valid number.");
                 MovieScreen();
                 break;
             }
