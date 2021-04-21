@@ -175,6 +175,7 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.Genre;
                     if (ret == "Action")
+                        Console.Clear();
                         Console.WriteLine($"{counter} Title: {item.Title}");
                         counter++;
                     }
@@ -184,6 +185,7 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.Genre;
                     if (ret == "Thriller")
+                        Console.Clear();
                         Console.WriteLine($"{counter} Title: {item.Title}");
                         counter++;
                     }   
@@ -192,6 +194,7 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.Genre;
                     if (ret == "Adventure")
+                        Console.Clear();
                         Console.WriteLine($"Title: {item.Title}");
                     }   
                 }
@@ -199,6 +202,7 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.Genre;
                     if (ret == "Comedy")
+                        Console.Clear();
                         Console.WriteLine($"Title: {item.Title}");
                     }
                 }  
@@ -206,6 +210,7 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.Genre;
                     if (ret == "Fantasy")
+                        Console.Clear();
                         Console.WriteLine($"Title: {item.Title}");
                     }
                 }  
@@ -213,6 +218,7 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.Genre;
                     if (ret == "Horror")
+                        Console.Clear();
                         Console.WriteLine($"Title: {item.Title}");
                     }
                 }  
@@ -220,6 +226,7 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.Genre;
                     if (ret == "Romance")
+                        Console.Clear();
                         Console.WriteLine($"Title: {item.Title}");
                     }
                 }  
@@ -227,6 +234,7 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.Genre;
                     if (ret == "Drama")
+                        Console.Clear();
                         Console.WriteLine($"Title: {item.Title}");
                     }
                 } 
@@ -251,6 +259,7 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.Language;
                     if (ret == "Dutch")
+                        Console.Clear();
                         Console.WriteLine($"Title: {item.Title}");    
                     }   
                 }
@@ -258,6 +267,7 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.Language;
                     if (ret == "English")
+                        Console.Clear();
                         Console.WriteLine($"Title: {item.Title}");     
                     }   
                 }
@@ -273,6 +283,7 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.PlayTime;
                     if (ret == "1 hour")
+                        Console.Clear();
                         Console.WriteLine($"Title: {item.Title}");     
                     }   
                 }
@@ -280,6 +291,7 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.PlayTime;
                     if (ret == "1.5 hours")
+                        Console.Clear();
                         Console.WriteLine($"Title: {item.Title}");    
                     }   
                 }
@@ -287,6 +299,7 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.PlayTime;
                     if (ret == "2 hours")
+                        Console.Clear();
                         Console.WriteLine($"Title: {item.Title}");     
                     }   
                 }
@@ -294,6 +307,7 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.PlayTime;
                     if (ret == "2.5 hours")
+                        Console.Clear();
                         Console.WriteLine($"Title: {item.Title}");    
                     }   
                 }
@@ -301,6 +315,7 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.PlayTime;
                     if (ret == "3 hours")
+                        Console.Clear();
                         Console.WriteLine($"Title: {item.Title}");    
                     } 
                 }      
