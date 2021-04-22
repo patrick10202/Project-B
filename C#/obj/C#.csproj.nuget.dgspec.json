@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\patri\\Documents\\GitHub\\Project-B\\C#\\C#.csproj": {}
   },
   "projects": {
@@ -12,18 +13,42 @@
         "projectPath": "C:\\Users\\patri\\Documents\\GitHub\\Project-B\\C#\\C#.csproj",
         "packagesPath": "C:\\Users\\patri\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\patri\\Documents\\GitHub\\Project-B\\C#\\obj\\",
+=======
+    "C:\\Users\\DotBat\\Documents\\GitHub\\Project-B\\C#\\C#.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\DotBat\\Documents\\GitHub\\Project-B\\C#\\C#.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\DotBat\\Documents\\GitHub\\Project-B\\C#\\C#.csproj",
+        "projectName": "C#",
+        "projectPath": "C:\\Users\\DotBat\\Documents\\GitHub\\Project-B\\C#\\C#.csproj",
+        "packagesPath": "C:\\Users\\DotBat\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DotBat\\Documents\\GitHub\\Project-B\\C#\\obj\\",
+>>>>>>> d930ef53a03a47eaf2310d9fcdca2d37f4480881
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\patri\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+          "C:\\Users\\DotBat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+>>>>>>> d930ef53a03a47eaf2310d9fcdca2d37f4480881
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -35,6 +60,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Newtonsoft.Json": {
               "target": "Package",
@@ -56,7 +82,11 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.405\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+>>>>>>> d930ef53a03a47eaf2310d9fcdca2d37f4480881
         }
       }
     }

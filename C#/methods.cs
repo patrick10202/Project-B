@@ -18,6 +18,14 @@ namespace methods
 
         public string PlayTime {get; set;}
 
+        
+
+    }
+    public class Review  {
+        public string Title {get; set;}
+        public string ReviewString {get; set;}
+        public string Username {get; set;}
+        
     }
 
 }
