@@ -736,13 +736,45 @@ public class Screen{
                 break;
             }
         }
+        Console.WriteLine("0: back\n 1: Add Review");
+        // add reviews
+        string UserInput = Console.ReadLine();
+        switch(UserInput){
+            
+            case "0":
+                Console.Clear();
+                MovieScreen();
+                break;
+            
+            case "1":
+                Console.Clear();
+                AddReviewScreen(MovieName);
+                break;
 
+            default:
+                Console.WriteLine("Please enter a valid number.");
+                ReviewScreen(MovieName);
+                break;
+
+        }
         
 
 
 
         //Console.WriteLine($"review {MovieName}");
 
+    }
+    static void AddReviewScreen(string MovieName){
+        string movieInfo = File.ReadAllText(@"movies.json");
+        List<MovieClass> Movielist = JsonConvert.DeserializeObject<List<MovieClass>>(movieInfo);
+        int MovieIndex = 0;
+        for (int i = 0; i < Movielist.Count;i++){
+            if (Movielist[i].Title == MovieName){
+                MovieIndex = i;
+                break;
+            }
+        }
+        //add review add function
     }
 }
 
