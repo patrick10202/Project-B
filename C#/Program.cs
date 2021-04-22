@@ -177,92 +177,94 @@ public class Screen{
                 string answergenre = Console.ReadLine();
                 //filter for genre
                 if (answergenre == "1") {
+                    Console.Clear();
                     int counter = 1;
                     foreach(var item in Movielist){
                         string ret = item.Genre;
-                    if (ret == "Action")
-                        Console.Clear();
-                        Console.WriteLine($"{counter} Title: {item.Title}");
+                        if (ret == "Action"){
+                            Console.WriteLine($"{counter} Title: {item.Title}");
+                        }
                         counter++;
                     }
                 }    
                 if (answergenre == "2") {
+                    Console.Clear();
                     int counter = 1;
                     foreach(var item in Movielist){
                         string ret = item.Genre;
-                    if (ret == "Thriller")
-                        Console.Clear();
-                        Console.WriteLine($"{counter} Title: {item.Title}");
+                        if (ret == "Thriller"){
+                            Console.WriteLine($"{counter} Title: {item.Title}");
+                        }
                         counter++;
                     }   
                 }
                 if (answergenre == "3") {
+                    Console.Clear();
                     int counter = 1;
                     foreach(var item in Movielist){
                         string ret = item.Genre;
                     if (ret == "Adventure")
-                        Console.Clear();
                         Console.WriteLine($"{counter} Title: {item.Title}");
-                        counter++;
-                    }   
+                    }
+                    counter++;
+
                 }
                 if (answergenre == "4") {
+                    Console.Clear();
                     int counter = 1;
                     foreach(var item in Movielist){
                         string ret = item.Genre;
                     if (ret == "Comedy")
-                        Console.Clear();
                         Console.WriteLine($"{counter} Title: {item.Title}");
-                        counter++;
-                    } 
+                    }
+                    counter++;
+
                 }  
                 if (answergenre == "5") {
+                    Console.Clear();
                     int counter = 1;
                     foreach(var item in Movielist){
                         string ret = item.Genre;
                     if (ret == "Fantasy")
-                        Console.Clear();
                         Console.WriteLine($"{counter} Title: {item.Title}");
-                        counter++;
                     }
+                    counter++;
                 }  
                 if (answergenre == "6") {
+                    Console.Clear();
                     int counter = 1;
                     foreach(var item in Movielist){
                         string ret = item.Genre;
                     if (ret == "Horror")
-                        Console.Clear();
                         Console.WriteLine($"{counter} Title: {item.Title}");
-                        counter++;
                     }
+                    counter++;
                 }  
                 if (answergenre == "7") {
+                    Console.Clear();
                     int counter = 1;
                     foreach(var item in Movielist){
                         string ret = item.Genre;
                     if (ret == "Romance")
-                        Console.Clear();
                         Console.WriteLine($"{counter} Title: {item.Title}");
-                        counter++;
                     }
+                    counter++;
                 }  
                 if (answergenre == "8") {
+                    Console.Clear();
                     int counter = 1;
                     foreach(var item in Movielist){
                         string ret = item.Genre;
                     if (ret == "Drama")
-                        Console.Clear();
                         Console.WriteLine($"{counter} Title: {item.Title}");
-                        counter++;
                     }
+                    counter++;
                 } 
-                Console.WriteLine("0: Back\n");
+                Console.WriteLine("Type a number of a movie to reserve that movie or press 0 to go back");
                 UserInput = Console.ReadLine();
-                switch(UserInput){
-                    case "0":
-                        Console.Clear();
-                        MovieScreen();
-                        break;
+                if (UserInput == "0"){
+                    Console.Clear();
+                    MovieScreen();
                 }
                 
                 break;
