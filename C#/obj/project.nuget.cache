@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "6KR6CRyeMXc5rS4vy+PJE4waGNXLZJiSODU4M6xXUCZ80jZE0p+TGZ/QczrbXxuFQHgkhDg0gkmcCS5NBzk72A==",
+  "dgSpecHash": "Xm0VhZkrd/8G/CziRQoYTAeOXw6fF42s9+LfGomwjJp6Vtz1AtCKkgCeAtCEV7wdsj3iJl9xDLrSnVIIeDwwdg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\DotBat\\Documents\\GitHub\\Project-B\\C#\\C#.csproj",
+  "projectFilePath": "/Users/stephanvandenberg/Documents/GitHub/Project-B/C#/C#.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\DotBat\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+    "/Users/stephanvandenberg/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512"
   ],
   "logs": []
 }
