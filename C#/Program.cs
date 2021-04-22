@@ -154,7 +154,7 @@ public class Screen{
     static void MovieScreen(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Movies");
-        Console.WriteLine("0: back\n1: filter on genre\n2: filter on Language\n3: filter on time");
+        Console.WriteLine("0: back\n1: filter on genre\n2: filter on Language\n3: filter on time\n4: reviews");
         string movieInfo = File.ReadAllText(@"movies.json");
         List<MovieClass> Movielist = JsonConvert.DeserializeObject<List<MovieClass>>(movieInfo);
         string UserInput = Console.ReadLine();
@@ -292,8 +292,41 @@ public class Screen{
                     } 
                 }      
                 break;
+            case "4":
+                Console.Clear();
+                Console.WriteLine("----------------------------------------------------------------------");
+                int Choce = 1;
+                Console.WriteLine("0: Cancel");
+                foreach (var item in Movielist){
+                    Console.WriteLine($"{Choce}: {item.Title}");
+                    Choce++;
+                }
+                string SelecteMovie = Console.ReadLine();
+                int selecteIndex = 0;
+                try {
+                    selecteIndex = Convert.ToInt32(SelecteMovie);
+                } catch {
+                    Console.WriteLine("Please enter a valid number");
+                }
+                if (selecteIndex != 0){
+                    bool indexInList = true;
+                    try {
+                        var test = Movielist[selecteIndex - 1];
+
+                    } catch {
+                        indexInList = false;
+                    }
+                    if (indexInList){
+                        Console.Clear();
+                        Console.WriteLine($"{Movielist[selecteIndex - 1].Title} Reviews");
+                        ReviewScreen(Movielist[selecteIndex - 1].Title);
+                    }
+                }
+                MovieScreen();
+                break;
+
                 
-                default:
+            default:
             Console.Clear();
             Console.WriteLine("Please enter a valid number.");
                 MovieScreen();
@@ -639,6 +672,24 @@ public class Screen{
                 AdminMovies();
                 break;
             }
+    }
+    static void ReviewScreen(string MovieName){
+        string movieInfo = File.ReadAllText(@"movies.json");
+        List<MovieClass> Movielist = JsonConvert.DeserializeObject<List<MovieClass>>(movieInfo);
+        int MovieIndex = 0;
+        for (int i = 0; i < Movielist.Count;i++){
+            if (Movielist[i].Title == MovieName){
+                MovieIndex = i;
+                break;
+            }
+        }
+
+        
+
+
+
+        //Console.WriteLine($"review {MovieName}");
+
     }
 }
 
