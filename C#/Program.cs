@@ -21,7 +21,13 @@ public class Persoon{
 
 */
 public class Reservering{
+    public int PersonIndex;
+    public Tuple<string, int>[] movie;
 
+    public Reservering(int PersonIndex){
+        this.PersonIndex = PersonIndex;
+        this.movie = null;
+    }
 }
 
 public class login{
@@ -154,7 +160,7 @@ public class Screen{
     static void MovieScreen(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Movies");
-        Console.WriteLine("0: back\n1: filter on genre\n2: filter on Language\n3: filter on time\n4: reviews");
+        Console.WriteLine("0: back\n1: filter on genre\n2: filter on Language\n3: filter on time");
         string movieInfo = File.ReadAllText(@"movies.json");
         List<MovieClass> Movielist = JsonConvert.DeserializeObject<List<MovieClass>>(movieInfo);
         string UserInput = Console.ReadLine();
@@ -171,19 +177,23 @@ public class Screen{
                 string answergenre = Console.ReadLine();
                 //filter for genre
                 if (answergenre == "1") {
+                    int counter = 1;
                     foreach(var item in Movielist){
                         string ret = item.Genre;
                     if (ret == "Action")
                         Console.Clear();
-                        Console.WriteLine($"Title: {item.Title}");
+                        Console.WriteLine($"{counter} Title: {item.Title}");
+                        counter++;
                     }
                 }    
                 if (answergenre == "2") {
+                    int counter = 1;
                     foreach(var item in Movielist){
                         string ret = item.Genre;
                     if (ret == "Thriller")
                         Console.Clear();
-                        Console.WriteLine($"Title: {item.Title}");
+                        Console.WriteLine($"{counter} Title: {item.Title}");
+                        counter++;
                     }   
                 }
                 if (answergenre == "3") {
@@ -316,39 +326,6 @@ public class Screen{
                     } 
                 }      
                 break;
-            case "4":
-                Console.Clear();
-                Console.WriteLine("----------------------------------------------------------------------");
-                int Choce = 1;
-                Console.WriteLine("0: Cancel");
-                foreach (var item in Movielist){
-                    Console.WriteLine($"{Choce}: {item.Title}");
-                    Choce++;
-                }
-                string SelecteMovie = Console.ReadLine();
-                int selecteIndex = 0;
-                try {
-                    selecteIndex = Convert.ToInt32(SelecteMovie);
-                } catch {
-                    Console.WriteLine("Please enter a valid number");
-                }
-                if (selecteIndex != 0){
-                    bool indexInList = true;
-                    try {
-                        var test = Movielist[selecteIndex - 1];
-
-                    } catch {
-                        indexInList = false;
-                    }
-                    if (indexInList){
-                        Console.Clear();
-                        Console.WriteLine($"{Movielist[selecteIndex - 1].Title} Reviews");
-                        ReviewScreen(Movielist[selecteIndex - 1].Title);
-                    }
-                }
-                MovieScreen();
-                break;
-
                 
             default:
                 Console.Clear();
@@ -356,6 +333,12 @@ public class Screen{
                 MovieScreen();
                 break;
             }
+    }
+
+    static void ReserveringenScherm(){
+        Console.WriteLine("----------------------------------------------------------------------");
+        Console.WriteLine("Reservation screen");
+
     }
     static void Drinks(){
         Console.Clear();
@@ -791,6 +774,7 @@ public class Phrases{
 class program{
     static void Main(){
         Console.Clear();
+        Reservering[] reserveringen = new Reservering[2];
         Console.WriteLine("Welcome to our cinema app");
         Screen.HomeScreen();
     }
