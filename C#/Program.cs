@@ -174,6 +174,7 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.Genre;
                     if (ret == "Action")
+                        Console.Clear();
                         Console.WriteLine($"Title: {item.Title}");
                     }
                 }    
@@ -181,6 +182,7 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.Genre;
                     if (ret == "Thriller")
+                        Console.Clear();
                         Console.WriteLine($"Title: {item.Title}");
                     }   
                 }
@@ -188,6 +190,7 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.Genre;
                     if (ret == "Adventure")
+                        Console.Clear();
                         Console.WriteLine($"Title: {item.Title}");
                     }   
                 }
@@ -195,6 +198,7 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.Genre;
                     if (ret == "Comedy")
+                        Console.Clear();
                         Console.WriteLine($"Title: {item.Title}");
                     }
                 }  
@@ -202,6 +206,7 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.Genre;
                     if (ret == "Fantasy")
+                        Console.Clear();
                         Console.WriteLine($"Title: {item.Title}");
                     }
                 }  
@@ -209,6 +214,7 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.Genre;
                     if (ret == "Horror")
+                        Console.Clear();
                         Console.WriteLine($"Title: {item.Title}");
                     }
                 }  
@@ -216,6 +222,7 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.Genre;
                     if (ret == "Romance")
+                        Console.Clear();
                         Console.WriteLine($"Title: {item.Title}");
                     }
                 }  
@@ -223,9 +230,19 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.Genre;
                     if (ret == "Drama")
+                        Console.Clear();
                         Console.WriteLine($"Title: {item.Title}");
                     }
-                }  
+                } 
+                Console.WriteLine("0: Back\n");
+                UserInput = Console.ReadLine();
+                switch(UserInput){
+                    case "0":
+                        Console.Clear();
+                        MovieScreen();
+                        break;
+                }
+                
                 break;
             
             case "2":
@@ -238,6 +255,7 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.Language;
                     if (ret == "Dutch")
+                        Console.Clear();
                         Console.WriteLine($"Title: {item.Title}");    
                     }   
                 }
@@ -245,6 +263,7 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.Language;
                     if (ret == "English")
+                        Console.Clear();
                         Console.WriteLine($"Title: {item.Title}");     
                     }   
                 }
@@ -260,6 +279,7 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.PlayTime;
                     if (ret == "1 hour")
+                        Console.Clear();
                         Console.WriteLine($"Title: {item.Title}");     
                     }   
                 }
@@ -267,6 +287,7 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.PlayTime;
                     if (ret == "1.5 hours")
+                        Console.Clear();
                         Console.WriteLine($"Title: {item.Title}");    
                     }   
                 }
@@ -274,6 +295,7 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.PlayTime;
                     if (ret == "2 hours")
+                        Console.Clear();
                         Console.WriteLine($"Title: {item.Title}");     
                     }   
                 }
@@ -281,6 +303,7 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.PlayTime;
                     if (ret == "2.5 hours")
+                        Console.Clear();
                         Console.WriteLine($"Title: {item.Title}");    
                     }   
                 }
@@ -288,6 +311,7 @@ public class Screen{
                     foreach(var item in Movielist){
                         string ret = item.PlayTime;
                     if (ret == "3 hours")
+                        Console.Clear();
                         Console.WriteLine($"Title: {item.Title}");    
                     } 
                 }      
@@ -327,8 +351,8 @@ public class Screen{
 
                 
             default:
-            Console.Clear();
-            Console.WriteLine("Please enter a valid number.");
+                Console.Clear();
+                Console.WriteLine("Please enter a valid number.");
                 MovieScreen();
                 break;
             }
@@ -481,27 +505,57 @@ public class Screen{
                 break;
             case "1":
                 Console.Clear();
-                LoginScreen();
+                Console.WriteLine("Enter new username: ");
+                UserInput = Console.ReadLine();
+                Loginlist[accindex.Item2].Username = UserInput;
+                File.WriteAllText(@"login.Json",JsonConvert.SerializeObject(Loginlist, Formatting.Indented));
+                Console.WriteLine("Username updated");
+                AccountSettings(accindex);
                 break;
             case "2":
                 Console.Clear();
-                LoginScreen();
+                Console.WriteLine("Enter new password: ");
+                UserInput = Console.ReadLine();
+                Loginlist[accindex.Item2].Password = UserInput;
+                File.WriteAllText(@"login.Json",JsonConvert.SerializeObject(Loginlist, Formatting.Indented));
+                Console.WriteLine("Password updated");
+                AccountSettings(accindex);
                 break;
             case "3":
                 Console.Clear();
-                LoginScreen();
+                Console.WriteLine("Enter new password: ");
+                UserInput = Console.ReadLine();
+                Loginlist[accindex.Item2].Name = UserInput;
+                File.WriteAllText(@"login.Json",JsonConvert.SerializeObject(Loginlist, Formatting.Indented));
+                Console.WriteLine("Name updated");
+                AccountSettings(accindex);
                 break;
             case "4":
                 Console.Clear();
-                LoginScreen();
+                Console.WriteLine("Enter new password: ");
+                UserInput = Console.ReadLine();
+                Loginlist[accindex.Item2].Surname = UserInput;
+                File.WriteAllText(@"login.Json",JsonConvert.SerializeObject(Loginlist, Formatting.Indented));
+                Console.WriteLine("Surname updated");
+                AccountSettings(accindex);
                 break;
             case "5":
                 Console.Clear();
-                LoginScreen();
+                Console.WriteLine("Enter new password: ");
+                UserInput = Console.ReadLine();
+                Loginlist[accindex.Item2].Email = UserInput;
+                File.WriteAllText(@"login.Json",JsonConvert.SerializeObject(Loginlist, Formatting.Indented));
+                Console.WriteLine("Email updated");
+                AccountSettings(accindex);
                 break;
             case "6":
                 Console.Clear();
-                LoginScreen();
+                Console.WriteLine("Enter new password: ");
+                UserInput = Console.ReadLine();
+                Loginlist[accindex.Item2].Phone = UserInput;
+                File.WriteAllText(@"login.Json",JsonConvert.SerializeObject(Loginlist, Formatting.Indented));
+                Console.WriteLine("Phone updated");
+                AccountSettings(accindex);
                 break;
             case "7":
                 Console.Clear();
@@ -513,8 +567,7 @@ public class Screen{
                 } else {
                     Console.WriteLine("Aborted");
                 }
-                var serialisedLoginlist = JsonConvert.SerializeObject(Loginlist, Formatting.Indented);
-                File.WriteAllText(@"login.Json",serialisedLoginlist);
+                File.WriteAllText(@"login.Json",JsonConvert.SerializeObject(Loginlist, Formatting.Indented));
                 LoginScreen();
                 break;
             default:
