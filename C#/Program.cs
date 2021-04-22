@@ -21,7 +21,13 @@ public class Persoon{
 
 */
 public class Reservering{
+    public int PersonIndex;
+    public Tuple<string, int>[] movie;
 
+    public Reservering(int PersonIndex){
+        this.PersonIndex = PersonIndex;
+        this.movie = null;
+    }
 }
 
 public class login{
@@ -327,6 +333,12 @@ public class Screen{
                 MovieScreen();
                 break;
             }
+    }
+
+    static void ReserveringenScherm(){
+        Console.WriteLine("----------------------------------------------------------------------");
+        Console.WriteLine("Reservation screen");
+
     }
     static void Drinks(){
         Console.Clear();
@@ -712,6 +724,7 @@ public class Phrases{
 class program{
     static void Main(){
         Console.Clear();
+        Reservering[] reserveringen = new Reservering[2];
         Console.WriteLine("Welcome to our cinema app");
         Screen.HomeScreen();
     }
