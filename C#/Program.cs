@@ -274,24 +274,24 @@ public class Screen{
                 string answerLanguage = Console.ReadLine();
                 //filter for Language
                 if (answerLanguage == "1") {
+                    Console.Clear();
                     int counter = 1;
                     foreach(var item in Movielist){
                         string ret = item.Language;
                     if (ret == "Dutch")
-                        Console.Clear();
                         Console.WriteLine($"{counter} Title: {item.Title}");   
-                        counter++; 
-                    }   
+                    }  
+                    counter++;  
                 }
                 if (answerLanguage == "2") {
+                    Console.Clear();
                     int counter = 1;
                     foreach(var item in Movielist){
                         string ret = item.Language;
                     if (ret == "English")
-                        Console.Clear();
-                        Console.WriteLine($"{counter} Title: {item.Title}");  
-                        counter++;   
+                        Console.WriteLine($"{counter} Title: {item.Title}");     
                     }   
+                    counter++;  
                 }
                 break;
             
@@ -302,54 +302,54 @@ public class Screen{
                 string answerPlayTime = Console.ReadLine();
                 //filter for PlayTime
                 if (answerPlayTime == "1") {
+                    Console.Clear();
                     int counter = 1;
                     foreach(var item in Movielist){
                         string ret = item.PlayTime;
                     if (ret == "1 hour")
-                        Console.Clear();
                         Console.WriteLine($"{counter}Title: {item.Title}");    
-                        counter++; 
                     }   
+                    counter++; 
                 }
                 if (answerPlayTime == "2") {
+                    Console.Clear();
                     int counter = 1;
                     foreach(var item in Movielist){
                         string ret = item.PlayTime;
                     if (ret == "1.5 hours")
-                        Console.Clear();
                         Console.WriteLine($"{counter} Title: {item.Title}");    
-                        counter++;
                     }   
+                    counter++;
                 }
                 if (answerPlayTime == "3") {
+                    Console.Clear();
                     int counter = 1;
                     foreach(var item in Movielist){
                         string ret = item.PlayTime;
                     if (ret == "2 hours")
-                        Console.Clear();
                         Console.WriteLine($"{counter} Title: {item.Title}");    
-                        counter++; 
                     }   
+                    counter++; 
                 }
                 if (answerPlayTime == "4") {
+                    Console.Clear();
                     int counter = 1;
                     foreach(var item in Movielist){
                         string ret = item.PlayTime;
                     if (ret == "2.5 hours")
-                        Console.Clear();
                         Console.WriteLine($"{counter} Title: {item.Title}");    
-                        counter++;
-                    }   
+                    }  
+                    counter++; 
                 }
                 if (answerPlayTime == "5") {
+                    Console.Clear();
                     int counter = 1;
                     foreach(var item in Movielist){
                         string ret = item.PlayTime;
                     if (ret == "3 hours")
-                        Console.Clear();
                         Console.WriteLine($"{counter} Title: {item.Title}");    
-                        counter++;
                     } 
+                    counter++;
                 }      
                 break;
 
