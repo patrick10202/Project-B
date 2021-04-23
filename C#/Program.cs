@@ -372,18 +372,20 @@ public class Screen{
                 if (selecteIndex != 0){
                     bool indexInList = true;
                     try {
+                        
                         var test = Movielist[selecteIndex - 1];
-
                     } catch {
                         indexInList = false;
                     }
                     if (indexInList){
                         Console.Clear();
-                        Console.WriteLine($"{Movielist[selecteIndex - 1].Title} Reviews");
+
                         ReviewScreen(Movielist[selecteIndex - 1].Title);
+                    } else {
+                        Console.WriteLine("Canceled");
                     }
                 }
-                MovieScreen();
+                Console.Clear();
                 break;
                 
             default:
@@ -768,7 +770,7 @@ public class Screen{
                 break;
             }
     }
-    static void ReviewScreen(string MovieName){
+    static void ReviewScreen(string MovieName){//
         string movieInfo = File.ReadAllText(@"movies.json");
         List<MovieClass> Movielist = JsonConvert.DeserializeObject<List<MovieClass>>(movieInfo);
         int MovieIndex = 0;
@@ -778,8 +780,18 @@ public class Screen{
                 break;
             }
         }
-        Console.WriteLine("0: back \n1: Add Review");
-        // add reviews
+        Console.WriteLine($"{MovieName} Reviews");
+        Console.WriteLine("0: back \n1: Leave Review");
+        Console.WriteLine();
+
+        string Reviews = File.ReadAllText(@"reviews.json");
+        List<Review> ReviewList = JsonConvert.DeserializeObject<List<Review>>(Reviews);
+        foreach (var item in ReviewList){
+            if(item.Title == MovieName){
+                Console.WriteLine($"{item.Username}: {item.ReviewString}");
+            }
+        }
+
         string UserInput = Console.ReadLine();
         switch(UserInput){
             
@@ -794,6 +806,7 @@ public class Screen{
                 break;
 
             default:
+                Console.Clear();
                 Console.WriteLine("Please enter a valid number.");
                 ReviewScreen(MovieName);
                 break;
@@ -816,7 +829,28 @@ public class Screen{
                 break;
             }
         }
-        //add review add function
+
+        string Reviews = File.ReadAllText(@"reviews.json");
+        List<Review> ReviewList = JsonConvert.DeserializeObject<List<Review>>(Reviews);
+
+        Review newReview = new Review();
+        newReview.Title = MovieName;
+        Console.WriteLine("Please Enter your Review");
+        newReview.ReviewString = Console.ReadLine();
+        Console.WriteLine("Please enter your name");
+        newReview.Username = Console.ReadLine();
+
+        if (ReviewList == null){
+            ReviewList = new List<Review>();
+        } else{
+            ReviewList.Add(newReview);
+        }
+        string serialisedReviewList = JsonConvert.SerializeObject(ReviewList, Formatting.Indented);
+        File.WriteAllText(@"reviews.Json",serialisedReviewList);
+        Console.WriteLine("Added!");
+        Console.ReadLine();
+
+
     }
 }
 

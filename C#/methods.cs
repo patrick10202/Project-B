@@ -21,8 +21,7 @@ namespace methods
         
 
     }
-    public class Review  {
-        public string Title {get; set;}
+    public class Review :MovieClass {
         public string ReviewString {get; set;}
         public string Username {get; set;}
         

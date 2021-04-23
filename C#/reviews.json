@@ -1,0 +1,42 @@
+[
+  {
+    "ReviewString": "wow",
+    "Username": "johnny",
+    "Title": "Balaji: A tale of kings",
+    "Description": null,
+    "Genre": null,
+    "Language": null,
+    "BasePrice": 0,
+    "PlayTime": null
+  },
+  {
+    "ReviewString": "cant wait for the sequel",
+    "Username": "lisa",
+    "Title": "Balaji: A tale of kings",
+    "Description": null,
+    "Genre": null,
+    "Language": null,
+    "BasePrice": 0,
+    "PlayTime": null
+  },
+  {
+    "ReviewString": "Truly a MasterPiece 10/10",
+    "Username": "Joris",
+    "Title": "Balaji: A tale of kings",
+    "Description": null,
+    "Genre": null,
+    "Language": null,
+    "BasePrice": 0,
+    "PlayTime": null
+  },
+  {
+    "ReviewString": "goeie film",
+    "Username": "hans",
+    "Title": "Balaji: A tale of kings",
+    "Description": null,
+    "Genre": null,
+    "Language": null,
+    "BasePrice": 0,
+    "PlayTime": null
+  }
+]
