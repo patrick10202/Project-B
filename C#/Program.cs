@@ -516,7 +516,7 @@ public class Screen{
     static void AdminHome(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Admin Main Menu");
-        Console.WriteLine("0: Admin logoff\n1: Movies");
+        Console.WriteLine("0: Admin logoff\n1: Movies\n2: Reviews");
         string UserInput = Console.ReadLine();
         switch (UserInput){
             case "0":
@@ -528,12 +528,60 @@ public class Screen{
                 Console.Clear();
                 AdminMovies();
                 break;
+
+            case "2":
+                Console.Clear();
+                AdminReviews();
+                break;
+            
             default:
                 Console.Clear();
                 Console.WriteLine("Please enter a valid number.");
                 AdminHome();
                 break;
             }
+    }
+    static void AdminReviews(){
+        Console.WriteLine("----------------------------------------------------------------------");
+        Console.WriteLine("Please select a Review to delete");
+        Console.WriteLine("0: Cancel");
+        
+        string Reviews = File.ReadAllText(@"reviews.json");
+        List<Review> ReviewList = JsonConvert.DeserializeObject<List<Review>>(Reviews);
+        int count = 1;
+        foreach (var item in ReviewList){
+            Console.WriteLine($"{count++}: movie: {item.Title}, User: {item.Username}, Review: {item.ReviewString}");
+        }
+        string UserInput = Console.ReadLine();
+        int input = 0;
+        try{
+            input = Convert.ToInt32(UserInput);
+        } catch{
+            Console.WriteLine("Please enter a valid Number");
+            input = 0;
+        }
+        int ListLen = ReviewList.Count;
+        if (input > 0 && input <= ListLen){
+            int choice = input - 1;
+            Console.Clear();
+            Console.WriteLine($"are you sure you want to delete this the review: {ReviewList[choice].ReviewString}? Y/N");
+            string deleteOrnot = Console.ReadLine();
+            if (deleteOrnot == "Y" || deleteOrnot == "y"){
+                ReviewList.RemoveAt(choice);
+                Console.WriteLine("Review Was removed");
+            } else {
+                Console.WriteLine("Review was not removed");
+            }
+            string serialisedReviewList = JsonConvert.SerializeObject(ReviewList, Formatting.Indented);
+            File.WriteAllText(@"reviews.Json",serialisedReviewList);
+            AdminReviews();
+        } else if (input == 0){ 
+            AdminHome();
+        } else {
+            Console.WriteLine("Please enter a valid number");
+            AdminReviews();
+        }
+        
     }
     static void AccountSettings(Tuple<bool, int> accindex){
         Console.WriteLine("----------------------------------------------------------------------");
@@ -829,7 +877,7 @@ public class Screen{
                 break;
             }
         }
-
+        //
         string Reviews = File.ReadAllText(@"reviews.json");
         List<Review> ReviewList = JsonConvert.DeserializeObject<List<Review>>(Reviews);
 
@@ -842,13 +890,14 @@ public class Screen{
 
         if (ReviewList == null){
             ReviewList = new List<Review>();
-        } else{
-            ReviewList.Add(newReview);
         }
+        ReviewList.Add(newReview);
+
         string serialisedReviewList = JsonConvert.SerializeObject(ReviewList, Formatting.Indented);
         File.WriteAllText(@"reviews.Json",serialisedReviewList);
         Console.WriteLine("Added!");
         Console.ReadLine();
+        ReviewScreen(MovieName);
 
 
     }
