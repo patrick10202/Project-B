@@ -424,6 +424,9 @@ public class Screen{
                     Username = usernameinput,
                     MovieName = Movielist[movieindex].Title
                 };
+                if (reservationdata == null){
+                    reservationdata = new List<Reservation>();
+                }
                 reservationdata.Add(newReservation);
                 var serialisedreservationlist = JsonConvert.SerializeObject(reservationdata, Formatting.Indented);
                 File.WriteAllText(@"reservations.Json",serialisedreservationlist);
@@ -439,9 +442,12 @@ public class Screen{
             Console.WriteLine("Please enter your email for the reservation:");
             string UserInput = Console.ReadLine();
             Reservation newReservation = new Reservation(){
-                    Email = Userinput,
+                    Email = UserInput,
                     MovieName = Movielist[movieindex].Title
                 };
+            if (reservationdata == null){
+                reservationdata = new List<Reservation>();
+            }
             reservationdata.Add(newReservation);
             var serialisedreservationlist = JsonConvert.SerializeObject(reservationdata, Formatting.Indented);
             File.WriteAllText(@"reservations.Json",serialisedreservationlist);
