@@ -936,11 +936,6 @@ public class Screen{
                 break;
             }
         }
-<<<<<<< Updated upstream
-        //
-=======
-
->>>>>>> Stashed changes
         string Reviews = File.ReadAllText(@"reviews.json");
         List<Review> ReviewList = JsonConvert.DeserializeObject<List<Review>>(Reviews);
 
@@ -953,23 +948,14 @@ public class Screen{
 
         if (ReviewList == null){
             ReviewList = new List<Review>();
-<<<<<<< Updated upstream
         }
         ReviewList.Add(newReview);
-
-=======
-        } else{
-            ReviewList.Add(newReview);
-        }
->>>>>>> Stashed changes
+        
         string serialisedReviewList = JsonConvert.SerializeObject(ReviewList, Formatting.Indented);
         File.WriteAllText(@"reviews.Json",serialisedReviewList);
         Console.WriteLine("Added!");
         Console.ReadLine();
-<<<<<<< Updated upstream
         ReviewScreen(MovieName);
-=======
->>>>>>> Stashed changes
 
 
     }
