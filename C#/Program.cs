@@ -20,15 +20,6 @@ public class Persoon{
 }
 
 */
-public class Reservering{
-    public int PersonIndex;
-    public string movie;
-
-    public Reservering(int PersonIndex, string movie){
-        this.PersonIndex = PersonIndex;
-        this.movie = movie;
-    }
-}
 
 public class login{
     public static Tuple<bool, int> tryLogin(string usernameinput, string passwordinput){
@@ -418,6 +409,8 @@ public class Screen{
         Console.WriteLine("Reservation screen");
         string movieInfo = File.ReadAllText(@"movies.json");
         List<MovieClass> Movielist = JsonConvert.DeserializeObject<List<MovieClass>>(movieInfo);
+        string reservationjson = File.ReadAllText(@"reservations.json");
+        List<Reservation> reservationdata = JsonConvert.DeserializeObject<List<Reservation>>(reservationjson);
         Console.WriteLine("If you have an account press 1, else press 2");
         string Userinput = Console.ReadLine();
         if (Userinput == "1"){
@@ -427,7 +420,13 @@ public class Screen{
             var passwordinput = Console.ReadLine();
             Tuple<bool, int> accindex = login.tryLogin(usernameinput, passwordinput);
             if (accindex.Item1 == true){
-                var newreservering = new Reservering(accindex.Item2, Movielist[movieindex].Title);
+                Reservation newReservation = new Reservation(){
+                    Username = usernameinput,
+                    MovieName = Movielist[movieindex].Title
+                };
+                reservationdata.Add(newReservation);
+                var serialisedreservationlist = JsonConvert.SerializeObject(reservationdata, Formatting.Indented);
+                File.WriteAllText(@"reservations.Json",serialisedreservationlist);
                 Console.WriteLine("reservation succesful");
             }
             else{
@@ -439,6 +438,13 @@ public class Screen{
         else if (Userinput == "2"){
             Console.WriteLine("Please enter your email for the reservation:");
             string UserInput = Console.ReadLine();
+            Reservation newReservation = new Reservation(){
+                    Email = Userinput,
+                    MovieName = Movielist[movieindex].Title
+                };
+            reservationdata.Add(newReservation);
+            var serialisedreservationlist = JsonConvert.SerializeObject(reservationdata, Formatting.Indented);
+            File.WriteAllText(@"reservations.Json",serialisedreservationlist);
         }
         else{
             Console.Clear();
