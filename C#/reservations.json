@@ -1,0 +1,17 @@
+[
+  {
+    "Username": "test",
+    "Email": null,
+    "MovieName": "American Assassin"
+  },
+  {
+    "Username": null,
+    "Email": "2",
+    "MovieName": "Tenet"
+  },
+  {
+    "Username": null,
+    "Email": "testtttttttt",
+    "MovieName": "Balaji: A tale of kings"
+  }
+]
