@@ -26,5 +26,11 @@ namespace methods
         public string Username {get; set;}
         
     }
+    public class FoodItem{
+        public string isFoodOrDrink {get; set;}
+        public double Cost {get;set;}
+        public string name {get;set;}
+        
+    }
 
 }

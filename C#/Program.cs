@@ -467,7 +467,7 @@ public class Screen{
         Console.WriteLine("2. Fanta                   2,50 euros ");
         Console.WriteLine("3. Sprite                  2,50 euros ");
         Console.WriteLine("4. Fernandes               2,50 euros ");
-        Console.WriteLine("5 Heineken 500 ml          4,50 euros ");
+        Console.WriteLine("5. Heineken 500 ml          4,50 euros ");
         Console.WriteLine("6. Redbull                 3,50 euros ");
         Console.WriteLine("7. Spa blue                2,50 euros ");
         Console.WriteLine("8. Tenesis                 2,50 euros ");
@@ -575,7 +575,7 @@ public class Screen{
     static void AdminHome(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Admin Main Menu");
-        Console.WriteLine("0: Admin logoff\n1: Movies\n2: Reviews");
+        Console.WriteLine("0: Admin logoff\n1: Movies\n2: Reviews\n3: Foods and drinks");
         string UserInput = Console.ReadLine();
         switch (UserInput){
             case "0":
@@ -593,12 +593,209 @@ public class Screen{
                 AdminReviews();
                 break;
             
+            case "3":
+                Console.Clear();
+                AdminFoodsDrinks();
+                break;
+
             default:
                 Console.Clear();
                 Console.WriteLine("Please enter a valid number.");
                 AdminHome();
                 break;
             }
+    }
+    static void AdminFoodsDrinks(){
+        Console.WriteLine("----------------------------------------------------------------------");
+        Console.WriteLine("Admin foods and drinks screen");
+        Console.WriteLine("0: back\n1: add food or drink\n2: Edit food or drink \n3: Delete food or drink");
+        string foodsInfo = File.ReadAllText(@"FoodsDrinks.json");
+        List<FoodItem> Foodlist = JsonConvert.DeserializeObject<List<FoodItem>>(foodsInfo);
+        string Userinput = Console.ReadLine();
+        string UserInput;
+        string Choice;
+        string serialisedFoodList;
+
+        switch(Userinput){
+            
+
+            case "0":
+                Console.Clear();
+                AdminHome();
+                break;
+            case "1":
+                Console.Clear();
+                Console.WriteLine("Add food or drink:");
+                Console.WriteLine("do you want to add a Food or a drink? \n0: Cancel \n1: Food \n2: Drink");
+                UserInput = Console.ReadLine();
+                Choice = "";
+                if (UserInput == "1"){
+                    Choice = "Food";
+                } else if (UserInput == "2"){
+                    Choice = "Drink";
+                } else {
+                    Console.Clear();
+                    Console.WriteLine("Cancelled");
+                    AdminFoodsDrinks();
+                }
+                Console.WriteLine($"Please enter the name of the new {Choice} Item");
+                string newname = Console.ReadLine();
+                bool IsGoodFormat = false;
+                double newPrice = 0.0;
+                while (!IsGoodFormat){
+                    Console.WriteLine("Please enter the price of this item (separate the full euros and the cents with a comma like such: 4,50) in euros)");
+                    string price = Console.ReadLine();
+                    try {
+                        newPrice =  Convert.ToDouble(price);
+                        IsGoodFormat = true;
+                    } catch {
+                        Console.WriteLine("Please enter the price in the specified format (eg 1,0)");
+                    }
+                }
+                FoodItem newFoodItem = new FoodItem{
+                    isFoodOrDrink = Choice,
+                    name = newname,
+                    Cost = newPrice
+                };
+                if (Foodlist == null){
+                    Foodlist = new List<FoodItem>();
+                }
+                Foodlist.Add(newFoodItem);
+                serialisedFoodList = JsonConvert.SerializeObject(Foodlist, Formatting.Indented);
+                File.WriteAllText(@"FoodsDrinks.Json",serialisedFoodList);
+                Console.WriteLine("Added!");
+                Console.ReadLine();
+                
+                AdminFoodsDrinks();
+                break;
+
+            case "2":
+                Console.Clear();
+                bool isValidIndex = false;
+                int chosenIndex = 0;
+                while (!isValidIndex){
+                    Console.WriteLine("Edit food or drink");
+                    Console.WriteLine("Please select food or drink to edit");
+                    int index = 1;
+                    foreach(var item in Foodlist){
+                        Console.WriteLine($"{index++}: {item.name}");
+                    }
+                    UserInput = Console.ReadLine();
+                    try{
+                        chosenIndex = Convert.ToInt32(UserInput);
+                        chosenIndex--;
+                        
+                        FoodItem chosenfood = Foodlist[chosenIndex];
+                        
+                        isValidIndex = true;
+
+                    } catch {
+                        Console.WriteLine("Please enter a valid number");
+                    }
+                }
+
+
+                Console.Clear();
+                Console.WriteLine($"edit food item '{Foodlist[chosenIndex].name}' properties");
+                Console.WriteLine("0: cancel \n1: type (food or drink!) \n2: name \n3: cost");
+                UserInput = Console.ReadLine();
+                if (UserInput == "1"){
+                    Console.WriteLine($"edit '{Foodlist[chosenIndex].name}' type \n1: Food \n2: Drink");
+                    bool isValidType = false;
+                    while (!isValidType){
+                        UserInput = Console.ReadLine();
+                        if (UserInput == "1" || UserInput == "2"){
+                            isValidType = true;
+                            if (UserInput == "1"){
+                                Foodlist[chosenIndex].isFoodOrDrink = "Food";
+                            } else {
+                                Foodlist[chosenIndex].isFoodOrDrink = "Drink";
+                            }
+                        } else {
+                            Console.WriteLine("Please enter a valid number");
+                        }
+                    
+                    }
+                    Console.WriteLine("Edited!");
+                    
+                    
+
+                } else if (UserInput == "2"){
+                    Console.WriteLine($"edit '{Foodlist[chosenIndex].name}' name");
+                    Foodlist[chosenIndex].name = Console.ReadLine();
+
+                } else if (UserInput == "3"){
+                    bool isValidNumber = false;
+                    while (!isValidNumber){
+                        Console.WriteLine($"edit '{Foodlist[chosenIndex].name}' cost (separate the full euros and the cents with a comma like such: 4,50) in euros)");
+                        try {
+                            Foodlist[chosenIndex].Cost = Convert.ToDouble(Console.ReadLine());
+                            isValidNumber = true;
+                        } catch{
+                            Console.WriteLine("Please enter a valid number");
+                        }
+                    }       
+
+                } else {
+                    Console.WriteLine("Cancelled");
+                }
+                serialisedFoodList = JsonConvert.SerializeObject(Foodlist, Formatting.Indented);
+                File.WriteAllText(@"FoodsDrinks.Json",serialisedFoodList);
+                Console.WriteLine("Press enter to continue");
+                Console.ReadLine();
+                AdminFoodsDrinks();
+                break;
+
+            case "3":
+                
+                Console.Clear();
+                bool isValidndex = false;
+                int chosenndex = 0;
+                while (!isValidndex){
+                    Console.WriteLine("Delete food or drink");
+                    Console.WriteLine("Please select food or drink to edit");
+                    int index = 1;
+                    foreach(var item in Foodlist){
+                        Console.WriteLine($"{index++}: {item.name}");
+                    }
+                    UserInput = Console.ReadLine();
+                    try{
+                        chosenndex = Convert.ToInt32(UserInput);
+                        chosenndex--;
+                        FoodItem chosenfood = Foodlist[chosenndex];
+                        
+                        isValidndex = true;
+
+                    } catch {
+                        Console.WriteLine("Please enter a valid number");
+                    }
+                }
+                
+
+
+                Console.Clear();
+                Console.WriteLine($"delete food item '{Foodlist[chosenndex].name}'? Y/N");
+                UserInput = Console.ReadLine();
+                if (Userinput == "Y" || UserInput == "y"){
+                    string name = Foodlist[chosenndex].name;
+                    Foodlist.RemoveAt(chosenndex);
+                    Console.WriteLine($"{name} was Deleted!");
+                } else {
+                    Console.WriteLine("Nothing was Deleted!");
+                }
+                serialisedFoodList = JsonConvert.SerializeObject(Foodlist, Formatting.Indented);
+                File.WriteAllText(@"FoodsDrinks.Json",serialisedFoodList);
+                Console.WriteLine("press enter to continue");
+                Console.ReadLine();
+
+                AdminFoodsDrinks();
+                break;
+
+            default:
+                Console.Clear();
+                AdminFoodsDrinks();
+                break;
+        }
     }
     static void AdminReviews(){
         Console.WriteLine("----------------------------------------------------------------------");
