@@ -645,9 +645,11 @@ public class Screen{
     static void AccountSettings(Tuple<bool, int> accindex){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Account Settings");
-        Console.WriteLine("0: back\n1: edit username\n2: edit password\n3: edit name\n4: edit surname\n5: edit email\n6: edit phone number\n7 delete account");
+        Console.WriteLine("0: back\n1: edit username\n2: edit password\n3: edit name\n4: edit surname\n5: edit email\n6: edit phone number\n7 delete account\n8 view reservations");
         string logininfo = File.ReadAllText(@"login.json");
         List<LoginClass> Loginlist = JsonConvert.DeserializeObject<List<LoginClass>>(logininfo);
+        string reservationsinfo = File.ReadAllText(@"reservations.json");
+        List<Reservation> reservationlist = JsonConvert.DeserializeObject<List<Reservation>>(reservationsinfo);
         string UserInput = Console.ReadLine();
         switch (UserInput){
             case "0":
@@ -721,10 +723,24 @@ public class Screen{
                 File.WriteAllText(@"login.Json",JsonConvert.SerializeObject(Loginlist, Formatting.Indented));
                 LoginScreen();
                 break;
+            case "8":
+                Console.Clear();
+                bool reserved = false;
+                foreach (Reservation reservation in reservationlist){
+                    if (reservation.Username == Loginlist[accindex.Item2].Username){
+                        Console.WriteLine(reservation.MovieName);
+                        reserved = true;
+                    }
+                }
+                if (reserved == false){
+                    Console.WriteLine("You didn't make a reservation yet.");
+                }
+
+                break;
             default:
                 Console.Clear();
                 Console.WriteLine("Please enter a valid number.");
-                AdminHome();
+                AccountSettings(accindex);
                 break;
             }
     }
@@ -964,7 +980,7 @@ public class Screen{
 public class Phrases{
     public static string inputPlease(){
         Console.WriteLine("Please input a number to see the following menus:\n");
-        Console.WriteLine("1: Login\n2: movies\n3: Food & Drinks\n4: comming soon\n5: info\n");
+        Console.WriteLine("1: Login\n2: movies\n3: Food & Drinks\n4: coming soon\n5: info\n");
         
         Console.WriteLine("to quit, enter 0");
         string UserInput = Console.ReadLine();
