@@ -432,7 +432,9 @@ public class Screen{
                 reservationdata.Add(newReservation);
                 var serialisedreservationlist = JsonConvert.SerializeObject(reservationdata, Formatting.Indented);
                 File.WriteAllText(@"reservations.Json",serialisedreservationlist);
+                Console.Clear();
                 Console.WriteLine("reservation succesful");
+                MovieScreen();
             }
             else{
                 Console.Clear();
@@ -726,16 +728,56 @@ public class Screen{
             case "8":
                 Console.Clear();
                 bool reserved = false;
+                int ordernummer = 0;
+                List<string> nummerlist = new List<string>();
                 foreach (Reservation reservation in reservationlist){
                     if (reservation.Username == Loginlist[accindex.Item2].Username){
-                        Console.WriteLine(reservation.MovieName);
+                        Console.WriteLine($"Reservation number: {ordernummer} {reservation.MovieName}");
                         reserved = true;
+                        nummerlist.Add(ordernummer.ToString());
                     }
+                    ordernummer++;
                 }
+                Console.WriteLine();
                 if (reserved == false){
                     Console.WriteLine("You didn't make a reservation yet.");
+                    AccountSettings(accindex);
                 }
-
+                else{
+                    Console.WriteLine("1: Delete a reservation\n0: Back");
+                    UserInput = Console.ReadLine();
+                    if (UserInput == "0"){
+                        Console.Clear();
+                        AccountSettings(accindex);
+                    }
+                    else if (UserInput == "1"){
+                        Console.WriteLine("Enter the reservation number of the movie you want to delete: ");
+                        UserInput = Console.ReadLine();
+                        bool resfound = false;
+                        foreach (string s in nummerlist){
+                            if (UserInput == s){
+                                reservationlist.RemoveAt(Convert.ToInt32(s));
+                                Console.WriteLine("Your reservation has been deleted");
+                                File.WriteAllText(@"reservations.Json",JsonConvert.SerializeObject(reservationlist, Formatting.Indented));
+                                resfound = true;
+                            }
+                        }
+                        if (resfound){
+                            Console.Clear();
+                            AccountSettings(accindex);
+                        }
+                        else{
+                            Console.Clear();
+                            Console.WriteLine("Reservation not found please enter a valid number.");
+                            AccountSettings(accindex);
+                        }
+                    }
+                    else{
+                        Console.Clear();
+                        Console.WriteLine("Please enter a valid number.");
+                        AccountSettings(accindex);
+                    }
+                }
                 break;
             default:
                 Console.Clear();
