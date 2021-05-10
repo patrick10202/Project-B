@@ -1,0 +1,92 @@
+[
+  {
+    "isFoodOrDrink": "Food",
+    "Cost": 2.5,
+    "name": "Popcorn small"
+  },
+  {
+    "isFoodOrDrink": "Food",
+    "Cost": 3.5,
+    "name": "Popcorn medium"
+  },
+  {
+    "isFoodOrDrink": "Food",
+    "Cost": 4.5,
+    "name": "Popcorn large"
+  },
+  {
+    "isFoodOrDrink": "Food",
+    "Cost": 4.5,
+    "name": "Tacos with cheese"
+  },
+  {
+    "isFoodOrDrink": "Food",
+    "Cost": 4.5,
+    "name": "Tacos with guacamole"
+  },
+  {
+    "isFoodOrDrink": "Food",
+    "Cost": 4.5,
+    "name": "Tacos with chili sauce"
+  },
+  {
+    "isFoodOrDrink": "Food",
+    "Cost": 2.5,
+    "name": "Chips"
+  },
+  {
+    "isFoodOrDrink": "Food",
+    "Cost": 2.0,
+    "name": "Winegums"
+  },
+  {
+    "isFoodOrDrink": "Food",
+    "Cost": 3.5,
+    "name": "M&Ms "
+  },
+  {
+    "isFoodOrDrink": "Drink",
+    "Cost": 2.5,
+    "name": "Coca Cola"
+  },
+  {
+    "isFoodOrDrink": "Drink",
+    "Cost": 2.5,
+    "name": "Fanta Orange"
+  },
+  {
+    "isFoodOrDrink": "Drink",
+    "Cost": 2.5,
+    "name": "Sprite"
+  },
+  {
+    "isFoodOrDrink": "Drink",
+    "Cost": 2.5,
+    "name": "Fernandes"
+  },
+  {
+    "isFoodOrDrink": "Drink",
+    "Cost": 4.5,
+    "name": "Heineken 500ml"
+  },
+  {
+    "isFoodOrDrink": "Drink",
+    "Cost": 2.5,
+    "name": "Redbull"
+  },
+  {
+    "isFoodOrDrink": "Drink",
+    "Cost": 2.5,
+    "name": "Spa blue"
+  },
+  {
+    "isFoodOrDrink": "Drink",
+    "Cost": 2.5,
+    "name": "Tenesis"
+  },
+  {
+    "isFoodOrDrink": "Drink",
+    "Cost": 3.5,
+    "name": "Milkshake Strawberry"
+  }
+]
