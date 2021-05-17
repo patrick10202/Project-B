@@ -8,5 +8,10 @@
     "Username": null,
     "Email": "testtttttttt",
     "MovieName": "Balaji: A tale of kings"
+  },
+  {
+    "Username": "test",
+    "Email": null,
+    "MovieName": "American Assassin"
   }
 ]

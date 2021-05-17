@@ -6,7 +6,12 @@
     "Surname": "testsurname",
     "Email": "testemail@gmail.com",
     "Phone": "0612345678",
-    "Watchlist": ["tenet","balaji: tale of kings","Scooby!" ]
+    "Watchlist": [
+      "tenet",
+      "balaji: tale of kings",
+      "Scooby!",
+      "American Assassin"
+    ]
   },
   {
     "Username": "testnewuser",
@@ -14,6 +19,7 @@
     "Name": "testnewname",
     "Surname": "testnewsurname",
     "Email": "testnewemail@gmail.com",
-    "Phone": "0612345678"
+    "Phone": "0612345678",
+    "Watchlist": null
   }
 ]
