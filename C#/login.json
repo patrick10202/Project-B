@@ -5,7 +5,8 @@
     "Name": "testname",
     "Surname": "testsurname",
     "Email": "testemail@gmail.com",
-    "Phone": "0612345678"
+    "Phone": "0612345678",
+    "Watchlist": ["tenet","balaji: tale of kings","Scooby!" ]
   },
   {
     "Username": "testnewuser",

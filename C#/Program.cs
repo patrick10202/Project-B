@@ -647,7 +647,7 @@ public class Screen{
     static void AccountSettings(Tuple<bool, int> accindex){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Account Settings");
-        Console.WriteLine("0: back\n1: edit username\n2: edit password\n3: edit name\n4: edit surname\n5: edit email\n6: edit phone number\n7 delete account\n8 view reservations");
+        Console.WriteLine("0: back\n1: edit username\n2: edit password\n3: edit name\n4: edit surname\n5: edit email\n6: edit phone number\n7: delete account\n8: view reservations\n9: view watchlist");
         string logininfo = File.ReadAllText(@"login.json");
         List<LoginClass> Loginlist = JsonConvert.DeserializeObject<List<LoginClass>>(logininfo);
         string reservationsinfo = File.ReadAllText(@"reservations.json");
@@ -779,6 +779,17 @@ public class Screen{
                     }
                 }
                 break;
+            
+            case "9":
+                Console.Clear();
+                foreach (string item in Loginlist[accindex.Item2].Watchlist){
+                    Console.WriteLine(item);
+                }
+                Console.WriteLine("\npress enter to continue");
+                Console.ReadLine();
+                AccountSettings(accindex);
+                break;
+
             default:
                 Console.Clear();
                 Console.WriteLine("Please enter a valid number.");

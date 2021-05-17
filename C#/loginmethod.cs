@@ -15,6 +15,7 @@ namespace methods
         public string Surname {get;set;}
         public string Email {get;set;}
         public string Phone {get;set;}
+        public List<string> Watchlist {get;set;} 
 
     }
 
