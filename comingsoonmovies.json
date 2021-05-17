@@ -1,0 +1,18 @@
+[
+    {
+      "Title": "filmpje",
+      "Description": "dit is een test",
+      "Genre": "Action",
+      "Language": "English",
+      "BasePrice": 0,
+      "PlayTime": "1 hour"
+    },
+    {
+      "Title": "ander test filmpje",
+      "Description": "dit is een 2e test filmpje",
+      "Genre": "Action",
+      "Language": "English",
+      "BasePrice": 0,
+      "PlayTime": "1.5 hours"
+    }
+   ]

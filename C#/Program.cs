@@ -478,6 +478,7 @@ public class Screen{
         Console.WriteLine("0 = back");
         string userName = Console.ReadLine();
         if (userName == "0"){
+           Console.Clear();
            FoodAndDrinks();
         }
     }
@@ -497,6 +498,7 @@ public class Screen{
         //Console.WriteLine("Price in total ");
         string userName = Console.ReadLine();
         if (userName == "0"){
+            Console.Clear();
             FoodAndDrinks();
         }
     }
@@ -518,14 +520,16 @@ public class Screen{
                 Console.Clear();
                 Drinks();
           }
-                
-
-
     }
 
     static void ComingSoonScreen(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Come watch these movies soon");
+        string comingsoonmovieInfo = File.ReadAllText(@"comingsoonmovies.json");
+        List<MovieClass> Movielist = JsonConvert.DeserializeObject<List<MovieClass>>(comingsoonmovieInfo);
+        foreach(var item in Movielist){
+            Console.WriteLine($"Title: {item.Title}");
+        }
         Console.WriteLine("0: back");
         string UserInput = Console.ReadLine();
         switch (UserInput){
@@ -1047,26 +1051,3 @@ class program{
         Screen.HomeScreen();
     }
 }
-
-/*
-namespace MovieProgram
-{
-    class Program
-    {
-        public static void Main(string[] args)
-        {
-            MovieClass movie = new MovieClass()
-            {
-                Title = "Balaji: A tale of kings",
-                Description = "Balaji punjab is on a quest to defeat his evil brother and become king of the promised land",
-                Genre = "action",
-                Language = "english"
-            };
-            string movieObject =  JsonConvert.SerializeObject(movie);
-            File.WriteAllText(@"movies.json",movieObject);
-            Console.WriteLine("succesfully created");
-            string movieInfo = File.ReadAllText(@"movies.json");
-            Console.WriteLine(movieInfo);
-        }
-    }
-}*/
