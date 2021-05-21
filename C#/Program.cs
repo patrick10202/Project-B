@@ -257,7 +257,12 @@ public class Screen{
                         counter++;
                     }
                     finalcount = counter;
-                } 
+                }
+                if (answergenre.Length != 1 || Convert.ToChar(answergenre) < '0' || Convert.ToChar(answergenre) > '8'){
+                    Console.Clear();
+                    Console.WriteLine("Please enter a valid number.");
+                    MovieScreen();
+                }
                 Console.WriteLine("Type a number of a movie to reserve that movie or press 0 to go back");
                 UserInput = Console.ReadLine();
                 if (UserInput == "0"){
@@ -415,6 +420,8 @@ public class Screen{
         List<Reservation> reservationdata = JsonConvert.DeserializeObject<List<Reservation>>(reservationjson);
         string logininfo = File.ReadAllText(@"login.json");
         List<LoginClass> Loginlist = JsonConvert.DeserializeObject<List<LoginClass>>(logininfo);
+        string seatinfo = File.ReadAllText(@"seats.json");
+        List<Seats> seatString = JsonConvert.DeserializeObject<List<Seats>>(seatinfo);
         
         Console.WriteLine("If you have an account press 1, else press 2");
         string Userinput = Console.ReadLine();
@@ -427,7 +434,8 @@ public class Screen{
             if (accindex.Item1 == true){
                 Reservation newReservation = new Reservation(){
                     Username = usernameinput,
-                    MovieName = Movielist[movieindex].Title
+                    MovieName = Movielist[movieindex].Title,
+                    SeatNumber = "1"
                 };
                 if (reservationdata == null){
                     reservationdata = new List<Reservation>();
@@ -435,8 +443,10 @@ public class Screen{
                 reservationdata.Add(newReservation);
                 Loginlist[accindex.Item2].Watchlist.Add(Movielist[movieindex].Title);
                 File.WriteAllText(@"login.Json",JsonConvert.SerializeObject(Loginlist, Formatting.Indented));
+
                 var serialisedreservationlist = JsonConvert.SerializeObject(reservationdata, Formatting.Indented);
                 File.WriteAllText(@"reservations.Json",serialisedreservationlist);
+                
                 Console.Clear();
                 Console.WriteLine("reservation succesful");
                 MovieScreen();

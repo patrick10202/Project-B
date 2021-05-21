@@ -2,16 +2,25 @@
   {
     "Username": null,
     "Email": "2",
-    "MovieName": "Tenet"
+    "MovieName": "Tenet",
+    "SeatNumber": null
   },
   {
     "Username": null,
     "Email": "testtttttttt",
-    "MovieName": "Balaji: A tale of kings"
+    "MovieName": "Balaji: A tale of kings",
+    "SeatNumber": null
   },
   {
     "Username": "test",
     "Email": null,
-    "MovieName": "American Assassin"
+    "MovieName": "American Assassin",
+    "SeatNumber": null
+  },
+  {
+    "Username": "test",
+    "Email": null,
+    "MovieName": "Balaji: A tale of kings",
+    "SeatNumber": "1"
   }
 ]

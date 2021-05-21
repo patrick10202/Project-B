@@ -24,7 +24,12 @@ namespace methods
         public string Username {get;set;}
         public string Email {get;set;}
         public string MovieName {get;set;}
+        public string SeatNumber {get;set;}
 
+    }
+
+    public class Seats{
+        public string seats {get;set;}
     }
 
 }
