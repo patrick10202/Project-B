@@ -40,5 +40,11 @@
     "Email": null,
     "MovieName": "Ferry",
     "SeatNumber": "6"
+  },
+  {
+    "Username": "test",
+    "Email": null,
+    "MovieName": "Balaji: A tale of kings",
+    "SeatNumber": "2"
   }
 ]

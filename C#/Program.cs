@@ -445,7 +445,11 @@ public class Screen{
                         jsonseatchararr[counter] = 'X';
                     }
                 }
-                seatString[movieindex].seats = jsonseatchararr.ToString();
+                string finalstring = "";
+                foreach (var element in jsonseatchararr){
+                    finalstring += element;
+                }
+                seatString[movieindex].seats = finalstring;
                 Reservation newReservation = new Reservation(){
                     Username = usernameinput,
                     MovieName = Movielist[movieindex].Title,
