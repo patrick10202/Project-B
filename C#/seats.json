@@ -1,10 +1,86 @@
 [
     {
-      "Title": "Balaji: A tale of kings",
-      "seats": "U U U U U U U U U U\nU U U U U U U U U U\nU U U U U U U U U U"
+        "Title": "Balaji: A tale of kings",
+        "seats": "U U U U U U U U U U\nU U U U U U U U U U\nU U U U U U U U U U\n"
     },
     {
-      "Title": "Justice Leauge",
-      "seats": "U U U U U U U U U U\nU U U U U U U U U U\nU U U U U U U U U U"
+        "Title": "Justice Leauge",
+        "seats": "U U U U U U U U U U\nU U U U U U U U U U\nU U U U U U U U U U\n"
+    },
+    {
+        "Title": "Tenet",
+        "seats": "U U U U U U U U U U\nU U U U U U U U U U\nU U U U U U U U U U\n"
+    },
+    {
+        "Title": "American Assassin",
+        "seats": "U U U U U U U U U U\nU U U U U U U U U U\nU U U U U U U U U U\n"
+    },
+    {
+        "Title": "21 Bridges",
+        "seats": "U U U U U U U U U U\nU U U U U U U U U U\nU U U U U U U U U U\n"
+    },
+    {
+        "Title": "Harry Potter and the Philosopher's Stone",
+        "seats": "U U U U U U U U U U\nU U U U U U U U U U\nU U U U U U U U U U\n"
+    },
+    {
+        "Title": "Toy Story 3",
+        "seats": "U U U U U U U U U U\nU U U U U U U U U U\nU U U U U U U U U U\n"
+    },
+    {
+        "Title": "Scooby!",
+        "seats": "U U U U U U U U U U\nU U U U U U U U U U\nU U U U U U U U U U\n"
+    },
+    {
+        "Title": "Pirates of the Caribbean: the Curse of the Black Pearl",
+        "seats": "U U U U U U U U U U\nU U U U U U U U U U\nU U U U U U U U U U\n"
+    },
+    {
+        "Title": "Ferry",
+        "seats": "U U U U U U U U U U\nU U U U U U U U U U\nU U U U U U U U U U\n"
+    },
+    {
+        "Title": "De Oost",
+        "seats": "U U U U U U U U U U\nU U U U U U U U U U\nU U U U U U U U U U\n"
+    },
+    {
+        "Title": "De Beentjes van Sint Hildegard",
+        "seats": "U U U U U U U U U U\nU U U U U U U U U U\nU U U U U U U U U U\n"
+    },
+    {
+        "Title": "After",
+        "seats": "U U U U U U U U U U\nU U U U U U U U U U\nU U U U U U U U U U\n"
+    },
+    {
+        "Title": "Ready Player One",
+        "seats": "U U U U U U U U U U\nU U U U U U U U U U\nU U U U U U U U U U\n"
+    },
+    {
+        "Title": "No Escape",
+        "seats": "U U U U U U U U U U\nU U U U U U U U U U\nU U U U U U U U U U\n"
+    },
+    {
+        "Title": "Overlord",
+        "seats": "U U U U U U U U U U\nU U U U U U U U U U\nU U U U U U U U U U\n"
+    },    
+    {
+        "Title": "The Nun",
+        "seats": "U U U U U U U U U U\nU U U U U U U U U U\nU U U U U U U U U U\n"
+    },    
+    {
+        "Title": "Crawl",
+        "seats": "U U U U U U U U U U\nU U U U U U U U U U\nU U U U U U U U U U\n"
+    },    
+    {
+        "Title": "Honest Thief",
+        "seats": "U U U U U U U U U U\nU U U U U U U U U U\nU U U U U U U U U U\n"
+    },    
+    {
+        "Title": "The Little Things",
+        "seats": "U U U U U U U U U U\nU U U U U U U U U U\nU U U U U U U U U U\n"
+    },    
+    {
+        "Title": "21 Bridges",
+        "seats": "U U U U U U U U U U\nU U U U U U U U U U\nU U U U U U U U U U\n"
     }
 ]
