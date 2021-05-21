@@ -432,21 +432,34 @@ public class Screen{
             var passwordinput = Console.ReadLine();
             Tuple<bool, int> accindex = login.tryLogin(usernameinput, passwordinput);
             if (accindex.Item1 == true){
+                Console.Clear();
+                Console.WriteLine("All seats with an U are available.");
+                Console.WriteLine(seatString[movieindex].seats);
+                Console.WriteLine("Please choose your seat:");
+                var userinput = Console.ReadLine();
+                var jsonseatchararr = seatString[movieindex].seats.ToCharArray(); 
+                var counter = 0;
+                foreach (var character in jsonseatchararr){
+                    counter++;
+                    if (character == Convert.ToChar(userinput)){
+                        jsonseatchararr[counter] = 'X';
+                    }
+                }
+                seatString[movieindex].seats = jsonseatchararr.ToString();
                 Reservation newReservation = new Reservation(){
                     Username = usernameinput,
                     MovieName = Movielist[movieindex].Title,
-                    SeatNumber = "1"
+                    SeatNumber = userinput
                 };
                 if (reservationdata == null){
                     reservationdata = new List<Reservation>();
                 }
                 reservationdata.Add(newReservation);
                 Loginlist[accindex.Item2].Watchlist.Add(Movielist[movieindex].Title);
+                File.WriteAllText(@"seats.Json",JsonConvert.SerializeObject(seatString, Formatting.Indented));
                 File.WriteAllText(@"login.Json",JsonConvert.SerializeObject(Loginlist, Formatting.Indented));
+                File.WriteAllText(@"reservations.Json",JsonConvert.SerializeObject(reservationdata, Formatting.Indented));
 
-                var serialisedreservationlist = JsonConvert.SerializeObject(reservationdata, Formatting.Indented);
-                File.WriteAllText(@"reservations.Json",serialisedreservationlist);
-                
                 Console.Clear();
                 Console.WriteLine("reservation succesful");
                 MovieScreen();
