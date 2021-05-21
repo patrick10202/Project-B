@@ -65,10 +65,106 @@
   },
   {
     "Title": "Pirates of the Caribbean: the Curse of the Black Pearl",
-    "Description": "Wanneer de dochter van de gouverneur wordt ontvoerd door de gevaarlijke kapitein Barbossa, roept haar vriend Will de hulp in van piratenheld Jack Sparrow. De twee weten echter niet dat er een vloek rust op hun tegenstanders.",
+    "Description": "When the governor's daughter is kidnapped by the dangerous Captain Barbossa, her friend Will enlists the help of pirate hero Jack Sparrow. However, the two do not know that there is a curse on their opponents.",
     "Genre": "Adventure",
     "Language": "English",
     "BasePrice": 0,
     "PlayTime": "3 hours"
-  }
+  },
+  {
+    "Title": "Ferry",
+    "Description": "Ferry is a 2021 crime thriller directed by Cecilia Verheyden. The film is a prequel to the fiction series Undercover, and, like the series, was produced by the production company De Mannen. The film is a prequel to the first season of Undercover.",
+    "Genre": "Action",
+    "Language": "Dutch",
+    "BasePrice": 0,
+    "PlayTime": "1.5 hours"
+  },
+  {
+    "Title": "De Oost",
+    "Description": "De Oost is a Dutch war film from 2020, directed by Jim Taihuttu.",
+    "Genre": "Action",
+    "Language": "Dutch",
+    "BasePrice": 0,
+    "PlayTime": "2 hours"
+  },
+  {
+    "Title": "De Beentjes van Sint Hildegard",
+    "Description": "De Beentjes van Sint-Hildegard is a Dutch film from 2020 starring Herman Finkers and Johanna ter Steege. The film is largely spoken in the Twente regional language. The film is based on the screenplay of the 2016 Czech movie Teorie tygra.",
+    "Genre": "Comedy",
+    "Language": "Dutch",
+    "BasePrice": 0,
+    "PlayTime": "1.5 hours"
+  },
+  {
+    "Title": "After",
+    "Description": "After is a 2019 film directed by Jenny Gage, based on the Anna Todd book series.",
+    "Genre": "Romance",
+    "Language": "English",
+    "BasePrice": 0,
+    "PlayTime": "1.5 hours"
+  },
+  {
+    "Title": "Ready Player One",
+    "Description": "Ready Player One is a 2018 American science fiction film directed by Steven Spielberg, based on Ernest Cline's book of the same name.",
+    "Genre": "Fantasy",
+    "Language": "English",
+    "BasePrice": 0,
+    "PlayTime": "1.5 hours"
+  },
+  {
+    "Title": "No Escape",
+    "Description": "No Escape, also known as Follow Me, is a 2020 American horror mystery film written and directed by Will Wernick and starring Keegan Allen, Holland Roden, Denzel Whitaker, Ronen Rubinstein, Pasha D. Lychnikoff, George Janko and Siya.",
+    "Genre": "Horror",
+    "Language": "English",
+    "BasePrice": 0,
+    "PlayTime": "1.5 hours"
+  },
+  {
+    "Title": "Overlord",
+    "Description": "Overlord is a 2018 American horror action war film directed by Julius Avery. Lead roles are played by Jovan Adepo, Wyatt Russell, Mathilde Ollivier, John Magaro, Gianny Taufer, Pilou Asbæk, Bokeem Woodbine and Iain De Caestecker. The film was produced by J.J.",
+    "Genre": "Horror",
+    "Language": "English",
+    "BasePrice": 0,
+    "PlayTime": "2 hours"
+  },
+  {
+    "Title": "The Nun",
+    "Description": "The Nun is a 2018 American horror film directed by Corin Hardy and written by Gary Dauberman. The film is a spin-off of The Conjuring 2 and is the fifth film in The Conjuring Universe.",
+    "Genre": "Horror",
+    "Language": "English",
+    "BasePrice": 0,
+    "PlayTime": "1.5 hours"
+  },
+  {
+    "Title": "Crawl",
+    "Description": "Crawl is a 2019 American disaster horror film directed by Alexandre Aja and starring Kaya Scodelario and Barry Pepper.",
+    "Genre": "Horror",
+    "Language": "English",
+    "BasePrice": 0,
+    "PlayTime": "1.5 hours"
+  },
+  {
+    "Title": "Honest Thief",
+    "Description": "Honest Thief is a 2020 American action thriller film directed by Mark Williams from a screenplay by Williams and Steve Allrich.",
+    "Genre": "Thriller",
+    "Language": "English",
+    "BasePrice": 0,
+    "PlayTime": "1.5 hours"
+  },
+  {
+    "Title": "The Little Things",
+    "Description": "The Little Things is a 2021 American crime thriller written and directed by John Lee Hancock. The lead roles are played by Denzel Washington, Rami Malek and Jared Leto.",
+    "Genre": "Thriller",
+    "Language": "English",
+    "BasePrice": 0,
+    "PlayTime": "2 hours"
+  },  
+  {
+    "Title": "21 Bridges",
+    "Description": "21 Bridges is a 2019 American action thriller film directed by Brian Kirk and written by Adam Mervis and Matthew Michael Carnahan, based on a story by Mervis.",
+    "Genre": "Thriller",
+    "Language": "English",
+    "BasePrice": 0,
+    "PlayTime": "1.5 hours"
+  },  
  ]
