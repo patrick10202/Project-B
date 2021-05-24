@@ -46,5 +46,17 @@
     "Email": null,
     "MovieName": "Balaji: A tale of kings",
     "SeatNumber": "2"
+  },
+  {
+    "Username": "test",
+    "Email": null,
+    "MovieName": "Ferry",
+    "SeatNumber": "1"
+  },
+  {
+    "Username": "test",
+    "Email": null,
+    "MovieName": "Balaji: A tale of kings",
+    "SeatNumber": "1"
   }
 ]

@@ -450,6 +450,7 @@ public class Screen{
                     finalstring += element;
                 }
                 seatString[movieindex].seats = finalstring;
+                
                 Reservation newReservation = new Reservation(){
                     Username = usernameinput,
                     MovieName = Movielist[movieindex].Title,
