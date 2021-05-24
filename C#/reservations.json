@@ -6,25 +6,15 @@
     "SeatNumber": "01"
   },
   {
-<<<<<<< Updated upstream
     "Username": "test",
     "Email": null,
     "MovieName": "Balaji: A tale of kings",
     "SeatNumber": "0"
-=======
-    "Username": null,
-    "Email": "testtttttttt",
-    "MovieName": "Balaji: A tale of kings"
->>>>>>> Stashed changes
   },
   {
     "Username": "test",
     "Email": null,
-<<<<<<< Updated upstream
     "MovieName": "Balaji: A tale of kings",
     "SeatNumber": "01"
-=======
-    "MovieName": "American Assassin"
->>>>>>> Stashed changes
   }
 ]
