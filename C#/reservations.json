@@ -1,62 +1,20 @@
 [
   {
-    "Username": null,
-    "Email": "2",
-    "MovieName": "Tenet",
-    "SeatNumber": null
-  },
-  {
-    "Username": null,
-    "Email": "testtttttttt",
-    "MovieName": "Balaji: A tale of kings",
-    "SeatNumber": null
-  },
-  {
     "Username": "test",
     "Email": null,
-    "MovieName": "American Assassin",
-    "SeatNumber": null
+    "MovieName": "Balaji: A tale of kings",
+    "SeatNumber": "01"
   },
   {
     "Username": "test",
     "Email": null,
     "MovieName": "Balaji: A tale of kings",
-    "SeatNumber": "1"
+    "SeatNumber": "0"
   },
   {
     "Username": "test",
     "Email": null,
     "MovieName": "Balaji: A tale of kings",
-    "SeatNumber": "1"
-  },
-  {
-    "Username": "test",
-    "Email": null,
-    "MovieName": "De Oost",
-    "SeatNumber": "5"
-  },
-  {
-    "Username": "test",
-    "Email": null,
-    "MovieName": "Ferry",
-    "SeatNumber": "6"
-  },
-  {
-    "Username": "test",
-    "Email": null,
-    "MovieName": "Balaji: A tale of kings",
-    "SeatNumber": "2"
-  },
-  {
-    "Username": "test",
-    "Email": null,
-    "MovieName": "Ferry",
-    "SeatNumber": "1"
-  },
-  {
-    "Username": "test",
-    "Email": null,
-    "MovieName": "Balaji: A tale of kings",
-    "SeatNumber": "1"
+    "SeatNumber": "01"
   }
 ]

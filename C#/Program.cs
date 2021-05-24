@@ -437,20 +437,15 @@ public class Screen{
                 Console.WriteLine(seatString[movieindex].seats);
                 Console.WriteLine("Please choose your seat:");
                 var userinput = Console.ReadLine();
-                var jsonseatchararr = seatString[movieindex].seats.ToCharArray(); 
-                var counter = 0;
-                foreach (var character in jsonseatchararr){
-                    counter++;
-                    if (character == Convert.ToChar(userinput)){
-                        jsonseatchararr[counter] = 'X';
-                    }
+
+                if (seatString[movieindex].seats.Contains(userinput)){
+                    seatString[movieindex].seats.Replace(userinput, "X");
                 }
-                string finalstring = "";
-                foreach (var element in jsonseatchararr){
-                    finalstring += element;
-                }
-                seatString[movieindex].seats = finalstring;
-                
+                File.WriteAllText(@"seats.Json",JsonConvert.SerializeObject(seatString, Formatting.Indented));
+
+                Loginlist[accindex.Item2].Watchlist.Add(Movielist[movieindex].Title);
+                File.WriteAllText(@"login.Json",JsonConvert.SerializeObject(Loginlist, Formatting.Indented));
+
                 Reservation newReservation = new Reservation(){
                     Username = usernameinput,
                     MovieName = Movielist[movieindex].Title,
@@ -460,9 +455,6 @@ public class Screen{
                     reservationdata = new List<Reservation>();
                 }
                 reservationdata.Add(newReservation);
-                Loginlist[accindex.Item2].Watchlist.Add(Movielist[movieindex].Title);
-                File.WriteAllText(@"seats.Json",JsonConvert.SerializeObject(seatString, Formatting.Indented));
-                File.WriteAllText(@"login.Json",JsonConvert.SerializeObject(Loginlist, Formatting.Indented));
                 File.WriteAllText(@"reservations.Json",JsonConvert.SerializeObject(reservationdata, Formatting.Indented));
 
                 Console.Clear();

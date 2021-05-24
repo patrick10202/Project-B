@@ -29,6 +29,7 @@ namespace methods
     }
 
     public class Seats{
+        public string Title {get;set;}
         public string seats {get;set;}
     }
 
