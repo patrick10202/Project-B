@@ -433,7 +433,7 @@ public class Screen{
             Tuple<bool, int> accindex = login.tryLogin(usernameinput, passwordinput);
             if (accindex.Item1 == true){
                 Console.Clear();
-                Console.WriteLine("All seats with an U are available.");
+                Console.WriteLine($"All seats with an U are available, a seat for {Movielist[movieindex].Title} costs {Movielist[movieindex].BasePrice} Euros");
                 Console.WriteLine(seatString[movieindex].seats);
                 Console.WriteLine("Please choose your seat:");
                 var userinput = Console.ReadLine();
@@ -449,7 +449,8 @@ public class Screen{
                 Reservation newReservation = new Reservation(){
                     Username = usernameinput,
                     MovieName = Movielist[movieindex].Title,
-                    SeatNumber = userinput
+                    SeatNumber = userinput,
+                    TotalCost = Movielist[movieindex].BasePrice
                 };
                 if (reservationdata == null){
                     reservationdata = new List<Reservation>();
@@ -606,7 +607,7 @@ public class Screen{
     static void AdminHome(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Admin Main Menu");
-        Console.WriteLine("0: Admin logoff\n1: Movies\n2: Reviews");
+        Console.WriteLine("0: Admin logoff\n1: Movies\n2: Reviews \n3: Total Revenue");
         string UserInput = Console.ReadLine();
         switch (UserInput){
             case "0":
@@ -624,6 +625,25 @@ public class Screen{
                 AdminReviews();
                 break;
             
+            case "3":
+                Console.Clear();
+                string reservationjson = File.ReadAllText(@"reservations.json");
+                List<Reservation> reservationdata = JsonConvert.DeserializeObject<List<Reservation>>(reservationjson);
+                double subTotal = 0.0;
+                int totalReservations = reservationdata.Count;
+                foreach (var reservation in reservationdata){
+                    subTotal += reservation.TotalCost;
+                }
+                
+                double averageRevenue = Math.Round(subTotal / totalReservations, 2);
+
+                Console.WriteLine($"Total Revenue: {subTotal} euro \nWith a total of {totalReservations} reservations, the average Reservation revenue is {averageRevenue} euro");
+                Console.WriteLine("press Enter to continue");
+                Console.WriteLine();
+                Console.ReadLine();
+                AdminHome();
+                break;
+
             default:
                 Console.Clear();
                 Console.WriteLine("Please enter a valid number.");

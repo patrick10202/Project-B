@@ -25,6 +25,7 @@ namespace methods
         public string Email {get;set;}
         public string MovieName {get;set;}
         public string SeatNumber {get;set;}
+        public double TotalCost {get;set;}
 
     }
 
