@@ -7,8 +7,15 @@
     "Email": "testemail@gmail.com",
     "Phone": "0612345678",
     "Watchlist": [
+<<<<<<< Updated upstream
       "Balaji: A tale of kings",
       "Balaji: A tale of kings"
+=======
+      "tenet",
+      "balaji: tale of kings",
+      "Scooby!",
+      "American Assassin"
+>>>>>>> Stashed changes
     ]
   },
   {

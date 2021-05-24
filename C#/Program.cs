@@ -420,8 +420,11 @@ public class Screen{
         List<Reservation> reservationdata = JsonConvert.DeserializeObject<List<Reservation>>(reservationjson);
         string logininfo = File.ReadAllText(@"login.json");
         List<LoginClass> Loginlist = JsonConvert.DeserializeObject<List<LoginClass>>(logininfo);
+<<<<<<< Updated upstream
         string seatinfo = File.ReadAllText(@"seats.json");
         List<Seats> seatString = JsonConvert.DeserializeObject<List<Seats>>(seatinfo);
+=======
+>>>>>>> Stashed changes
         
         Console.WriteLine("If you have an account press 1, else press 2");
         string Userinput = Console.ReadLine();
@@ -455,8 +458,15 @@ public class Screen{
                     reservationdata = new List<Reservation>();
                 }
                 reservationdata.Add(newReservation);
+<<<<<<< Updated upstream
                 File.WriteAllText(@"reservations.Json",JsonConvert.SerializeObject(reservationdata, Formatting.Indented));
 
+=======
+                Loginlist[accindex.Item2].Watchlist.Add(Movielist[movieindex].Title);
+                File.WriteAllText(@"login.Json",JsonConvert.SerializeObject(Loginlist, Formatting.Indented));
+                var serialisedreservationlist = JsonConvert.SerializeObject(reservationdata, Formatting.Indented);
+                File.WriteAllText(@"reservations.Json",serialisedreservationlist);
+>>>>>>> Stashed changes
                 Console.Clear();
                 Console.WriteLine("reservation succesful");
                 MovieScreen();
