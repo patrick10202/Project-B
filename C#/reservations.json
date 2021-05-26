@@ -40,5 +40,61 @@
     "MovieName": "Toy Story 3",
     "SeatNumber": "0",
     "TotalCost": 10.0
+  },
+  {
+    "Username": "test",
+    "Email": null,
+    "MovieName": "Balaji: A tale of kings",
+    "SeatNumber": "01",
+    "TotalCost": 9.0
+  },
+  {
+    "Username": "test",
+    "Email": null,
+    "MovieName": "Balaji: A tale of kings",
+    "SeatNumber": "01",
+    "TotalCost": 9.0
+  },
+  {
+    "Username": "test",
+    "Email": null,
+    "MovieName": "Balaji: A tale of kings",
+    "SeatNumber": "15",
+    "TotalCost": 9.0
+  },
+  {
+    "Username": "test",
+    "Email": null,
+    "MovieName": "Balaji: A tale of kings",
+    "SeatNumber": "U",
+    "TotalCost": 9.0
+  },
+  {
+    "Username": "test",
+    "Email": null,
+    "MovieName": "Balaji: A tale of kings",
+    "SeatNumber": "TakenU",
+    "TotalCost": 9.0
+  },
+  {
+    "Username": "test",
+    "Email": null,
+    "MovieName": "Balaji: A tale of kings",
+    "SeatNumber": "01",
+    "TotalCost": 9.0
+  },
+  {
+    "Username": "test",
+    "Email": null,
+    "MovieName": "Balaji: A tale of kings",
+    "SeatNumber": "01",
+    "TotalCost": 9.0
+  },
+  {
+    "Username": "test",
+    "Email": null,
+    "MovieName": "Balaji: A tale of kings",
+    "SeatNumber": "01",
+    "TotalCost": 9.0
   }
 ]

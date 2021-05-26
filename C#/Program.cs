@@ -437,12 +437,31 @@ public class Screen{
                 Console.WriteLine(seatString[movieindex].seats);
                 Console.WriteLine("Please choose your seat:");
                 var userinput = Console.ReadLine();
-
-                if (seatString[movieindex].seats.Contains(userinput)){
-                    seatString[movieindex].seats.Replace(userinput, "X");
+                int userinputasint = 0;
+                try{
+                    userinputasint = Convert.ToInt32(userinput);
                 }
-                File.WriteAllText(@"seats.Json",JsonConvert.SerializeObject(seatString, Formatting.Indented));
-
+                catch{
+                    Console.Clear();
+                    Console.WriteLine("Please input a valid seat number.");
+                    ReserveringenScherm(movieindex);
+                }
+                if (userinputasint >= 1 && userinputasint <= 30){
+                    if (seatString[movieindex].seats.Contains(userinput)){
+                        seatString[movieindex].seats = seatString[movieindex].seats.Replace(userinput, "Taken");
+                    }
+                    else{
+                        Console.Clear();
+                        Console.WriteLine("Please input a valid seat number.");
+                        ReserveringenScherm(movieindex);
+                    }
+                    File.WriteAllText(@"seats.Json",JsonConvert.SerializeObject(seatString, Formatting.Indented));
+                }
+                else{
+                    Console.Clear();
+                    Console.WriteLine("Please input a valid seat number.");
+                    ReserveringenScherm(movieindex);
+                }
                 Loginlist[accindex.Item2].Watchlist.Add(Movielist[movieindex].Title);
                 File.WriteAllText(@"login.Json",JsonConvert.SerializeObject(Loginlist, Formatting.Indented));
 
