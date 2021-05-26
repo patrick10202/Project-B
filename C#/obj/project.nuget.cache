@@ -1,17 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "cqwGTrTt7YcBtX6L+4cVZK2Rxpw895xdpIpmcfVnOjeY8DXfaago0kW+IW7GFbuu6trnFlDa2SZny5miJgAkNA==",
+  "dgSpecHash": "Xm0VhZkrd/8G/CziRQoYTAeOXw6fF42s9+LfGomwjJp6Vtz1AtCKkgCeAtCEV7wdsj3iJl9xDLrSnVIIeDwwdg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\patri\\Documents\\GitHub\\Project-B\\C#\\C#.csproj",
+  "projectFilePath": "/Users/stephanvandenberg/Documents/GitHub/Project-B/C#/C#.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\patri\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+    "/Users/stephanvandenberg/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\patri\\Documents\\GitHub\\Project-B\\C#\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

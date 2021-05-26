@@ -500,6 +500,14 @@ public class Screen{
             reservationdata.Add(newReservation);
             var serialisedreservationlist = JsonConvert.SerializeObject(reservationdata, Formatting.Indented);
             File.WriteAllText(@"reservations.Json",serialisedreservationlist);
+
+            Console.Clear();
+                Console.WriteLine("reservation succesful");
+                Random rd = new Random();
+                int rand_num = rd.Next(0,1000);
+                Console.WriteLine("reservation code =");
+                Console.WriteLine(rand_num);
+                MovieScreen();
         }
         else{
             Console.Clear();
