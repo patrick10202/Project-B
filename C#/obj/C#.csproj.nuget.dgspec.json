@@ -1,46 +1,36 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< Updated upstream
-    "C:\\Users\\patri\\Documents\\GitHub\\Project-B\\C#\\C#.csproj": {}
+    "C:\\Users\\DotBat\\Documents\\GitHub\\Project-B\\C#\\C#.csproj": {}
   },
   "projects": {
-    "C:\\Users\\patri\\Documents\\GitHub\\Project-B\\C#\\C#.csproj": {
+    "C:\\Users\\DotBat\\Documents\\GitHub\\Project-B\\C#\\C#.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\patri\\Documents\\GitHub\\Project-B\\C#\\C#.csproj",
+        "projectUniqueName": "C:\\Users\\DotBat\\Documents\\GitHub\\Project-B\\C#\\C#.csproj",
         "projectName": "C#",
-        "projectPath": "C:\\Users\\patri\\Documents\\GitHub\\Project-B\\C#\\C#.csproj",
-        "packagesPath": "C:\\Users\\patri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\patri\\Documents\\GitHub\\Project-B\\C#\\obj\\",
+        "projectPath": "C:\\Users\\DotBat\\Documents\\GitHub\\Project-B\\C#\\C#.csproj",
+        "packagesPath": "C:\\Users\\DotBat\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DotBat\\Documents\\GitHub\\Project-B\\C#\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\patri\\AppData\\Roaming\\NuGet\\NuGet.Config"
-=======
-    "/Users/stephanvandenberg/Documents/GitHub/Project-B/C#/C#.csproj": {}
-  },
-  "projects": {
-    "/Users/stephanvandenberg/Documents/GitHub/Project-B/C#/C#.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "/Users/stephanvandenberg/Documents/GitHub/Project-B/C#/C#.csproj",
-        "projectName": "C#",
-        "projectPath": "/Users/stephanvandenberg/Documents/GitHub/Project-B/C#/C#.csproj",
-        "packagesPath": "/Users/stephanvandenberg/.nuget/packages/",
-        "outputPath": "/Users/stephanvandenberg/Documents/GitHub/Project-B/C#/obj/",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "/Users/stephanvandenberg/.nuget/NuGet/NuGet.Config"
->>>>>>> Stashed changes
+          "C:\\Users\\DotBat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -52,6 +42,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Newtonsoft.Json": {
               "target": "Package",
@@ -73,11 +64,7 @@
               "privateAssets": "all"
             }
           },
-<<<<<<< Updated upstream
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.405\\RuntimeIdentifierGraph.json"
-=======
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.402/RuntimeIdentifierGraph.json"
->>>>>>> Stashed changes
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

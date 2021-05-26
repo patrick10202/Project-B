@@ -26,6 +26,8 @@
     "Surname": "Patrick",
     "Email": "Patrick",
     "Phone": "0612345678",
-    "Watchlist": null
+    "Watchlist": [
+      "De Beentjes van Sint Hildegard"
+    ]
   }
 ]

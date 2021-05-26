@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "Username": "Patrick",
+    "Email": null,
+    "MovieName": "De Beentjes van Sint Hildegard",
+    "SeatNumber": "01",
+    "TotalCost": 12.0
+  }
+]

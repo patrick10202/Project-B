@@ -462,6 +462,9 @@ public class Screen{
                     Console.WriteLine("Please input a valid seat number.");
                     ReserveringenScherm(movieindex);
                 }
+                if (Loginlist[accindex.Item2].Watchlist == null){
+                    Loginlist[accindex.Item2].Watchlist = new List<string>();
+                }
                 Loginlist[accindex.Item2].Watchlist.Add(Movielist[movieindex].Title);
                 File.WriteAllText(@"login.Json",JsonConvert.SerializeObject(Loginlist, Formatting.Indented));
 
@@ -851,8 +854,12 @@ public class Screen{
             
             case "9":
                 Console.Clear();
-                foreach (string item in Loginlist[accindex.Item2].Watchlist){
-                    Console.WriteLine(item);
+                if (Loginlist[accindex.Item2].Watchlist != null){
+                    foreach (string item in Loginlist[accindex.Item2].Watchlist){
+                        Console.WriteLine(item);
+                    }
+                } else {
+                    Console.WriteLine("You have not watched any movie yet");
                 }
                 Console.WriteLine("\npress enter to continue");
                 Console.ReadLine();
