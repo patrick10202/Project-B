@@ -493,9 +493,43 @@ public class Screen{
         else if (Userinput == "2"){
             Console.WriteLine("Please enter your email for the reservation:");
             string UserInput = Console.ReadLine();
+            Random rd = new Random();
+            int rand_num = rd.Next(0,1000);
+            Console.WriteLine($"All seats with an U are available, a seat for {Movielist[movieindex].Title} costs {Movielist[movieindex].BasePrice} Euros");
+            Console.WriteLine(seatString[movieindex].seats);
+            Console.WriteLine("Please choose your seat:");
+            var userinput = Console.ReadLine();
+            int userinputasint = 0;
+            try{
+                userinputasint = Convert.ToInt32(userinput);
+            }
+            catch{
+                Console.Clear();
+                Console.WriteLine("Please input a valid seat number.");
+                ReserveringenScherm(movieindex);
+            }
+            if (userinputasint >= 1 && userinputasint <= 30){
+                if (seatString[movieindex].seats.Contains(userinput)){
+                    seatString[movieindex].seats = seatString[movieindex].seats.Replace(userinput, "Taken");
+                }
+                else{
+                    Console.Clear();
+                    Console.WriteLine("Please input a valid seat number.");
+                    ReserveringenScherm(movieindex);
+                }
+                File.WriteAllText(@"seats.Json",JsonConvert.SerializeObject(seatString, Formatting.Indented));
+            }
+            else{
+                Console.Clear();
+                Console.WriteLine("Please input a valid seat number.");
+                ReserveringenScherm(movieindex);
+            }
             Reservation newReservation = new Reservation(){
                     Email = UserInput,
-                    MovieName = Movielist[movieindex].Title
+                    MovieName = Movielist[movieindex].Title,
+                    SeatNumber = userinput,
+                    TotalCost = Movielist[movieindex].BasePrice,
+                    ordernumber = rand_num,
                 };
             if (reservationdata == null){
                 reservationdata = new List<Reservation>();
@@ -505,12 +539,9 @@ public class Screen{
             File.WriteAllText(@"reservations.Json",serialisedreservationlist);
 
             Console.Clear();
-                Console.WriteLine("reservation succesful");
-                Random rd = new Random();
-                int rand_num = rd.Next(0,1000);
-                Console.WriteLine("reservation code =");
-                Console.WriteLine(rand_num);
-                MovieScreen();
+            Console.WriteLine("reservation succesful");
+            Console.WriteLine($"reservation code = {rand_num}");
+            MovieScreen();
         }
         else{
             Console.Clear();
