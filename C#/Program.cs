@@ -411,6 +411,234 @@ public class Screen{
             }
     }
 
+    static void Draaiendefilms(){
+        Console.WriteLine("----------------------------------------------------------------------");
+        Console.WriteLine("Reserve available movies");
+        Console.WriteLine("0: back\n1: filter on Genre\n2: filter on Language\n3: filter on time");
+        string seatInfo = File.ReadAllText(@"seats.json");
+        List<Seats> seatstring = JsonConvert.DeserializeObject<List<Seats>>(seatstring);
+        string UserInput = Console.ReadLine();
+        switch (UserInput){
+            case "0":
+                Console.Clear();
+                HomeScreen();
+                break;
+            case "1":
+                Console.Clear();
+                Console.WriteLine("----------------------------------------------------------------------");
+                Console.WriteLine("0: Back\n1: Action\n2: Thriller\n3: Adventure\n4: Comedy\n5: Fantasy");
+                Console.WriteLine("6: Horror\n7: Romance\n8: Drama");
+                string answergenre = Console.ReadLine();
+                int finalcount = 1;
+                //filter for genre
+                if (answergenre == "1") {
+                    Console.Clear();
+                    int counter = 1;
+                    foreach(var item in seatstring){
+                        string ret = item.Genre;
+                        if (ret == "Action"){
+                            Console.WriteLine($"{counter} Title: {item.Title}");
+                        }
+                        counter++;
+                    }
+                    finalcount = counter;
+                }    
+                if (answergenre == "2") {
+                    Console.Clear();
+                    int counter = 1;
+                    foreach(var item in seatstring){
+                        string ret = item.Genre;
+                        if (ret == "Thriller"){
+                            Console.WriteLine($"{counter} Title: {item.Title}");
+                        }
+                        counter++;
+                    }   
+                    finalcount = counter;
+                }
+                if (answergenre == "3") {
+                    Console.Clear();
+                    int counter = 1;
+                    foreach(var item in seatstring){
+                        string ret = item.Genre;
+                        if (ret == "Adventure")
+                            Console.WriteLine($"{counter} Title: {item.Title}");
+                        counter++;
+                    }
+                    finalcount = counter;
+                }
+                if (answergenre == "4") {
+                    Console.Clear();
+                    int counter = 1;
+                    foreach(var item in seatstring){
+                        string ret = item.Genre;
+                        if (ret == "Comedy")
+                            Console.WriteLine($"{counter} Title: {item.Title}");
+                        counter++;
+                    }
+                    finalcount = counter;
+                }  
+                if (answergenre == "5") {
+                    Console.Clear();
+                    int counter = 1;
+                    foreach(var item in seatstring){
+                        string ret = item.Genre;
+                        if (ret == "Fantasy")
+                            Console.WriteLine($"{counter} Title: {item.Title}");
+                        counter++;
+                    }
+                    finalcount = counter;
+                }  
+                if (answergenre == "6") {
+                    Console.Clear();
+                    int counter = 1;
+                    foreach(var item in seatstring){
+                        string ret = item.Genre;
+                        if (ret == "Horror")
+                            Console.WriteLine($"{counter} Title: {item.Title}");
+                        counter++;
+                    }
+                    finalcount = counter;
+                }  
+                if (answergenre == "7") {
+                    Console.Clear();
+                    int counter = 1;
+                    foreach(var item in seatstring){
+                        string ret = item.Genre;
+                        if (ret == "Romance")
+                            Console.WriteLine($"{counter} Title: {item.Title}");
+                        counter++;
+                    }
+                    finalcount = counter;
+                }  
+                if (answergenre == "8") {
+                    Console.Clear();
+                    int counter = 1;
+                    foreach(var item in seatstring){
+                        string ret = item.Genre;
+                        if (ret == "Drama")
+                            Console.WriteLine($"{counter} Title: {item.Title}");
+                        counter++;
+                    }
+                    finalcount = counter;
+                }
+                if (answergenre.Length != 1 || Convert.ToChar(answergenre) < '0' || Convert.ToChar(answergenre) > '8'){
+                    Console.Clear();
+                    Console.WriteLine("Please enter a valid number.");
+                    Draaiendefilms();
+                }
+                Console.WriteLine("Type a number of a movie to reserve that movie or press 0 to go back");
+                UserInput = Console.ReadLine();
+                if (UserInput == "0"){
+                    Console.Clear();
+                    Draaiendefilms();
+                }
+                else{
+                    try{
+                        int UsrInp = Convert.ToInt32(UserInput);
+                        Console.Clear();
+                        if (UsrInp >= 1 && UsrInp <= finalcount)
+                        ReserveringenScherm(UsrInp - 1);
+                    }
+                    catch{
+                        Console.WriteLine("Please input a valid number");
+                    }
+                }
+                break;
+            
+            case "2":
+                Console.Clear();
+                Console.WriteLine("----------------------------------------------------------------------");
+                Console.WriteLine("0: Back\n1: Dutch\n2: English");
+                string answerLanguage = Console.ReadLine();
+                //filter for Language
+                if (answerLanguage == "1") {
+                    Console.Clear();
+                    int counter = 1;
+                    foreach(var item in seatstring){
+                        string ret = item.Language;
+                        if (ret == "Dutch")
+                            Console.WriteLine($"{counter} Title: {item.Title}");
+                        counter++;
+                    }   
+                }
+                if (answerLanguage == "2") {
+                    Console.Clear();
+                    int counter = 1;
+                    foreach(var item in seatstring){
+                        string ret = item.Language;
+                        if (ret == "English")
+                            Console.WriteLine($"{counter} Title: {item.Title}");
+                        counter++;  
+                    }  
+                }
+                break;
+            
+            case "3":
+                Console.Clear();
+                Console.WriteLine("----------------------------------------------------------------------");
+                Console.WriteLine("0: Back\n1: 1 hour\n2: 1.5 hours\n3: 2 hours\n4: 2.5 hours\n5: 3 hours");
+                string answerPlayTime = Console.ReadLine();
+                //filter for PlayTime
+                if (answerPlayTime == "1") {
+                    Console.Clear();
+                    int counter = 1;
+                    foreach(var item in seatstring){
+                        string ret = item.PlayTime;
+                        if (ret == "1 hour")
+                            Console.WriteLine($"{counter}Title: {item.Title}");
+                        counter++;
+                    }   
+                }
+                if (answerPlayTime == "2") {
+                    Console.Clear();
+                    int counter = 1;
+                    foreach(var item in seatstring){
+                        string ret = item.PlayTime;
+                        if (ret == "1.5 hours")
+                            Console.WriteLine($"{counter} Title: {item.Title}");
+                        counter++;
+                    }
+                }
+                if (answerPlayTime == "3") {
+                    Console.Clear();
+                    int counter = 1;
+                    foreach(var item in seatstring){
+                        string ret = item.PlayTime;
+                        if (ret == "2 hours")
+                            Console.WriteLine($"{counter} Title: {item.Title}");
+                        counter++;
+                    }
+                }
+                if (answerPlayTime == "4") {
+                    Console.Clear();
+                    int counter = 1;
+                    foreach(var item in seatstring){
+                        string ret = item.PlayTime;
+                        if (ret == "2.5 hours")
+                            Console.WriteLine($"{counter} Title: {item.Title}");
+                        counter++;
+                    }
+                }
+                if (answerPlayTime == "5") {
+                    Console.Clear();
+                    int counter = 1;
+                    foreach(var item in seatstring){
+                        string ret = item.PlayTime;
+                        if (ret == "3 hours")
+                            Console.WriteLine($"{counter} Title: {item.Title}");
+                        counter++;
+                    } 
+                }      
+                break;
+                
+            default:
+                Console.Clear();
+                Console.WriteLine("Please enter a valid number.");
+                Draaiendefilms();
+                break;
+            }
+    }
+
     static void ReserveringenScherm(int movieindex){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Reservation screen");
