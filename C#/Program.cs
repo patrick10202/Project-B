@@ -589,21 +589,22 @@ public class Screen{
                 break;
             }
     }
-    static void Seats(){
+    static void Info(){
         Console.Clear();
-        Console.WriteLine("Check Seats prices");
-        Console.WriteLine("Normal Seats         9,50 euro");
-        Console.WriteLine("Love Seats           10,50 euro");
-        Console.WriteLine("Premium Seats        13,50 euro");
+        Console.WriteLine("Phonenumber: 010 1234567");
+        Console.WriteLine("Location: Coolsingel 2");
+        Console.WriteLine("Mail: Cinema@gmail.com");
+        Console.WriteLine("if there is a Problem just give us a call");
         Console.WriteLine("0 = back to Main menu");
         string Usernameseats = Console.ReadLine();
         if (Usernameseats == "0"){
+            Console.Clear();
             HomeScreen();}
     }
     static void InfoScreen(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Cinema info");
-        Console.WriteLine("0: back\n1: Seats");
+        Console.WriteLine("0: back\n1: Information Cinema");
         string UserInput = Console.ReadLine();
         switch (UserInput){
             case "0":
@@ -613,7 +614,7 @@ public class Screen{
 
             case "1":
                 Console.Clear();
-                Seats();
+                Info();
                 break;
             default:
             Console.Clear();
