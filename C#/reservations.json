@@ -1,9 +1,26 @@
 [
   {
-    "Username": "Patrick",
+    "Username": "test",
     "Email": null,
-    "MovieName": "De Beentjes van Sint Hildegard",
-    "SeatNumber": "01",
-    "TotalCost": 12.0
+    "MovieName": "Balaji: A tale of kings",
+    "SeatNumber": "02",
+    "TotalCost": 9.0,
+    "ordernumber": 0
+  },
+  {
+    "Username": null,
+    "Email": "test@gmail.com",
+    "MovieName": "Balaji: A tale of kings",
+    "SeatNumber": null,
+    "TotalCost": 0.0,
+    "ordernumber": 0
+  },
+  {
+    "Username": null,
+    "Email": "gljelgj",
+    "MovieName": "Balaji: A tale of kings",
+    "SeatNumber": null,
+    "TotalCost": 0.0,
+    "ordernumber": 0
   }
 ]

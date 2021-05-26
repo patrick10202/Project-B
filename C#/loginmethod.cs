@@ -26,6 +26,7 @@ namespace methods
         public string MovieName {get;set;}
         public string SeatNumber {get;set;}
         public double TotalCost {get;set;}
+        public int ordernumber {get;set;}
 
     }
 
