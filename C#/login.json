@@ -7,18 +7,6 @@
     "Email": "testemail@gmail.com",
     "Phone": "0612345678",
     "Watchlist": [
-      "Balaji: A tale of kings",
-      "Balaji: A tale of kings",
-      "Balaji: A tale of kings",
-      "Justice Leauge",
-      "Toy Story 3",
-      "Balaji: A tale of kings",
-      "Balaji: A tale of kings",
-      "Balaji: A tale of kings",
-      "Balaji: A tale of kings",
-      "Balaji: A tale of kings",
-      "Balaji: A tale of kings",
-      "Balaji: A tale of kings",
       "Balaji: A tale of kings"
     ]
   },
@@ -28,6 +16,15 @@
     "Name": "testnewname",
     "Surname": "testnewsurname",
     "Email": "testnewemail@gmail.com",
+    "Phone": "0612345678",
+    "Watchlist": null
+  },
+  {
+    "Username": "Patrick",
+    "Password": "Patrick",
+    "Name": "Patrick",
+    "Surname": "Patrick",
+    "Email": "Patrick",
     "Phone": "0612345678",
     "Watchlist": null
   }

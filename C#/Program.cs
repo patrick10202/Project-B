@@ -800,7 +800,7 @@ public class Screen{
                 List<string> nummerlist = new List<string>();
                 foreach (Reservation reservation in reservationlist){
                     if (reservation.Username == Loginlist[accindex.Item2].Username){
-                        Console.WriteLine($"Reservation number: {ordernummer} {reservation.MovieName}");
+                        Console.WriteLine($"Reservation number: {ordernummer} Movie: '{reservation.MovieName}' Seatnumber: {reservation.SeatNumber}");
                         reserved = true;
                         nummerlist.Add(ordernummer.ToString());
                     }
