@@ -52,16 +52,11 @@
     ]
   },
   "packageFolders": {
-<<<<<<< Updated upstream
     "C:\\Users\\patri\\.nuget\\packages\\": {}
-=======
-    "/Users/stephanvandenberg/.nuget/packages/": {}
->>>>>>> Stashed changes
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< Updated upstream
       "projectUniqueName": "C:\\Users\\patri\\Documents\\GitHub\\Project-B\\C#\\C#.csproj",
       "projectName": "C#",
       "projectPath": "C:\\Users\\patri\\Documents\\GitHub\\Project-B\\C#\\C#.csproj",
@@ -70,16 +65,6 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\patri\\AppData\\Roaming\\NuGet\\NuGet.Config"
-=======
-      "projectUniqueName": "/Users/stephanvandenberg/Documents/GitHub/Project-B/C#/C#.csproj",
-      "projectName": "C#",
-      "projectPath": "/Users/stephanvandenberg/Documents/GitHub/Project-B/C#/C#.csproj",
-      "packagesPath": "/Users/stephanvandenberg/.nuget/packages/",
-      "outputPath": "/Users/stephanvandenberg/Documents/GitHub/Project-B/C#/obj/",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "/Users/stephanvandenberg/.nuget/NuGet/NuGet.Config"
->>>>>>> Stashed changes
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -121,12 +106,16 @@
             "privateAssets": "all"
           }
         },
-<<<<<<< Updated upstream
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.405\\RuntimeIdentifierGraph.json"
-=======
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.402/RuntimeIdentifierGraph.json"
->>>>>>> Stashed changes
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\patri\\Documents\\GitHub\\Project-B\\C#\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
