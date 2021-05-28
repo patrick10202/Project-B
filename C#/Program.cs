@@ -51,13 +51,17 @@ public class Screen{
                 break;
             case "3":
                 Console.Clear();
-                FoodAndDrinks();
+                Draaiendefilms();
                 break;
             case "4":
                 Console.Clear();
-                ComingSoonScreen();
+                FoodAndDrinks();
                 break;
             case "5":
+                Console.Clear();
+                ComingSoonScreen();
+                break;
+            case "6":
                 Console.Clear();
                 InfoScreen();
                 break;
@@ -273,8 +277,10 @@ public class Screen{
                     try{
                         int UsrInp = Convert.ToInt32(UserInput);
                         Console.Clear();
-                        if (UsrInp >= 1 && UsrInp <= finalcount)
-                        ReserveringenScherm(UsrInp - 1);
+                        if (UsrInp >= 1 && UsrInp <= finalcount){
+                            /*nieuw scherm aanmaken voor films die index UsrInp - 1 gebruikt.*/
+                            ReserveringenScherm(UsrInp - 1);
+                        }
                     }
                     catch{
                         Console.WriteLine("Please input a valid number");
@@ -416,7 +422,7 @@ public class Screen{
         Console.WriteLine("Reserve available movies");
         Console.WriteLine("0: back\n1: filter on Genre\n2: filter on Language\n3: filter on time");
         string seatInfo = File.ReadAllText(@"seats.json");
-        List<Seats> seatstring = JsonConvert.DeserializeObject<List<Seats>>(seatstring);
+        List<Seats> seatstring = JsonConvert.DeserializeObject<List<Seats>>(seatInfo);
         string UserInput = Console.ReadLine();
         switch (UserInput){
             case "0":
@@ -550,6 +556,7 @@ public class Screen{
                 Console.WriteLine("----------------------------------------------------------------------");
                 Console.WriteLine("0: Back\n1: Dutch\n2: English");
                 string answerLanguage = Console.ReadLine();
+                int finalcount1 = 1;
                 //filter for Language
                 if (answerLanguage == "1") {
                     Console.Clear();
@@ -560,6 +567,7 @@ public class Screen{
                             Console.WriteLine($"{counter} Title: {item.Title}");
                         counter++;
                     }   
+                    finalcount1 = counter;
                 }
                 if (answerLanguage == "2") {
                     Console.Clear();
@@ -570,6 +578,29 @@ public class Screen{
                             Console.WriteLine($"{counter} Title: {item.Title}");
                         counter++;  
                     }  
+                    finalcount1 = counter;
+                }
+                if (answerLanguage.Length != 1 || Convert.ToChar(answerLanguage) < '0' || Convert.ToChar(answerLanguage) > '2'){
+                    Console.Clear();
+                    Console.WriteLine("Please enter a valid number.");
+                    Draaiendefilms();
+                }
+                Console.WriteLine("Type a number of a movie to reserve that movie or press 0 to go back");
+                UserInput = Console.ReadLine();
+                if (UserInput == "0"){
+                    Console.Clear();
+                    Draaiendefilms();
+                }
+                else{
+                    try{
+                        int UsrInp = Convert.ToInt32(UserInput);
+                        Console.Clear();
+                        if (UsrInp >= 1 && UsrInp <= finalcount1)
+                        ReserveringenScherm(UsrInp - 1);
+                    }
+                    catch{
+                        Console.WriteLine("Please input a valid number");
+                    }
                 }
                 break;
             
@@ -578,6 +609,7 @@ public class Screen{
                 Console.WriteLine("----------------------------------------------------------------------");
                 Console.WriteLine("0: Back\n1: 1 hour\n2: 1.5 hours\n3: 2 hours\n4: 2.5 hours\n5: 3 hours");
                 string answerPlayTime = Console.ReadLine();
+                int finalcount2 = 1;
                 //filter for PlayTime
                 if (answerPlayTime == "1") {
                     Console.Clear();
@@ -588,6 +620,7 @@ public class Screen{
                             Console.WriteLine($"{counter}Title: {item.Title}");
                         counter++;
                     }   
+                    finalcount2 = counter;
                 }
                 if (answerPlayTime == "2") {
                     Console.Clear();
@@ -598,6 +631,7 @@ public class Screen{
                             Console.WriteLine($"{counter} Title: {item.Title}");
                         counter++;
                     }
+                    finalcount2 = counter;
                 }
                 if (answerPlayTime == "3") {
                     Console.Clear();
@@ -608,6 +642,7 @@ public class Screen{
                             Console.WriteLine($"{counter} Title: {item.Title}");
                         counter++;
                     }
+                    finalcount2 = counter;
                 }
                 if (answerPlayTime == "4") {
                     Console.Clear();
@@ -618,6 +653,7 @@ public class Screen{
                             Console.WriteLine($"{counter} Title: {item.Title}");
                         counter++;
                     }
+                    finalcount2 = counter;
                 }
                 if (answerPlayTime == "5") {
                     Console.Clear();
@@ -628,7 +664,30 @@ public class Screen{
                             Console.WriteLine($"{counter} Title: {item.Title}");
                         counter++;
                     } 
-                }      
+                    finalcount2 = counter;
+                }
+                if (answerPlayTime.Length != 1 || Convert.ToChar(answerPlayTime) < '0' || Convert.ToChar(answerPlayTime) > '5'){
+                    Console.Clear();
+                    Console.WriteLine("Please enter a valid number.");
+                    Draaiendefilms();
+                }
+                Console.WriteLine("Type a number of a movie to reserve that movie or press 0 to go back");
+                UserInput = Console.ReadLine();
+                if (UserInput == "0"){
+                    Console.Clear();
+                    Draaiendefilms();
+                }
+                else{
+                    try{
+                        int UsrInp = Convert.ToInt32(UserInput);
+                        Console.Clear();
+                        if (UsrInp >= 1 && UsrInp <= finalcount2)
+                        ReserveringenScherm(UsrInp - 1);
+                    }
+                    catch{
+                        Console.WriteLine("Please input a valid number");
+                    }
+                }   
                 break;
                 
             default:
@@ -1462,7 +1521,7 @@ public class Screen{
 public class Phrases{
     public static string inputPlease(){
         Console.WriteLine("Please input a number to see the following menus:\n");
-        Console.WriteLine("1: Login\n2: movies\n3: Food & Drinks\n4: coming soon\n5: info\n");
+        Console.WriteLine("1: Login\n2: view all movies\n3: reserve a movie\n4: Food & Drinks\n5: coming soon\n6: info\n");
         
         Console.WriteLine("to quit, enter 0");
         string UserInput = Console.ReadLine();
