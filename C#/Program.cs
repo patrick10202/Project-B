@@ -410,7 +410,7 @@ public class Screen{
                 break;
             }
     }
-
+    /*
     static void Draaiendefilms(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Reserve available movies");
@@ -637,7 +637,7 @@ public class Screen{
                 Draaiendefilms();
                 break;
             }
-    }
+    }*/
 
     static void ReserveringenScherm(int movieindex){
         Console.WriteLine("----------------------------------------------------------------------");
@@ -651,6 +651,36 @@ public class Screen{
         string seatinfo = File.ReadAllText(@"seats.json");
         List<Seats> seatString = JsonConvert.DeserializeObject<List<Seats>>(seatinfo);
         
+        double Cost = Movielist[movieindex].BasePrice;
+        Console.WriteLine("Please choose a timeslot:");
+        int TempCount = 0;
+        foreach (var movie in seatString){
+            if (movie.Title == Movielist[movieindex].Title){
+                Console.WriteLine($"{TempCount}: {movie.Timeslot}");
+            }
+            TempCount++;
+        }
+        bool isvalid = false;
+        int ChosenSeatsIndex = -1;
+        while (!isvalid){
+            string choice = Console.ReadLine();
+            try {
+                ChosenSeatsIndex = Convert.ToInt32(choice);
+                if (seatString[ChosenSeatsIndex].Title == Movielist[movieindex].Title){
+                    isvalid = true;
+                } else {
+                    Convert.ToInt32("lmao u kresh");
+                }
+                
+            } catch {
+                Console.WriteLine("Please enter a valid number");
+            }
+        }
+
+
+        Console.Clear();
+        Console.WriteLine($"You have chosen {seatString[ChosenSeatsIndex].Timeslot} for the movie: {seatString[ChosenSeatsIndex].Title}");
+        Console.WriteLine($"A seat for this movie costs {Cost} euros");
         Console.WriteLine("If you have an account press 1, else press 2");
         string Userinput = Console.ReadLine();
         if (Userinput == "1"){
@@ -661,34 +691,37 @@ public class Screen{
             Tuple<bool, int> accindex = login.tryLogin(usernameinput, passwordinput);
             if (accindex.Item1 == true){
                 Console.Clear();
-                Console.WriteLine($"All seats with an U are available, a seat for {Movielist[movieindex].Title} costs {Movielist[movieindex].BasePrice} Euros");
-                Console.WriteLine(seatString[movieindex].seats);
+                Console.WriteLine($"All seats with an U are available, a seat for {seatString[ChosenSeatsIndex].Title} costs {Movielist[movieindex].BasePrice} Euros");
+                Console.WriteLine(seatString[ChosenSeatsIndex].seats);
                 Console.WriteLine("Please choose your seat:");
                 var userinput = Console.ReadLine();
                 int userinputasint = 0;
-                try{
-                    userinputasint = Convert.ToInt32(userinput);
-                }
-                catch{
-                    Console.Clear();
-                    Console.WriteLine("Please input a valid seat number.");
-                    ReserveringenScherm(movieindex);
-                }
-                if (userinputasint >= 1 && userinputasint <= 30){
-                    if (seatString[movieindex].seats.Contains(userinput)){
-                        seatString[movieindex].seats = seatString[movieindex].seats.Replace(userinput, "Taken");
+                isvalid = false;
+                while (!isvalid){
+                    try{
+                        userinputasint = Convert.ToInt32(userinput);
+                        
+                        if (userinputasint >= 1 && userinputasint <= 30){
+                            if (seatString[movieindex].seats.Contains(userinput)){
+                                seatString[movieindex].seats = seatString[movieindex].seats.Replace(userinput, "Taken");
+                                isvalid = true;
+                            }
+                            else{
+                                Console.Clear();
+                                Console.WriteLine("Please input a valid seat number.");
+                            }
+                            File.WriteAllText(@"seats.Json",JsonConvert.SerializeObject(seatString, Formatting.Indented));
+                        }
+                        else{
+                            Console.Clear();
+                            Console.WriteLine("Please input a valid seat number.");
+                        }
                     }
-                    else{
+                    catch{
                         Console.Clear();
                         Console.WriteLine("Please input a valid seat number.");
-                        ReserveringenScherm(movieindex);
                     }
-                    File.WriteAllText(@"seats.Json",JsonConvert.SerializeObject(seatString, Formatting.Indented));
-                }
-                else{
-                    Console.Clear();
-                    Console.WriteLine("Please input a valid seat number.");
-                    ReserveringenScherm(movieindex);
+                    
                 }
                 if (Loginlist[accindex.Item2].Watchlist == null){
                     Loginlist[accindex.Item2].Watchlist = new List<string>();
@@ -700,7 +733,8 @@ public class Screen{
                     Username = usernameinput,
                     MovieName = Movielist[movieindex].Title,
                     SeatNumber = userinput,
-                    TotalCost = Movielist[movieindex].BasePrice
+                    TotalCost = Movielist[movieindex].BasePrice,
+                    Timeslot = seatString[ChosenSeatsIndex].Timeslot,
                 };
                 if (reservationdata == null){
                     reservationdata = new List<Reservation>();
@@ -723,34 +757,37 @@ public class Screen{
             string UserInput = Console.ReadLine();
             Random rd = new Random();
             int rand_num = rd.Next(0,1000);
-            Console.WriteLine($"All seats with an U are available, a seat for {Movielist[movieindex].Title} costs {Movielist[movieindex].BasePrice} Euros");
-            Console.WriteLine(seatString[movieindex].seats);
+            Console.WriteLine($"All seats with an U are available, a seat for {seatString[ChosenSeatsIndex].Title} costs {Movielist[movieindex].BasePrice} Euros");
+            Console.WriteLine(seatString[ChosenSeatsIndex].seats);
             Console.WriteLine("Please choose your seat:");
             var userinput = Console.ReadLine();
             int userinputasint = 0;
-            try{
-                userinputasint = Convert.ToInt32(userinput);
-            }
-            catch{
-                Console.Clear();
-                Console.WriteLine("Please input a valid seat number.");
-                ReserveringenScherm(movieindex);
-            }
-            if (userinputasint >= 1 && userinputasint <= 30){
-                if (seatString[movieindex].seats.Contains(userinput)){
-                    seatString[movieindex].seats = seatString[movieindex].seats.Replace(userinput, "Taken");
+            isvalid = false;
+            while (!isvalid){
+                try{
+                    userinputasint = Convert.ToInt32(userinput);
+                    
+                    if (userinputasint >= 1 && userinputasint <= 30){
+                        if (seatString[movieindex].seats.Contains(userinput)){
+                            seatString[movieindex].seats = seatString[movieindex].seats.Replace(userinput, "Taken");
+                            isvalid = true;
+                        }
+                        else{
+                            Console.Clear();
+                            Console.WriteLine("Please input a valid seat number.");
+                        }
+                        File.WriteAllText(@"seats.Json",JsonConvert.SerializeObject(seatString, Formatting.Indented));
+                    }
+                    else{
+                        Console.Clear();
+                        Console.WriteLine("Please input a valid seat number.");
+                    }
                 }
-                else{
+                catch{
                     Console.Clear();
                     Console.WriteLine("Please input a valid seat number.");
-                    ReserveringenScherm(movieindex);
                 }
-                File.WriteAllText(@"seats.Json",JsonConvert.SerializeObject(seatString, Formatting.Indented));
-            }
-            else{
-                Console.Clear();
-                Console.WriteLine("Please input a valid seat number.");
-                ReserveringenScherm(movieindex);
+                
             }
             Reservation newReservation = new Reservation(){
                     Email = UserInput,
@@ -758,6 +795,7 @@ public class Screen{
                     SeatNumber = userinput,
                     TotalCost = Movielist[movieindex].BasePrice,
                     ordernumber = rand_num,
+                    Timeslot = seatString[ChosenSeatsIndex].Timeslot,
                 };
             if (reservationdata == null){
                 reservationdata = new List<Reservation>();
@@ -897,7 +935,7 @@ public class Screen{
     static void AdminHome(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Admin Main Menu");
-        Console.WriteLine("0: Admin logoff\n1: Movies\n2: Reviews \n3: Total Revenue");
+        Console.WriteLine("0: Admin logoff\n1: Movies\n2: Reviews \n3: Total Revenue\n4: Add movie show");
         string UserInput = Console.ReadLine();
         switch (UserInput){
             case "0":
@@ -934,6 +972,54 @@ public class Screen{
                 AdminHome();
                 break;
 
+            case "4":
+                Console.Clear();
+                Console.WriteLine("Add movie show: \nPlease choose a movie title to add");
+                string movieInfo = File.ReadAllText(@"movies.json");
+                List<MovieClass> Movielist = JsonConvert.DeserializeObject<List<MovieClass>>(movieInfo);
+                
+                string seatinfo = File.ReadAllText(@"seats.json");
+                List<Seats> seatString = JsonConvert.DeserializeObject<List<Seats>>(seatinfo);
+
+                int choice = 0;
+                foreach (var movie in Movielist){
+                    Console.WriteLine($"{choice++}: {movie.Title}");
+                }
+                bool isvalid = false;
+                while (!isvalid){
+                    string UserChoice = Console.ReadLine();
+                    try {
+                        choice = Convert.ToInt32(UserChoice);
+                        isvalid = true;
+                    } catch {
+                        Console.WriteLine("Please enter valid number");
+                    }
+                }
+                Console.WriteLine($"you have chosen {Movielist[choice].Title}");
+                Console.WriteLine("currently, this movie has these timeslots available to customers:");
+                foreach(var showing in seatString){
+                    if (showing.Title == Movielist[choice].Title){
+                        Console.WriteLine(showing.Timeslot);
+                    }
+                }
+                Console.WriteLine("Please enter a Valid Timeslot value (e.g. 20:00 for 8 PM)");
+                string chosenTimeSlot = Console.ReadLine();
+                Seats newSeat = new Seats {
+                    Title = Movielist[choice].Title,
+                    Timeslot = chosenTimeSlot,
+                    Genre = Movielist[choice].Genre,
+                    seats = "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n",
+                };
+                if (seatString == null){
+                    seatString = new List<Seats>();
+                }
+                seatString.Add(newSeat);
+                File.WriteAllText(@"seats.Json",JsonConvert.SerializeObject(seatString, Formatting.Indented));
+                Console.WriteLine("Movie show added!");
+
+
+                AdminHome();
+                break;
             default:
                 Console.Clear();
                 Console.WriteLine("Please enter a valid number.");

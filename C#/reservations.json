@@ -5,7 +5,8 @@
     "MovieName": "Balaji: A tale of kings",
     "SeatNumber": "02",
     "TotalCost": 9.0,
-    "ordernumber": 0
+    "ordernumber": 0,
+    "Timeslot": "20:00"
   },
   {
     "Username": null,
@@ -13,7 +14,8 @@
     "MovieName": "Balaji: A tale of kings",
     "SeatNumber": null,
     "TotalCost": 0.0,
-    "ordernumber": 0
+    "ordernumber": 0,
+    "Timeslot": "20:00"
   },
   {
     "Username": null,
@@ -21,7 +23,8 @@
     "MovieName": "Balaji: A tale of kings",
     "SeatNumber": null,
     "TotalCost": 0.0,
-    "ordernumber": 0
+    "ordernumber": 0,
+    "Timeslot": "20:00"
   },
   {
     "Username": null,
@@ -29,7 +32,8 @@
     "MovieName": "Justice Leauge",
     "SeatNumber": null,
     "TotalCost": 0.0,
-    "ordernumber": 0
+    "ordernumber": 0,
+    "Timeslot": "20:00"
   },
   {
     "Username": null,
@@ -37,7 +41,8 @@
     "MovieName": "21 Bridges",
     "SeatNumber": null,
     "TotalCost": 0.0,
-    "ordernumber": 0
+    "ordernumber": 0,
+    "Timeslot": "20:00"
   },
   {
     "Username": null,
@@ -45,7 +50,8 @@
     "MovieName": "Balaji: A tale of kings",
     "SeatNumber": null,
     "TotalCost": 0.0,
-    "ordernumber": 0
+    "ordernumber": 0,
+    "Timeslot": "20:00"
   },
   {
     "Username": null,
@@ -53,7 +59,8 @@
     "MovieName": "Balaji: A tale of kings",
     "SeatNumber": null,
     "TotalCost": 0.0,
-    "ordernumber": 0
+    "ordernumber": 0,
+    "Timeslot": "20:00"
   },
   {
     "Username": null,
@@ -61,7 +68,8 @@
     "MovieName": "Balaji: A tale of kings",
     "SeatNumber": null,
     "TotalCost": 0.0,
-    "ordernumber": 0
+    "ordernumber": 0,
+    "Timeslot": "20:00"
   },
   {
     "Username": null,
@@ -69,7 +77,8 @@
     "MovieName": "Balaji: A tale of kings",
     "SeatNumber": null,
     "TotalCost": 0.0,
-    "ordernumber": 0
+    "ordernumber": 0,
+    "Timeslot": "20:00"
   },
   {
     "Username": null,
@@ -77,7 +86,8 @@
     "MovieName": "Balaji: A tale of kings",
     "SeatNumber": "0",
     "TotalCost": 0.0,
-    "ordernumber": 628
+    "ordernumber": 628,
+    "Timeslot": "20:00"
   },
   {
     "Username": null,
@@ -85,6 +95,70 @@
     "MovieName": "Balaji: A tale of kings",
     "SeatNumber": "03",
     "TotalCost": 9.0,
-    "ordernumber": 829
+    "ordernumber": 829,
+    "Timeslot": "20:00"
+  },
+  {
+    "Username": "test",
+    "Email": null,
+    "MovieName": "Toy Story 3",
+    "SeatNumber": "01",
+    "TotalCost": 10.0,
+    "ordernumber": 0,
+    "Timeslot": "20:00"
+  },
+  {
+    "Username": "test",
+    "Email": null,
+    "MovieName": "De Oost",
+    "SeatNumber": "10",
+    "TotalCost": 12.0,
+    "ordernumber": 0,
+    "Timeslot": "20:00"
+  },
+  {
+    "Username": null,
+    "Email": "lmao fuku",
+    "MovieName": "American Assassin",
+    "SeatNumber": "30",
+    "TotalCost": 10.0,
+    "ordernumber": 42,
+    "Timeslot": "20:00"
+  },
+  {
+    "Username": "test",
+    "Email": null,
+    "MovieName": "Balaji: A tale of kings",
+    "SeatNumber": "30",
+    "TotalCost": 9.0,
+    "ordernumber": 0,
+    "Timeslot": "20:00"
+  },
+  {
+    "Username": "test",
+    "Email": null,
+    "MovieName": "Balaji: A tale of kings",
+    "SeatNumber": "21",
+    "TotalCost": 9.0,
+    "ordernumber": 0,
+    "Timeslot": "20:00"
+  },
+  {
+    "Username": null,
+    "Email": "sadf",
+    "MovieName": "Balaji: A tale of kings",
+    "SeatNumber": "20",
+    "TotalCost": 9.0,
+    "ordernumber": 529,
+    "Timeslot": "18:00"
+  },
+  {
+    "Username": null,
+    "Email": "asdf",
+    "MovieName": "Balaji: A tale of kings",
+    "SeatNumber": "17",
+    "TotalCost": 9.0,
+    "ordernumber": 567,
+    "Timeslot": "20:00"
   }
 ]

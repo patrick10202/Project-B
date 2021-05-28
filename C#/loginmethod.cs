@@ -27,7 +27,8 @@ namespace methods
         public string SeatNumber {get;set;}
         public double TotalCost {get;set;}
         public int ordernumber {get;set;}
-{
+        public string Timeslot {get;set;}
+
     }
 
     public class Seats{
