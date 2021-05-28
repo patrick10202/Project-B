@@ -2,86 +2,169 @@
   {
     "Title": "Balaji: A tale of kings",
     "Genre": "Action",
-    "seats": "TakenU TakenU TakenU 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n"
+    "Language": null,
+    "PlayTime": "3 Hours",
+    "seats": "TakenU TakenU TakenU TakenU 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n",
+    "Timeslot": null
   },
   {
     "Title": "Justice Leauge",
-    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n"
+    "Genre": "Action",
+    "Language": null,
+    "PlayTime": null,
+    "seats": "TakenU 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n",
+    "Timeslot": null
   },
   {
     "Title": "Tenet",
-    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n"
+    "Genre": "Thriller",
+    "Language": null,
+    "PlayTime": null,
+    "seats": "TakenU 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n",
+    "Timeslot": null
   },
   {
     "Title": "American Assassin",
-    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n"
+    "Genre": null,
+    "Language": null,
+    "PlayTime": null,
+    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n",
+    "Timeslot": null
   },
   {
     "Title": "21 Bridges",
-    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n"
+    "Genre": null,
+    "Language": null,
+    "PlayTime": null,
+    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n",
+    "Timeslot": null
   },
   {
     "Title": "Harry Potter and the Philosopher's Stone",
-    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n"
+    "Genre": null,
+    "Language": null,
+    "PlayTime": null,
+    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n",
+    "Timeslot": null
   },
   {
     "Title": "Toy Story 3",
-    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n"
+    "Genre": null,
+    "Language": null,
+    "PlayTime": null,
+    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n",
+    "Timeslot": null
   },
   {
     "Title": "Scooby!",
-    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n"
+    "Genre": null,
+    "Language": null,
+    "PlayTime": null,
+    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n",
+    "Timeslot": null
   },
   {
     "Title": "Pirates of the Caribbean: the Curse of the Black Pearl",
-    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n"
+    "Genre": null,
+    "Language": null,
+    "PlayTime": null,
+    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n",
+    "Timeslot": null
   },
   {
     "Title": "Ferry",
-    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n"
+    "Genre": null,
+    "Language": null,
+    "PlayTime": null,
+    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n",
+    "Timeslot": null
   },
   {
     "Title": "De Oost",
-    "seats": "01U 02U 03U 04U TakenU 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n"
+    "Genre": null,
+    "Language": null,
+    "PlayTime": null,
+    "seats": "01U 02U 03U 04U TakenU 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n",
+    "Timeslot": null
   },
   {
     "Title": "De Beentjes van Sint Hildegard",
-    "seats": "TakenU 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n"
+    "Genre": null,
+    "Language": null,
+    "PlayTime": null,
+    "seats": "TakenU 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n",
+    "Timeslot": null
   },
   {
     "Title": "After",
-    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n"
+    "Genre": null,
+    "Language": null,
+    "PlayTime": null,
+    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n",
+    "Timeslot": null
   },
   {
     "Title": "Ready Player One",
-    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n"
+    "Genre": null,
+    "Language": null,
+    "PlayTime": null,
+    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n",
+    "Timeslot": null
   },
   {
     "Title": "No Escape",
-    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n"
+    "Genre": null,
+    "Language": null,
+    "PlayTime": null,
+    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n",
+    "Timeslot": null
   },
   {
     "Title": "Overlord",
-    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n"
+    "Genre": null,
+    "Language": null,
+    "PlayTime": null,
+    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n",
+    "Timeslot": null
   },
   {
     "Title": "The Nun",
-    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n"
+    "Genre": null,
+    "Language": null,
+    "PlayTime": null,
+    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n",
+    "Timeslot": null
   },
   {
     "Title": "Crawl",
-    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n"
+    "Genre": null,
+    "Language": null,
+    "PlayTime": null,
+    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n",
+    "Timeslot": null
   },
   {
     "Title": "Honest Thief",
-    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n"
+    "Genre": null,
+    "Language": null,
+    "PlayTime": null,
+    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n",
+    "Timeslot": null
   },
   {
     "Title": "The Little Things",
-    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n"
+    "Genre": null,
+    "Language": null,
+    "PlayTime": null,
+    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n",
+    "Timeslot": null
   },
   {
     "Title": "21 Bridges",
-    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n"
+    "Genre": null,
+    "Language": null,
+    "PlayTime": null,
+    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n",
+    "Timeslot": null
   }
 ]

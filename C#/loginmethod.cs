@@ -27,12 +27,13 @@ namespace methods
         public string SeatNumber {get;set;}
         public double TotalCost {get;set;}
         public int ordernumber {get;set;}
-{
     }
 
     public class Seats{
         public string Title {get;set;}
         public string Genre {get;set;}
+        public string Language {get;set;}
+        public string PlayTime {get; set;}
         public string seats {get;set;}
         public string Timeslot {get;set;}
     }
