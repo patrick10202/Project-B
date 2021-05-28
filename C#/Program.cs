@@ -416,7 +416,7 @@ public class Screen{
                 break;
             }
     }
-    /*
+    
     static void Draaiendefilms(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Reserve available movies");
@@ -696,7 +696,7 @@ public class Screen{
                 Draaiendefilms();
                 break;
             }
-    }*/
+    }
 
     static void ReserveringenScherm(int movieindex){
         Console.WriteLine("----------------------------------------------------------------------");
@@ -1067,6 +1067,8 @@ public class Screen{
                     Title = Movielist[choice].Title,
                     Timeslot = chosenTimeSlot,
                     Genre = Movielist[choice].Genre,
+                    Language = Movielist[choice].Language,
+                    PlayTime = Movielist[choice].PlayTime,
                     seats = "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n",
                 };
                 if (seatString == null){

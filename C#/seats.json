@@ -3,8 +3,8 @@
     "Title": "Balaji: A tale of kings",
     "Genre": "Action",
     "Language": null,
-    "PlayTime": "3 hours",
-    "seats": "TakenU TakenU TakenU TakenU 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n",
+    "PlayTime": null,
+    "seats": "TakenU TakenU TakenU TakenU 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U TakenU 25U 26U 27U 28U 29U 30U\n",
     "Timeslot": null
   },
   {
@@ -76,7 +76,7 @@
     "Genre": null,
     "Language": null,
     "PlayTime": null,
-    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n",
+    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U TakenU\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n",
     "Timeslot": null
   },
   {
@@ -84,7 +84,7 @@
     "Genre": null,
     "Language": null,
     "PlayTime": null,
-    "seats": "01U 02U 03U 04U TakenU 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n",
+    "seats": "01U 02U 03U 04U TakenU 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U TakenU 26U 27U 28U 29U 30U\n",
     "Timeslot": null
   },
   {
@@ -166,5 +166,13 @@
     "PlayTime": null,
     "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n",
     "Timeslot": null
+  },
+  {
+    "Title": "The Nun",
+    "Genre": "Horror",
+    "Language": null,
+    "PlayTime": null,
+    "seats": "01U 02U 03U 04U 05U 06U 07U 08U 09U 10U\n11U 12U 13U 14U 15U 16U 17U 18U 19U 20U\n21U 22U 23U 24U 25U 26U 27U 28U 29U 30U\n",
+    "Timeslot": "21.00"
   }
 ]
