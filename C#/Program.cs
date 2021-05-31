@@ -443,7 +443,7 @@ public class Screen{
                     foreach(var item in seatstring){
                         string ret = item.Genre;
                         if (ret == "Action"){
-                            Console.WriteLine($"{counter} Title: {item.Title}");
+                            Console.WriteLine($"{counter} Time: {item.Timeslot} Title: {item.Title}");
                         }
                         counter++;
                     }
@@ -455,7 +455,7 @@ public class Screen{
                     foreach(var item in seatstring){
                         string ret = item.Genre;
                         if (ret == "Thriller"){
-                            Console.WriteLine($"{counter} Title: {item.Title}");
+                            Console.WriteLine($"{counter} Time: {item.Timeslot} Title: {item.Title}");
                         }
                         counter++;
                     }   
@@ -467,7 +467,7 @@ public class Screen{
                     foreach(var item in seatstring){
                         string ret = item.Genre;
                         if (ret == "Adventure")
-                            Console.WriteLine($"{counter} Title: {item.Title}");
+                            Console.WriteLine($"{counter} Time: {item.Timeslot} Title: {item.Title}");
                         counter++;
                     }
                     finalcount = counter;
@@ -478,7 +478,7 @@ public class Screen{
                     foreach(var item in seatstring){
                         string ret = item.Genre;
                         if (ret == "Comedy")
-                            Console.WriteLine($"{counter} Title: {item.Title}");
+                            Console.WriteLine($"{counter} Time: {item.Timeslot} Title: {item.Title}");
                         counter++;
                     }
                     finalcount = counter;
@@ -489,7 +489,7 @@ public class Screen{
                     foreach(var item in seatstring){
                         string ret = item.Genre;
                         if (ret == "Fantasy")
-                            Console.WriteLine($"{counter} Title: {item.Title}");
+                            Console.WriteLine($"{counter} Time: {item.Timeslot} Title: {item.Title}");
                         counter++;
                     }
                     finalcount = counter;
@@ -500,7 +500,7 @@ public class Screen{
                     foreach(var item in seatstring){
                         string ret = item.Genre;
                         if (ret == "Horror")
-                            Console.WriteLine($"{counter} Title: {item.Title}");
+                            Console.WriteLine($"{counter} Time: {item.Timeslot} Title: {item.Title}");
                         counter++;
                     }
                     finalcount = counter;
@@ -511,7 +511,7 @@ public class Screen{
                     foreach(var item in seatstring){
                         string ret = item.Genre;
                         if (ret == "Romance")
-                            Console.WriteLine($"{counter} Title: {item.Title}");
+                            Console.WriteLine($"{counter} Time: {item.Timeslot} Title: {item.Title}");
                         counter++;
                     }
                     finalcount = counter;
@@ -522,7 +522,7 @@ public class Screen{
                     foreach(var item in seatstring){
                         string ret = item.Genre;
                         if (ret == "Drama")
-                            Console.WriteLine($"{counter} Title: {item.Title}");
+                            Console.WriteLine($"{counter} Time: {item.Timeslot} Title: {item.Title}");
                         counter++;
                     }
                     finalcount = counter;
@@ -564,7 +564,7 @@ public class Screen{
                     foreach(var item in seatstring){
                         string ret = item.Language;
                         if (ret == "Dutch")
-                            Console.WriteLine($"{counter} Title: {item.Title}");
+                            Console.WriteLine($"{counter} Time: {item.Timeslot} Title: {item.Title}");
                         counter++;
                     }   
                     finalcount1 = counter;
@@ -575,7 +575,7 @@ public class Screen{
                     foreach(var item in seatstring){
                         string ret = item.Language;
                         if (ret == "English")
-                            Console.WriteLine($"{counter} Title: {item.Title}");
+                            Console.WriteLine($"{counter} Time: {item.Timeslot} Title: {item.Title}");
                         counter++;  
                     }  
                     finalcount1 = counter;
@@ -617,7 +617,7 @@ public class Screen{
                     foreach(var item in seatstring){
                         string ret = item.PlayTime;
                         if (ret == "1 hour")
-                            Console.WriteLine($"{counter}Title: {item.Title}");
+                            Console.WriteLine($"{counter} Time: {item.Timeslot} Title: {item.Title}");
                         counter++;
                     }   
                     finalcount2 = counter;
@@ -628,7 +628,7 @@ public class Screen{
                     foreach(var item in seatstring){
                         string ret = item.PlayTime;
                         if (ret == "1.5 hours")
-                            Console.WriteLine($"{counter} Title: {item.Title}");
+                            Console.WriteLine($"{counter} Time: {item.Timeslot} Title: {item.Title}");
                         counter++;
                     }
                     finalcount2 = counter;
@@ -639,7 +639,7 @@ public class Screen{
                     foreach(var item in seatstring){
                         string ret = item.PlayTime;
                         if (ret == "2 hours")
-                            Console.WriteLine($"{counter} Title: {item.Title}");
+                            Console.WriteLine($"{counter} Time: {item.Timeslot} Title: {item.Title}");
                         counter++;
                     }
                     finalcount2 = counter;
@@ -650,7 +650,7 @@ public class Screen{
                     foreach(var item in seatstring){
                         string ret = item.PlayTime;
                         if (ret == "2.5 hours")
-                            Console.WriteLine($"{counter} Title: {item.Title}");
+                            Console.WriteLine($"{counter} Time: {item.Timeslot} Title: {item.Title}");
                         counter++;
                     }
                     finalcount2 = counter;
@@ -661,7 +661,7 @@ public class Screen{
                     foreach(var item in seatstring){
                         string ret = item.PlayTime;
                         if (ret == "3 hours")
-                            Console.WriteLine($"{counter} Title: {item.Title}");
+                            Console.WriteLine($"{counter} Time: {item.Timeslot} Title: {item.Title}");
                         counter++;
                     } 
                     finalcount2 = counter;
@@ -711,34 +711,7 @@ public class Screen{
         List<Seats> seatString = JsonConvert.DeserializeObject<List<Seats>>(seatinfo);
         
         double Cost = Movielist[movieindex].BasePrice;
-        Console.WriteLine("Please choose a timeslot:");
-        int TempCount = 0;
-        foreach (var movie in seatString){
-            if (movie.Title == Movielist[movieindex].Title){
-                Console.WriteLine($"{TempCount}: {movie.Timeslot}");
-            }
-            TempCount++;
-        }
-        bool isvalid = false;
-        int ChosenSeatsIndex = -1;
-        while (!isvalid){
-            string choice = Console.ReadLine();
-            try {
-                ChosenSeatsIndex = Convert.ToInt32(choice);
-                if (seatString[ChosenSeatsIndex].Title == Movielist[movieindex].Title){
-                    isvalid = true;
-                } else {
-                    Convert.ToInt32("lmao u kresh");
-                }
-                
-            } catch {
-                Console.WriteLine("Please enter a valid number");
-            }
-        }
-
-
-        Console.Clear();
-        Console.WriteLine($"You have chosen {seatString[ChosenSeatsIndex].Timeslot} for the movie: {seatString[ChosenSeatsIndex].Title}");
+        
         Console.WriteLine($"A seat for this movie costs {Cost} euros");
         Console.WriteLine("If you have an account press 1, else press 2");
         string Userinput = Console.ReadLine();
@@ -750,12 +723,12 @@ public class Screen{
             Tuple<bool, int> accindex = login.tryLogin(usernameinput, passwordinput);
             if (accindex.Item1 == true){
                 Console.Clear();
-                Console.WriteLine($"All seats with an U are available, a seat for {seatString[ChosenSeatsIndex].Title} costs {Movielist[movieindex].BasePrice} Euros");
-                Console.WriteLine(seatString[ChosenSeatsIndex].seats);
+                Console.WriteLine($"All seats with an U are available, a seat costs {Movielist[movieindex].BasePrice} Euros");
+                Console.WriteLine(seatString[movieindex].seats);
                 Console.WriteLine("Please choose your seat:");
                 var userinput = Console.ReadLine();
                 int userinputasint = 0;
-                isvalid = false;
+                bool isvalid = false;
                 while (!isvalid){
                     try{
                         userinputasint = Convert.ToInt32(userinput);
@@ -793,7 +766,7 @@ public class Screen{
                     MovieName = Movielist[movieindex].Title,
                     SeatNumber = userinput,
                     TotalCost = Movielist[movieindex].BasePrice,
-                    Timeslot = seatString[ChosenSeatsIndex].Timeslot,
+                    Timeslot = seatString[movieindex].Timeslot,
                 };
                 if (reservationdata == null){
                     reservationdata = new List<Reservation>();
@@ -816,12 +789,12 @@ public class Screen{
             string UserInput = Console.ReadLine();
             Random rd = new Random();
             int rand_num = rd.Next(0,1000);
-            Console.WriteLine($"All seats with an U are available, a seat for {seatString[ChosenSeatsIndex].Title} costs {Movielist[movieindex].BasePrice} Euros");
-            Console.WriteLine(seatString[ChosenSeatsIndex].seats);
+            Console.WriteLine($"All seats with an U are available, a seat costs {Movielist[movieindex].BasePrice} Euros");
+            Console.WriteLine(seatString[movieindex].seats);
             Console.WriteLine("Please choose your seat:");
             var userinput = Console.ReadLine();
             int userinputasint = 0;
-            isvalid = false;
+            bool isvalid = false;
             while (!isvalid){
                 try{
                     userinputasint = Convert.ToInt32(userinput);
@@ -854,7 +827,7 @@ public class Screen{
                     SeatNumber = userinput,
                     TotalCost = Movielist[movieindex].BasePrice,
                     ordernumber = rand_num,
-                    Timeslot = seatString[ChosenSeatsIndex].Timeslot,
+                    Timeslot = seatString[movieindex].Timeslot,
                 };
             if (reservationdata == null){
                 reservationdata = new List<Reservation>();
