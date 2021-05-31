@@ -793,10 +793,11 @@ public class Screen{
                 Console.WriteLine($"All seats with an U are available, a seat costs {Movielist[movieindex].BasePrice} Euros");
                 Console.WriteLine(seatString[movieindex].seats);
                 Console.WriteLine("Please choose your seat:");
-                var userinput = Console.ReadLine();
+                string userinput = "";
                 int userinputasint = 0;
                 bool isvalid = false;
                 while (!isvalid){
+                    userinput = Console.ReadLine();
                     try{
                         userinputasint = Convert.ToInt32(userinput);
                         
@@ -859,10 +860,11 @@ public class Screen{
             Console.WriteLine($"All seats with an U are available, a seat costs {Movielist[movieindex].BasePrice} Euros");
             Console.WriteLine(seatString[movieindex].seats);
             Console.WriteLine("Please choose your seat:");
-            var userinput = Console.ReadLine();
+            string userinput = "";
             int userinputasint = 0;
             bool isvalid = false;
             while (!isvalid){
+                userinput = Console.ReadLine();
                 try{
                     userinputasint = Convert.ToInt32(userinput);
                     
