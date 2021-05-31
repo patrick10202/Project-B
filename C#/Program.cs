@@ -267,7 +267,7 @@ public class Screen{
                     Console.WriteLine("Please enter a valid number.");
                     MovieScreen();
                 }
-                Console.WriteLine("Type a number of a movie to reserve that movie or press 0 to go back");
+                Console.WriteLine("Type a number of a movie to view the info about that movie or press 0 to go back");
                 UserInput = Console.ReadLine();
                 if (UserInput == "0"){
                     Console.Clear();
@@ -279,7 +279,7 @@ public class Screen{
                         Console.Clear();
                         if (UsrInp >= 1 && UsrInp <= finalcount){
                             /*nieuw scherm aanmaken voor films die index UsrInp - 1 gebruikt.*/
-                            ReserveringenScherm(UsrInp - 1);
+                            MovieInfo(UsrInp - 1);
                         }
                     }
                     catch{
@@ -293,6 +293,7 @@ public class Screen{
                 Console.WriteLine("----------------------------------------------------------------------");
                 Console.WriteLine("0: Back\n1: Dutch\n2: English");
                 string answerLanguage = Console.ReadLine();
+                int finalcount1 = 1;
                 //filter for Language
                 if (answerLanguage == "1") {
                     Console.Clear();
@@ -303,6 +304,7 @@ public class Screen{
                             Console.WriteLine($"{counter} Title: {item.Title}");
                         counter++;
                     }   
+                    finalcount1 = counter;
                 }
                 if (answerLanguage == "2") {
                     Console.Clear();
@@ -313,6 +315,31 @@ public class Screen{
                             Console.WriteLine($"{counter} Title: {item.Title}");
                         counter++;  
                     }  
+                    finalcount1 = counter;
+                }
+                if (answerLanguage.Length != 1 || Convert.ToChar(answerLanguage) < '0' || Convert.ToChar(answerLanguage) > '8'){
+                    Console.Clear();
+                    Console.WriteLine("Please enter a valid number.");
+                    MovieScreen();
+                }
+                Console.WriteLine("Type a number of a movie to view the info about that movie or press 0 to go back");
+                UserInput = Console.ReadLine();
+                if (UserInput == "0"){
+                    Console.Clear();
+                    MovieScreen();
+                }
+                else{
+                    try{
+                        int UsrInp = Convert.ToInt32(UserInput);
+                        Console.Clear();
+                        if (UsrInp >= 1 && UsrInp <= finalcount1){
+                            /*nieuw scherm aanmaken voor films die index UsrInp - 1 gebruikt.*/
+                            MovieInfo(UsrInp - 1);
+                        }
+                    }
+                    catch{
+                        Console.WriteLine("Please input a valid number");
+                    }
                 }
                 break;
             
@@ -321,6 +348,7 @@ public class Screen{
                 Console.WriteLine("----------------------------------------------------------------------");
                 Console.WriteLine("0: Back\n1: 1 hour\n2: 1.5 hours\n3: 2 hours\n4: 2.5 hours\n5: 3 hours");
                 string answerPlayTime = Console.ReadLine();
+                int finalcount2 = 1;
                 //filter for PlayTime
                 if (answerPlayTime == "1") {
                     Console.Clear();
@@ -331,6 +359,7 @@ public class Screen{
                             Console.WriteLine($"{counter}Title: {item.Title}");
                         counter++;
                     }   
+                    finalcount2 = counter;
                 }
                 if (answerPlayTime == "2") {
                     Console.Clear();
@@ -341,6 +370,7 @@ public class Screen{
                             Console.WriteLine($"{counter} Title: {item.Title}");
                         counter++;
                     }
+                    finalcount2 = counter;
                 }
                 if (answerPlayTime == "3") {
                     Console.Clear();
@@ -351,6 +381,7 @@ public class Screen{
                             Console.WriteLine($"{counter} Title: {item.Title}");
                         counter++;
                     }
+                    finalcount2 = counter;
                 }
                 if (answerPlayTime == "4") {
                     Console.Clear();
@@ -361,6 +392,7 @@ public class Screen{
                             Console.WriteLine($"{counter} Title: {item.Title}");
                         counter++;
                     }
+                    finalcount2 = counter;
                 }
                 if (answerPlayTime == "5") {
                     Console.Clear();
@@ -371,7 +403,32 @@ public class Screen{
                             Console.WriteLine($"{counter} Title: {item.Title}");
                         counter++;
                     } 
+                    finalcount2 = counter;
                 }      
+                if (answerPlayTime.Length != 1 || Convert.ToChar(answerPlayTime) < '0' || Convert.ToChar(answerPlayTime) > '8'){
+                    Console.Clear();
+                    Console.WriteLine("Please enter a valid number.");
+                    MovieScreen();
+                }
+                Console.WriteLine("Type a number of a movie to view the info about that movie or press 0 to go back");
+                UserInput = Console.ReadLine();
+                if (UserInput == "0"){
+                    Console.Clear();
+                    MovieScreen();
+                }
+                else{
+                    try{
+                        int UsrInp = Convert.ToInt32(UserInput);
+                        Console.Clear();
+                        if (UsrInp >= 1 && UsrInp <= finalcount2){
+                            /*nieuw scherm aanmaken voor films die index UsrInp - 1 gebruikt.*/
+                            MovieInfo(UsrInp - 1);
+                        }
+                    }
+                    catch{
+                        Console.WriteLine("Please input a valid number");
+                    }
+                }
                 break;
 
             case "4":
@@ -415,6 +472,16 @@ public class Screen{
                 MovieScreen();
                 break;
             }
+    }
+
+    static void MovieInfo(int movieindex){
+        string movieInfo = File.ReadAllText(@"movies.json");
+        List<MovieClass> Movielist = JsonConvert.DeserializeObject<List<MovieClass>>(movieInfo);
+        Console.WriteLine($"Title: {Movielist[movieindex].Title}\nDescription: {Movielist[movieindex].Description}\nGenre: {Movielist[movieindex].Genre}\nLanguage: {Movielist[movieindex].Language}\nBasePrice: {Movielist[movieindex].BasePrice}\nPlayTime: {Movielist[movieindex].PlayTime}");
+        Console.WriteLine("Press any key to go back to the movie screen.");
+        Console.ReadLine();
+        Console.Clear();
+        MovieScreen();
     }
     
     static void Draaiendefilms(){
