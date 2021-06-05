@@ -844,7 +844,7 @@ public class Screen{
 
                 Console.Clear();
                 Console.WriteLine("reservation succesful");
-                MovieScreen();
+                ReserveringenScherm(movieindex);
             }
             else{
                 Console.Clear();
