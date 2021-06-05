@@ -1040,7 +1040,10 @@ public class Screen{
     static void AdminHome(){
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Admin Main Menu");
-        Console.WriteLine("0: Admin logoff\n1: Movies\n2: Reviews \n3: Total Revenue\n4: Add movie show");
+        Console.WriteLine("0: Admin logoff\n1: Movies\n2: Reviews \n3: Total Revenue\n4: Add movie show \n5: show all Reservations");
+
+        string reservationjson = File.ReadAllText(@"reservations.json");
+        List<Reservation> reservationdata = JsonConvert.DeserializeObject<List<Reservation>>(reservationjson);
         string UserInput = Console.ReadLine();
         switch (UserInput){
             case "0":
@@ -1060,8 +1063,7 @@ public class Screen{
             
             case "3":
                 Console.Clear();
-                string reservationjson = File.ReadAllText(@"reservations.json");
-                List<Reservation> reservationdata = JsonConvert.DeserializeObject<List<Reservation>>(reservationjson);
+                
                 double subTotal = 0.0;
                 int totalReservations = reservationdata.Count;
                 foreach (var reservation in reservationdata){
@@ -1125,6 +1127,19 @@ public class Screen{
                 Console.WriteLine("Movie show added!");
 
 
+                AdminHome();
+                break;
+            case "5":
+                Console.Clear();
+
+                foreach (var item in reservationdata){
+                    if (item.Username == null){
+                        Console.WriteLine($"Seat: {item.SeatNumber}, reservationNumber: {item.ordernumber}, for {item.MovieName}. at timeslot: {item.Timeslot}");
+                    } else {
+                        Console.WriteLine($"Seat: {item.SeatNumber}, reservation by user: {item.Username}, for {item.MovieName}. at timeslot: {item.Timeslot}");
+                    }
+                }
+                Console.ReadLine();
                 AdminHome();
                 break;
             default:
