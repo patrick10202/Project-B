@@ -799,13 +799,13 @@ public class Screen{
             Tuple<bool, int> accindex = login.tryLogin(usernameinput, passwordinput);
             if (accindex.Item1 == true){
                 Console.Clear();
-                Console.WriteLine($"All seats with an U are available, a seat costs {Movielist[movieindex].BasePrice} Euros");
-                Console.WriteLine(seatString[movieindex].seats);
-                Console.WriteLine("Please choose your seat:");
                 string userinput = "";
                 int userinputasint = 0;
                 bool isvalid = false;
                 while (!isvalid){
+                    Console.WriteLine($"All seats with an U are available, a seat costs {Movielist[movieindex].BasePrice} Euros");
+                    Console.WriteLine(seatString[movieindex].seats);
+                    Console.WriteLine("Please choose your seats:");
                     userinput = Console.ReadLine();
                     try{
                         userinputasint = Convert.ToInt32(userinput);
@@ -817,13 +817,13 @@ public class Screen{
                             }
                             else{
                                 Console.Clear();
-                                Console.WriteLine("Please input a valid seat number.");
+                                Console.WriteLine("Please input a valid seat number.");   
                             }
                             File.WriteAllText(@"seats.Json",JsonConvert.SerializeObject(seatString, Formatting.Indented));
                         }
                         else{
                             Console.Clear();
-                            Console.WriteLine("Please input a valid seat number.");
+                            Console.WriteLine("Please input a valid seat number.");                     
                         }
                     }
                     catch{
@@ -866,13 +866,13 @@ public class Screen{
             string UserInput = Console.ReadLine();
             Random rd = new Random();
             int rand_num = rd.Next(0,1000);
-            Console.WriteLine($"All seats with an U are available, a seat costs {Movielist[movieindex].BasePrice} Euros");
-            Console.WriteLine(seatString[movieindex].seats);
-            Console.WriteLine("Please choose your seat:");
             string userinput = "";
             int userinputasint = 0;
             bool isvalid = false;
             while (!isvalid){
+                Console.WriteLine($"All seats with an U are available, a seat costs {Movielist[movieindex].BasePrice} Euros");
+                Console.WriteLine(seatString[movieindex].seats);
+                Console.WriteLine("Please choose your seats:");
                 userinput = Console.ReadLine();
                 try{
                     userinputasint = Convert.ToInt32(userinput);
