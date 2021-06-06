@@ -615,7 +615,9 @@ public class Screen{
                         ReserveringenScherm(UsrInp - 1);
                     }
                     catch{
-                        Console.WriteLine("Please input a valid number");
+                        Console.Clear();
+                        Console.WriteLine("Please enter a valid number.");
+                        Draaiendefilms();
                     }
                 }
                 break;
@@ -668,7 +670,9 @@ public class Screen{
                         ReserveringenScherm(UsrInp - 1);
                     }
                     catch{
-                        Console.WriteLine("Please input a valid number");
+                        Console.Clear();
+                        Console.WriteLine("Please enter a valid number.");
+                        Draaiendefilms();
                     }
                 }
                 break;
@@ -754,7 +758,9 @@ public class Screen{
                         ReserveringenScherm(UsrInp - 1);
                     }
                     catch{
-                        Console.WriteLine("Please input a valid number");
+                        Console.Clear();
+                        Console.WriteLine("Please enter a valid number.");
+                        Draaiendefilms();
                     }
                 }   
                 break;
