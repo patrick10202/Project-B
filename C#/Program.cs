@@ -131,6 +131,7 @@ public class Screen{
                 }
                 else{
                     Console.WriteLine("wrong combination");
+                    LoginScreen();
                 }
                 break;
             case "3":
@@ -1016,11 +1017,11 @@ public class Screen{
         Console.WriteLine("Location: Coolsingel 2");
         Console.WriteLine("Mail: Cinema@gmail.com");
         Console.WriteLine("if there is a Problem just give us a call");
-        Console.WriteLine("0 = back to Main menu");
-        string Usernameseats = Console.ReadLine();
-        if (Usernameseats == "0"){
-            Console.Clear();
-            HomeScreen();}
+        Console.WriteLine();
+        Console.WriteLine("Press enter to return to the home menu");
+        Console.ReadLine();
+        
+        HomeScreen();
     }
     static void InfoScreen(){
         Console.WriteLine("----------------------------------------------------------------------");
@@ -1232,7 +1233,7 @@ public class Screen{
                 break;
             case "3":
                 Console.Clear();
-                Console.WriteLine("Enter new password: ");
+                Console.WriteLine("Enter new Name: ");
                 UserInput = Console.ReadLine();
                 Loginlist[accindex.Item2].Name = UserInput;
                 File.WriteAllText(@"login.Json",JsonConvert.SerializeObject(Loginlist, Formatting.Indented));
@@ -1241,7 +1242,7 @@ public class Screen{
                 break;
             case "4":
                 Console.Clear();
-                Console.WriteLine("Enter new password: ");
+                Console.WriteLine("Enter new Surname: ");
                 UserInput = Console.ReadLine();
                 Loginlist[accindex.Item2].Surname = UserInput;
                 File.WriteAllText(@"login.Json",JsonConvert.SerializeObject(Loginlist, Formatting.Indented));
@@ -1250,7 +1251,7 @@ public class Screen{
                 break;
             case "5":
                 Console.Clear();
-                Console.WriteLine("Enter new password: ");
+                Console.WriteLine("Enter new email: ");
                 UserInput = Console.ReadLine();
                 Loginlist[accindex.Item2].Email = UserInput;
                 File.WriteAllText(@"login.Json",JsonConvert.SerializeObject(Loginlist, Formatting.Indented));
@@ -1259,7 +1260,7 @@ public class Screen{
                 break;
             case "6":
                 Console.Clear();
-                Console.WriteLine("Enter new password: ");
+                Console.WriteLine("Enter new Phone number: ");
                 UserInput = Console.ReadLine();
                 Loginlist[accindex.Item2].Phone = UserInput;
                 File.WriteAllText(@"login.Json",JsonConvert.SerializeObject(Loginlist, Formatting.Indented));
