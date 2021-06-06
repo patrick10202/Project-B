@@ -464,6 +464,8 @@ public class Screen{
                     }
                 }
                 Console.Clear();
+                Console.WriteLine("Please enter a valid number.");
+                MovieScreen();
                 break;
                 
             default:
@@ -1041,7 +1043,6 @@ public class Screen{
         Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Admin Main Menu");
         Console.WriteLine("0: Admin logoff\n1: Movies\n2: Reviews \n3: Total Revenue\n4: Add movie show \n5: show all Reservations");
-
         string reservationjson = File.ReadAllText(@"reservations.json");
         List<Reservation> reservationdata = JsonConvert.DeserializeObject<List<Reservation>>(reservationjson);
         string UserInput = Console.ReadLine();
@@ -1497,7 +1498,7 @@ public class Screen{
                 break;
             }
     }
-    static void ReviewScreen(string MovieName){//
+    static void ReviewScreen(string MovieName){
         string movieInfo = File.ReadAllText(@"movies.json");
         List<MovieClass> Movielist = JsonConvert.DeserializeObject<List<MovieClass>>(movieInfo);
         int MovieIndex = 0;
