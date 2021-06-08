@@ -829,7 +829,7 @@ public class Screen{
 
                 Console.Clear();
                 Console.WriteLine("reservation succesful");
-                ReserveringenScherm(movieindex);
+                Draaiendefilms();
             }
             else{
                 Console.Clear();
@@ -893,7 +893,7 @@ public class Screen{
             Console.Clear();
             Console.WriteLine("reservation succesful");
             Console.WriteLine($"reservation code = {rand_num}");
-            MovieScreen();
+            Draaiendefilms();
         }
         else{
             Console.Clear();
