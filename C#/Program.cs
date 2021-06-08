@@ -6,21 +6,6 @@ using methods;
 using System.IO;
 using System.Collections.Generic;
 
-/*var projectFolder = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
-var FILEPATH = Path.Combine(projectFolder, @"test.json");
-var jsonString = File.ReadAllText(FILEPATH);
- 
-var object = JsonConvert.DeserializeObject<Persoon>(jsonString);
-public class Persoon{
-    public string voornaam;
-    public string achternaam;
-    public string gender;
-    public string adres;
-    public int nummer;
-}
-
-*/
-
 public class login{
     public static Tuple<bool, int> tryLogin(string usernameinput, string passwordinput){
         string logininfo = File.ReadAllText(@"login.json");
@@ -172,7 +157,6 @@ public class Screen{
                 Console.WriteLine("6: Horror\n7: Romance\n8: Drama");
                 string answergenre = Console.ReadLine();
                 int finalcount = 1;
-                //filter for genre
                 if (answergenre == "1") {
                     Console.Clear();
                     int counter = 1;
@@ -279,7 +263,6 @@ public class Screen{
                         int UsrInp = Convert.ToInt32(UserInput);
                         Console.Clear();
                         if (UsrInp >= 1 && UsrInp <= finalcount){
-                            /*nieuw scherm aanmaken voor films die index UsrInp - 1 gebruikt.*/
                             MovieInfo(UsrInp - 1);
                         }
                     }
@@ -295,7 +278,6 @@ public class Screen{
                 Console.WriteLine("0: Back\n1: Dutch\n2: English");
                 string answerLanguage = Console.ReadLine();
                 int finalcount1 = 1;
-                //filter for Language
                 if (answerLanguage == "1") {
                     Console.Clear();
                     int counter = 1;
@@ -334,7 +316,6 @@ public class Screen{
                         int UsrInp = Convert.ToInt32(UserInput);
                         Console.Clear();
                         if (UsrInp >= 1 && UsrInp <= finalcount1){
-                            /*nieuw scherm aanmaken voor films die index UsrInp - 1 gebruikt.*/
                             MovieInfo(UsrInp - 1);
                         }
                     }
@@ -350,7 +331,6 @@ public class Screen{
                 Console.WriteLine("0: Back\n1: 1 hour\n2: 1.5 hours\n3: 2 hours\n4: 2.5 hours\n5: 3 hours");
                 string answerPlayTime = Console.ReadLine();
                 int finalcount2 = 1;
-                //filter for PlayTime
                 if (answerPlayTime == "1") {
                     Console.Clear();
                     int counter = 1;
@@ -422,7 +402,6 @@ public class Screen{
                         int UsrInp = Convert.ToInt32(UserInput);
                         Console.Clear();
                         if (UsrInp >= 1 && UsrInp <= finalcount2){
-                            /*nieuw scherm aanmaken voor films die index UsrInp - 1 gebruikt.*/
                             MovieInfo(UsrInp - 1);
                         }
                     }
@@ -506,7 +485,6 @@ public class Screen{
                 Console.WriteLine("6: Horror\n7: Romance\n8: Drama");
                 string answergenre = Console.ReadLine();
                 int finalcount = 1;
-                //filter for genre
                 if (answergenre == "1") {
                     Console.Clear();
                     int counter = 1;
@@ -629,7 +607,6 @@ public class Screen{
                 Console.WriteLine("0: Back\n1: Dutch\n2: English");
                 string answerLanguage = Console.ReadLine();
                 int finalcount1 = 1;
-                //filter for Language
                 if (answerLanguage == "1") {
                     Console.Clear();
                     int counter = 1;
@@ -684,7 +661,6 @@ public class Screen{
                 Console.WriteLine("0: Back\n1: 1 hour\n2: 1.5 hours\n3: 2 hours\n4: 2.5 hours\n5: 3 hours");
                 string answerPlayTime = Console.ReadLine();
                 int finalcount2 = 1;
-                //filter for PlayTime
                 if (answerPlayTime == "1") {
                     Console.Clear();
                     int counter = 1;
@@ -1044,7 +1020,6 @@ public class Screen{
                 InfoScreen();
                 break;
             }
-        // info over app en cinema
     }
     static void AdminHome(){
         Console.WriteLine("----------------------------------------------------------------------");
@@ -1547,12 +1522,6 @@ public class Screen{
                 break;
 
         }
-        
-
-
-
-        //Console.WriteLine($"review {MovieName}");
-
     }
     static void AddReviewScreen(string MovieName){
         string movieInfo = File.ReadAllText(@"movies.json");
@@ -1584,8 +1553,6 @@ public class Screen{
         Console.WriteLine("Added!");
         Console.ReadLine();
         ReviewScreen(MovieName);
-
-
     }
 }
 
